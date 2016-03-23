@@ -1,0 +1,48 @@
+{
+  "errMsg" : "success",
+  "errNum" : 0,
+  "retData" : [
+    {
+      "area_id" : "101010300",
+      "district_cn" : "北京",
+      "name_cn" : "朝阳",
+      "name_en" : "chaoyang",
+      "province_cn" : "北京"
+    },
+    {
+      "area_id" : "101071201",
+      "district_cn" : "朝阳",
+      "name_cn" : "朝阳",
+      "name_en" : "chaoyang",
+      "province_cn" : "辽宁"
+    },
+    {
+      "area_id" : "101071203",
+      "district_cn" : "朝阳",
+      "name_cn" : "凌源",
+      "name_en" : "lingyuan",
+      "province_cn" : "辽宁"
+    },
+    {
+      "area_id" : "101071204",
+      "district_cn" : "朝阳",
+      "name_cn" : "喀左",
+      "name_en" : "kazuo",
+      "province_cn" : "辽宁"
+    },
+    {
+      "area_id" : "101071205",
+      "district_cn" : "朝阳",
+      "name_cn" : "北票",
+      "name_en" : "beipiao",
+      "province_cn" : "辽宁"
+    },
+    {
+      "area_id" : "101071207",
+      "district_cn" : "朝阳",
+      "name_cn" : "建平县",
+      "name_en" : "jianpingxian",
+      "province_cn" : "辽宁"
+    }
+  ]
+}
