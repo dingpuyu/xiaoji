@@ -12,3 +12,5 @@
 #import "NSString+MessageDigest.h"
 
 #import "Reachability.h"
+
+#import "XTUserScheduleViewController.h"

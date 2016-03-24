@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wuM-Lz-HBN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wuM-Lz-HBN">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
@@ -119,10 +119,10 @@
             </objects>
             <point key="canvasLocation" x="184" y="605"/>
         </scene>
-        <!--Tool Box Controller-->
+        <!--User Schedule View Controller-->
         <scene sceneID="KJP-FF-Y8R">
             <objects>
-                <viewController id="bGC-aC-NbV" customClass="XTToolBoxController" customModule="xiaoji" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bGC-aC-NbV" customClass="XTUserScheduleViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4c2-P9-zZm"/>
                         <viewControllerLayoutGuide type="bottom" id="Lrc-rC-fCy"/>

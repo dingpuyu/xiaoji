@@ -173,7 +173,6 @@ class XTAddTitleItemController: XTBaseViewController,UITableViewDataSource,UITab
             }
             
         }
-
     }
     
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
