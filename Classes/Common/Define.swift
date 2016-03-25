@@ -34,3 +34,9 @@ func ios8() -> Bool{
     }
 }
 
+func dateTypeStrFromDate(date:NSDate) -> String{
+    let dateFormatter = NSDateFormatter()
+    dateFormatter.dateFormat = dateTimeStr
+    return dateFormatter.stringFromDate(date)
+}
+

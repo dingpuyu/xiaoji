@@ -29,7 +29,7 @@
 @interface XTScheduleContentView() <UITableViewDelegate,UITableViewDataSource>
 
 
-@property (nonatomic,strong)NSArray* cellFrameArray;
+
 
 @property (nonatomic,weak)UIView* lineView;
 
@@ -60,11 +60,11 @@
 
     __weak typeof(self) weakSelf = self;
     void(^rowActionHandler)(UITableViewRowAction *, NSIndexPath *) = ^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
-        [weakSelf.tableView setEditing:false animated:true];
-        XTUserScheduleCellFrame* cellFrame = weakSelf.cellFrameArray[indexPath.row - 1];        
-        if (weakSelf.deleteCallBack) {
-            weakSelf.deleteCallBack(cellFrame.remindResult.remindId);
-        }
+//        [weakSelf.tableView setEditing:false animated:true];
+//        XTUserScheduleCellFrame* cellFrame = weakSelf.cellModelArray[indexPath.row - 1];        
+//        if (weakSelf.deleteCallBack) {
+//            weakSelf.deleteCallBack(cellFrame.remindResult.remindId);
+//        }
         
     };
     UITableViewRowAction *action1 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault image:[UIImage imageNamed:@"xiaoxi删除"] handler:rowActionHandler];
@@ -72,22 +72,18 @@
     return @[action1];
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 0|| indexPath.row % 2 ==0 ) {
-        return NO;
-    }else return YES;
-}
+//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+//    if (indexPath.row == 0|| indexPath.row % 2 ==0 ) {
+//        return NO;
+//    }else return YES;
+//}
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.tableView setEditing:false animated:true];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    _noResult = _cellFrameArray.count <= 0;
-    if (_noResult) {
-        return 2;
-    }
-    return _cellFrameArray.count + 1;
+    return _cellModelArray.count;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -95,9 +91,13 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class])];
+    XTNoteItemShowCell* cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([XTNoteItemShowCell class])];
     if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([UITableViewCell class])];
+        cell = [[XTNoteItemShowCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([XTNoteItemShowCell class])];
+    }
+    
+    if (_cellModelArray.count > indexPath.row) {
+        cell.noteItemModel = _cellModelArray[indexPath.row];
     }
     return cell;
 }
@@ -144,27 +144,23 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 //    CGFloat scale = kMainScreenWidth / 375.0;
-    if (indexPath.row == 0) {
-        return 30.0f ;
+    
+    if (_cellModelArray.count < indexPath.row) {
+        return 100;
     }
     
-    if (_noResult) {
-        return 100.0f;
-    }
-    
-    XTUserScheduleCellFrame* cellFrame = _cellFrameArray[indexPath.row - 1];
-    if (indexPath.row %2 == 0) {
-        return cellFrame.infoMaxHeight;
-    }else return cellFrame.contentMaxHeight;
+    CGFloat height = [XTNoteItemShowCell heightWithModel:_cellModelArray[indexPath.row]];
+
+    return height;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row != 0 && indexPath.row %2 == 0) {
-        if (_cellFrameArray.count < indexPath.row)return;
-        XTUserScheduleCellFrame* result = _cellFrameArray[indexPath.row - 1];
-        if (_customerCallBack && result != nil) {
-            _customerCallBack(XTUserScheduleInfoCellDetailInfo,result.remindResult);
-        }
+        if (_cellModelArray.count < indexPath.row)return;
+//        XTUserScheduleCellFrame* result = _cellModelArray[indexPath.row - 1];
+//        if (_customerCallBack && result != nil) {
+//            _customerCallBack(XTUserScheduleInfoCellDetailInfo,result.remindResult);
+//        }
     }
 }
 
@@ -184,18 +180,7 @@
 }
 
 - (void)drawRect:(CGRect)rect{
-//    CGContextRef context = UIGraphicsGetCurrentContext();
-//    CGContextSetRGBStrokeColor(context, 0.67, 0.67, 0.67, 1.0);//线条颜色
-//    CGContextMoveToPoint(context, 0, 0);
-//    CGContextSetLineWidth(context, 0.5);
-//    CGContextAddLineToPoint(context, self.frame.size.width,0);
-//    CGContextStrokePath(context);
-//    
-//    CGContextSetRGBStrokeColor(context, 0.67, 0.67, 0.67, 1.0);//线条颜色
-//    CGContextMoveToPoint(context, 0, self.tableView.frame.origin.y);
-//    CGContextSetLineWidth(context, 0.5);
-//    CGContextAddLineToPoint(context, self.frame.size.width,self.tableView.frame.origin.y);
-//    CGContextStrokePath(context);
+
 }
 
 
@@ -223,7 +208,7 @@
 
 
 - (void)reloadInfo{
-    if (!_cellFrameArray) return;
+    if (!_cellModelArray) return;
     
     [_tableView reloadData];
 }
@@ -268,6 +253,11 @@
     if (_customerCallBack) {
         _customerCallBack(XTUserScheduleInfoCellAddSchedule,nil);
     }
+}
+
+- (void)setCellModelArray:(NSArray *)cellModelArray{
+    _cellModelArray = cellModelArray;
+    [self.tableView reloadData];
 }
 
 - (void)dealloc{

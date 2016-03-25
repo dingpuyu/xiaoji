@@ -75,6 +75,7 @@ typedef enum : NSInteger {
 @property (nonatomic,strong)NSDateFormatter* hourFormatter;
 
 @property (nonatomic,strong)NSDateFormatter* monthDayFormatter;
+
 //选中数据数组
 @property (nonatomic,strong)NSMutableArray* datesSelectedArray;
 
@@ -169,6 +170,8 @@ typedef enum : NSInteger {
     [self hasNetwork];
     
     [self addHelpView];
+    
+
 }
 
 
@@ -705,6 +708,14 @@ typedef enum : NSInteger {
 - (void)reloadInfo{
     if (!_selectedDate)return;
     __weak typeof(self) weakSelf = self;
+    
+    NSArray* titleModelArray = [XTDB selectTitleAndItemsWithDateStr:[self.requestFormatter stringFromDate:_selectedDate]];
+    
+    NSMutableArray* arrayM = [NSMutableArray array];
+    for(TitleModel* model in titleModelArray){
+        [arrayM addObjectsFromArray:model.itemModelArray];
+    }
+    self.contentView.cellModelArray = [arrayM copy];
 //    if ([NetworkSingleton sharedNetWork].isNetworkConnection) {
 //        UIImageView* loadingImageView = [self setRotationAnimationWithView];
 //        [[DataFactory sharedDataFactory]getScheduleListWithDate:[self.requestFormatter stringFromDate:_selectedDate] withCallBack:^(XTScheduleListResultModel *result) {

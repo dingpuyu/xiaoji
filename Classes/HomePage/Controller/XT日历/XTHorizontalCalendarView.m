@@ -63,6 +63,8 @@ typedef NS_ENUM(NSInteger, JTCalendarPageMode) {
     self.showsVerticalScrollIndicator = NO;
     self.pagingEnabled = YES;
     self.clipsToBounds = YES;
+    
+    
 }
 
 - (void)layoutSubviews

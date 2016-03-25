@@ -47,4 +47,6 @@ typedef void(^XTSchdueldCustomerEvent)(XTUserScheduleInfoCellEvent event,RemindR
 
 @property (nonatomic,weak)NSDateFormatter* hourFormatter;
 
+@property (nonatomic,strong)NSArray* cellModelArray;
+
 @end
