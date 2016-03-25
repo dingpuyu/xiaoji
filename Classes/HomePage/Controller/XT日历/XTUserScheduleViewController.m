@@ -254,22 +254,22 @@ typedef enum : NSInteger {
     [UIView animateWithDuration:duration animations:^{
         if (_contentViewPanStartY - 1 <= 94 + WeekViewHeight && _contentView.frame.origin.y >= 94 + WeekViewHeight * 1.5) {
             _pageView.frame = CGRectMake(0, 94, self.view.frame.size.width, WeekViewHeight * 6);
-            _contentView.frame = CGRectMake(0, CGRectGetMaxY(_pageView.frame) + 1, self.view.frame.size.width, self.view.frame.size.height - 94 - WeekViewHeight);
+            _contentView.frame = CGRectMake(0, CGRectGetMaxY(_pageView.frame) + 1, self.view.frame.size.width, self.view.frame.size.height - 94 - WeekViewHeight - 49);
         }else if(_contentViewPanStartY - 1 <= 94 + WeekViewHeight && _contentView.frame.origin.y < 94 + WeekViewHeight * 1.5){
             NSUInteger index = [_pageView weekIndexWithDate:_selectedDate];
             _pageView.frame = CGRectMake(0, 94 - WeekViewHeight * index , self.view.frame.size.width, WeekViewHeight * 6);
-            _contentView.frame = CGRectMake(0, 94 + WeekViewHeight + 1, self.view.frame.size.width, self.view.frame.size.height - 94 - WeekViewHeight);
+            _contentView.frame = CGRectMake(0, 94 + WeekViewHeight + 1, self.view.frame.size.width, self.view.frame.size.height - 94 - WeekViewHeight - 49);
             _contentView.scrollEnable = YES;
         }
         
         if (_contentViewPanStartY >= 94 + WeekViewHeight * 6 && _contentView.frame.origin.y >= 94 + WeekViewHeight * 6 - WeekViewHeight * 0.5) {
             _pageView.frame = CGRectMake(0, 94, self.view.frame.size.width, WeekViewHeight * 6);
-            _contentView.frame = CGRectMake(0, CGRectGetMaxY(_pageView.frame) + 1, self.view.frame.size.width, self.view.frame.size.height  - 94 - WeekViewHeight);
+            _contentView.frame = CGRectMake(0, CGRectGetMaxY(_pageView.frame) + 1, self.view.frame.size.width, self.view.frame.size.height  - 94 - WeekViewHeight - 49);
         }else if(_contentViewPanStartY >= 94 + WeekViewHeight * 6 && _contentView.frame.origin.y < 94 + WeekViewHeight * 6 - WeekViewHeight * 0.5){
             NSUInteger index = [_pageView weekIndexWithDate:_selectedDate];
             _pageView.frame = CGRectMake(0, 94 - WeekViewHeight * index , self.view.frame.size.width, WeekViewHeight * 6);
             
-            _contentView.frame = CGRectMake(0, 94 + WeekViewHeight + 1, self.view.frame.size.width, self.view.frame.size.height - 94 - WeekViewHeight);
+            _contentView.frame = CGRectMake(0, 94 + WeekViewHeight + 1, self.view.frame.size.width, self.view.frame.size.height - 94 - WeekViewHeight - 49);
             _contentView.scrollEnable = YES;
         }
         

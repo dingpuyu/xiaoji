@@ -74,7 +74,7 @@ class XTNoteItemShowCell: UITableViewCell {
         let noteCell = XTNoteItemShowCell(style: .Default, reuseIdentifier: "");
         noteCell.noteItemModel = itemModel
         noteCell.layoutIfNeeded()
-        return noteCell.answerLabel!.frame.size.height + 21.5
+        return noteCell.answerLabel!.frame.size.height + 25
     }
 
 }
