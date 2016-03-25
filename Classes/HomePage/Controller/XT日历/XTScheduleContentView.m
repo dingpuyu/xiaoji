@@ -20,6 +20,7 @@
 
 //addby xiaotei 2016-2-25
 //#import "ScheduleDateInfoCell.h"
+#import "xiaoji-Swift.h"
 
 #define WeekViewHeight 50.0f
 
@@ -64,18 +65,7 @@
         if (weakSelf.deleteCallBack) {
             weakSelf.deleteCallBack(cellFrame.remindResult.remindId);
         }
-
-//        [[DataFactory sharedDataFactory]deleteScheduleWithRemindId:cellFrame.remindResult.remindId callBack:^(BOOL isSuccess) {
-//            
-//        }];
-//        NSMutableArray* arrayM = [NSMutableArray arrayWithArray:weakSelf.cellFrameArray];
-//        if (indexPath.row - 1 < arrayM.count) {
-//            [arrayM removeObjectAtIndex:indexPath.row];
-//        }
-//        weakSelf.cellFrameArray = arrayM;
-//        
-//        
-//        weakSelf
+        
     };
     UITableViewRowAction *action1 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault image:[UIImage imageNamed:@"xiaoxi删除"] handler:rowActionHandler];
     
@@ -105,80 +95,14 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 0) {
-        NSString* className = NSStringFromClass([UITableViewCell class]);
-        UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:className];
-        if (!cell) {
-            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:className];
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        }
-//        [cell removeAllSubviews];
-//        UILabel* label = [[UILabel alloc]init];
-//        CGFloat scale = kMainScreenWidth / 375.0;
-//        label.frame = CGRectMake(16, 16 * scale, kMainScreenWidth - 16, 14);
-//        label.text = _resultModel.formatDateString;
-//        cell.textLabel.text = _resultModel.formatDateString;
-//        label.font = [UIFont systemFontOfSize:14];
-//        label.textColor = [UIColor colorWithRed:0.20f green:0.20f blue:0.20f alpha:1.00f];
-//        [cell addSubview:label];
-//        label.backgroundColor = [UIColor blackColor];
-        return cell;
-
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class])];
+    if (!cell) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([UITableViewCell class])];
     }
-    self.noDataTipsView.hidden = !_noResult;
-    if (_noResult) {
-        UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"noResultCell"];
-        if (!cell) {
-            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"noResultCell"];
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            [cell.contentView addSubview:self.noDataTipsView];
-        }
-        
-        return cell;
-    }
-    __weak typeof(self) weakSelf = self;
-    if (indexPath.row % 2 == 0) {
-        XTUserScheduleInfoCell* cell = [XTUserScheduleInfoCell userScheduleInfoCellWithTableView:tableView eventCallBack:^(XTUserScheduleInfoCell* infoCell, XTUserScheduleInfoCellEvent event) {
-            
-            
-            switch (event) {
-                case XTUserScheduleInfoCellCallEvent:
-                {
-                    if (weakSelf.customerCallBack) {
-                        weakSelf.customerCallBack(XTUserScheduleInfoCellCallEvent,infoCell.cellFrame.remindResult);
-                    }
-             
-                }
-                    break;
-                case XTUserScheduleInfoCellAddFollow:
-                {
-                    if (weakSelf.customerCallBack) {
-                        weakSelf.customerCallBack(XTUserScheduleInfoCellAddFollow,infoCell.cellFrame.remindResult);
-                    }
-                }
-                    break;
-                default:
-                    break;
-            }
-        }];
-        cell.cellFrame = _cellFrameArray[indexPath.row - 1];
-        cell.frame = CGRectMake(0, 0, kMainScreenWidth, cell.cellFrame.infoMaxHeight);
-        return cell;
-    }else{
-        XTUserScheduleContentCell* cell = [XTUserScheduleContentCell userScheduleContentCellWithTableView:tableView];
-        
-        cell.cellFrame = _cellFrameArray[indexPath.row - 1];
-//        cell.frame = CGRectMake(0, 0, kMainScreenWidth, cell.cellFrame.contentMaxHeight);
-        return cell;
-    }
-    
-
+    return cell;
 }
 
 - (void)layoutSubviews{
-//    if (_tableView.contentSize.height > self.frame.size.height) {
-//        self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y,self.frame.size.width , _tableView.contentSize.height);
-//    }
     self.lineView.frame = CGRectMake(0, 0, kMainScreenWidth, 0.5);
     self.lineView2.frame = CGRectMake(0, 9.5, kMainScreenWidth, 0.5);
     self.tableView.frame = CGRectMake(0, 10, self.frame.size.width, self.frame.size.height - 10);
@@ -203,9 +127,10 @@
 }
 
 - (XTScheduleInfoTableView *)tableView{
-    if (!_tableView) {
+    if (!_tableView) {              
         XTScheduleInfoTableView* tableView = [[XTScheduleInfoTableView alloc]initWithFrame:CGRectMake(0, 10, self.frame.size.width, self.frame.size.height - 10)];
         [self addSubview:tableView];
+    
         tableView.dataSource = self;
         tableView.delegate = self;
 //        tableView.scrollEnabled = NO;

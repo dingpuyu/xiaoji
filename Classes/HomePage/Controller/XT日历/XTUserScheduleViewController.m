@@ -19,6 +19,7 @@
 //add by xiaotei 2016-2-18
 //#import "CustomerDetailViewController.h"
 //#import "CustomerFollowDetailViewController.h"
+#import "xiaoji-Swift.h"
 
 //#import "XTHelpView.h"
 
@@ -98,7 +99,7 @@ typedef enum : NSInteger {
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [self calendarManager];
-    
+
     [_pageView reload];
     [self reloadInfo];
     _scheduleEventsArray = nil;
@@ -558,16 +559,6 @@ typedef enum : NSInteger {
         view.deleteCallBack = ^(NSInteger remindID){
             if (remindID) {
                 
-//                [[DataFactory sharedDataFactory]deleteScheduleWithRemindId:remindID callBack:^(ActionResult *result) {
-//                    if (result.success) {
-//                        [weakSelf reloadInfo];
-//                        weakSelf.scheduleEventsArray = nil;
-//                        [weakSelf scheduleEventsArray];
-////                        更新本地通知
-//                        AppDelegate* delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
-//                        [delegate performSelectorOnMainThread:@selector(registerAllLocalNotifications) withObject:nil waitUntilDone:YES];
-//                    }
-//                }];
             }
         };
 //
