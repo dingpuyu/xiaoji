@@ -11,7 +11,7 @@ import CoreLocation
 import PKHUD
 import Alamofire
 
-class XTHomePageController: XTBaseViewController,UITableViewDataSource,UITableViewDelegate,CLLocationManagerDelegate {
+class XTHomePageController: XTBaseViewController,CLLocationManagerDelegate {
     
     let url = "http://api.map.baidu.com/telematics/v3/weather"//天气API
     
@@ -48,29 +48,6 @@ class XTHomePageController: XTBaseViewController,UITableViewDataSource,UITableVi
         // Dispose of any resources that can be recreated.
     }
     
-
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1;
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return UIFont.familyNames().count
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(String(UITableViewCell), forIndexPath: indexPath)
-        let fontName = UIFont.familyNames()[indexPath.row]
-        
-        if fontName.hasPrefix("B"){
-            cell.textLabel?.textColor = UIColor.greenColor()
-        }else {
-            cell.textLabel?.textColor = UIColor.blackColor()
-        }
-        cell.textLabel?.text = "我是中国人" + "\(indexPath.row)" + "\(fontName)"
-        cell.textLabel?.font = UIFont(name:fontName, size: 14)
-        return cell
-    }
-
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location:CLLocation = locations[locations.count-1] as CLLocation
         if (location.horizontalAccuracy > 0) {

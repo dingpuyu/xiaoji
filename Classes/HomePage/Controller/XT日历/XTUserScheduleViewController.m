@@ -20,11 +20,13 @@
 //#import "CustomerDetailViewController.h"
 //#import "CustomerFollowDetailViewController.h"
 #import "xiaoji-Swift.h"
+#import "XTMonthDateSelectView.h"
 
 //#import "XTHelpView.h"
 
 #define WeekViewHeight 57.0f
-#define kMainScreenWidth self.frame.size.width
+#define kMainScreenWidth   [UIScreen mainScreen].bounds.size.width
+#define kMainScreenHeight  [UIScreen mainScreen].bounds.size.height
 
 CGFloat const gestureMinimumTranslation = 20.0 ;
 
@@ -94,6 +96,8 @@ typedef enum : NSInteger {
 
 @property (nonatomic,strong)NSArray* eventDateArray;
 
+
+@property (nonatomic,weak)UIButton* selectMonthButton;
 @end
 
 @implementation XTUserScheduleViewController
@@ -158,6 +162,9 @@ typedef enum : NSInteger {
     [self todayBtn];
     [self addScheduleBtn];
     
+    [self selectMonthButton];
+    [self.selectMonthButton setTitle:[self.formatter stringFromDate:_selectedDate] forState:UIControlStateNormal];
+    
     self.menuLabel.frame =  CGRectMake(0, 41.5, self.view.frame.size.width, 22.5);
     self.menuLabel.backgroundColor = [UIColor clearColor];
     [self.menuLabel setText:[self.formatter stringFromDate:[_calendarManager date]]];
@@ -165,13 +172,12 @@ typedef enum : NSInteger {
     self.popGestureRecognizerEnable = YES;
 
     [self.view insertSubview:pageView belowSubview:maskView];
-   
-    self.title = @"我的日程";
+    
     [self hasNetwork];
     
     [self addHelpView];
     
-
+    self.tabBarController.tabBar.tintColor = [UIColor colorWithRed:0.17f green:0.80f blue:0.80f alpha:1.00f];
 }
 
 
@@ -444,6 +450,22 @@ typedef enum : NSInteger {
 }
 
 #pragma mark - getter
+- (UIButton *)selectMonthButton{
+    if (!_selectMonthButton) {
+        UIButton *monthBtn = [[UIButton alloc]init];
+        CGFloat left = 4*9;
+        monthBtn.frame = CGRectMake((kMainScreenWidth-120)/2, 0, 120, 44);
+        [monthBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 65+(7-2)*8, 0, 0)];
+        [monthBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, -left, 0, 0)];
+        [monthBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [monthBtn setImage:[UIImage imageNamed:@"blackArrowDown.png"] forState:UIControlStateNormal];
+        [monthBtn addTarget:self action:@selector(selectMonthButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.navigationController.navigationBar addSubview:monthBtn];
+        _selectMonthButton = monthBtn;
+    }
+    return _selectMonthButton;
+}
+
 - (NSArray *)scheduleEventsArray{
     if (!_scheduleEventsArray) {
         __weak typeof(self) weakSelf = self;
@@ -657,6 +679,32 @@ typedef enum : NSInteger {
 //    
 //
 //}
+
+#pragma mark - 选择月份
+- (void)selectMonthButtonClick:(UIButton*)btn{
+    __weak typeof(self) weakSelf = self;
+    XTMonthDateSelectView* view = [[XTMonthDateSelectView alloc]initWithCallBack:^(XTMonthDateSelectView *selectView, NSDate *selectedDate) {
+        NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
+        formatter.dateFormat = @"yyyy-MM";
+        unsigned units  = NSMonthCalendarUnit|NSDayCalendarUnit|NSYearCalendarUnit;
+        NSDateComponents *comp1 = [weakSelf.calendarManager.dateHelper.calendar components:units fromDate:selectedDate];
+        NSDateComponents *comp2 = [weakSelf.calendarManager.dateHelper.calendar components:units fromDate:weakSelf.selectedDate];
+        [comp1 setDay:comp2.day];
+        [comp1 setYear:comp1.year];
+        [comp1 setMonth:comp1.month];
+        
+        NSLog(@"%@",[formatter stringFromDate:selectedDate]);
+        weakSelf.selectedDate = [weakSelf.calendarManager.dateHelper.calendar dateFromComponents:comp1];
+        [weakSelf.calendarManager setDate:weakSelf.selectedDate];
+        [weakSelf.selectMonthButton setTitle:[self.formatter stringFromDate:[weakSelf.calendarManager date]] forState:UIControlStateNormal];
+        [weakSelf reloadInfo];
+    }];
+    view.frame = self.view.bounds;
+    view.selectedDate = weakSelf.selectedDate;
+    UIWindow* window = [UIApplication sharedApplication].keyWindow;
+    [window addSubview:view];
+}
+
 
 #pragma mark - 返回今日
 - (void)goBackToday:(UIButton*)btn{

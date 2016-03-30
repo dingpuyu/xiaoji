@@ -25,6 +25,9 @@ let hightGreenColor = UIColor(red: 0.00, green: 0.9, blue: 0.79, alpha: 1.0)
 
 let functionViewHeight = 30
 
+
+let IFLYAPPID = "56dc14e0"
+
 //判断系统版本是否iOS8
 func ios8() -> Bool{
     if ( NSFoundationVersionNumber >= NSFoundationVersionNumber10_8 ) {

@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 @UIApplicationMain
 
 
@@ -21,6 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 //        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
 //        window?.rootViewController = XTTabBarController();
+        
+        let initString = "appid=" + IFLYAPPID;
+        IFlySpeechUtility.createUtility(initString)
+        
         
         self.commonInitReachability()
         

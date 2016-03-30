@@ -56,21 +56,21 @@
 
 }
 
-- (nullable NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    __weak typeof(self) weakSelf = self;
-    void(^rowActionHandler)(UITableViewRowAction *, NSIndexPath *) = ^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
-//        [weakSelf.tableView setEditing:false animated:true];
-//        XTUserScheduleCellFrame* cellFrame = weakSelf.cellModelArray[indexPath.row - 1];        
-//        if (weakSelf.deleteCallBack) {
-//            weakSelf.deleteCallBack(cellFrame.remindResult.remindId);
-//        }
-        
-    };
-    UITableViewRowAction *action1 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault image:[UIImage imageNamed:@"xiaoxi删除"] handler:rowActionHandler];
-    
-    return @[action1];
-}
+//- (nullable NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+//
+//    __weak typeof(self) weakSelf = self;
+//    void(^rowActionHandler)(UITableViewRowAction *, NSIndexPath *) = ^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+////        [weakSelf.tableView setEditing:false animated:true];
+////        XTUserScheduleCellFrame* cellFrame = weakSelf.cellModelArray[indexPath.row - 1];        
+////        if (weakSelf.deleteCallBack) {
+////            weakSelf.deleteCallBack(cellFrame.remindResult.remindId);
+////        }
+//        
+//    };
+//    UITableViewRowAction *action1 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault image:[UIImage imageNamed:@"xiaoxi删除"] handler:rowActionHandler];
+//    
+//    return @[action1];
+//}
 
 //- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
 //    if (indexPath.row == 0|| indexPath.row % 2 ==0 ) {
@@ -78,9 +78,9 @@
 //    }else return YES;
 //}
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self.tableView setEditing:false animated:true];
-}
+//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+//    [self.tableView setEditing:false animated:true];
+//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return _cellModelArray.count;

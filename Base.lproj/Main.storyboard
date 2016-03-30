@@ -46,7 +46,7 @@
         <!--首页-->
         <scene sceneID="gKD-iH-RTr">
             <objects>
-                <viewController title="首页" id="5Vd-7F-KzR" customClass="XTHomePageController" customModule="xiaoji" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="首页" id="5Vd-7F-KzR" customClass="XTUserScheduleViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ThZ-25-1eK"/>
                         <viewControllerLayoutGuide type="bottom" id="FzW-bp-P8F"/>
@@ -119,10 +119,10 @@
             </objects>
             <point key="canvasLocation" x="184" y="605"/>
         </scene>
-        <!--User Schedule View Controller-->
+        <!--Tool Box Controller-->
         <scene sceneID="KJP-FF-Y8R">
             <objects>
-                <viewController id="bGC-aC-NbV" customClass="XTUserScheduleViewController" sceneMemberID="viewController">
+                <viewController id="bGC-aC-NbV" customClass="XTToolBoxController" customModule="xiaoji" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4c2-P9-zZm"/>
                         <viewControllerLayoutGuide type="bottom" id="Lrc-rC-fCy"/>
@@ -130,6 +130,15 @@
                     <view key="view" contentMode="scaleToFill" id="n4M-p5-Boe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wt3-Od-Wtv">
+                                <rect key="frame" x="152" y="200" width="32" height="30"/>
+                                <state key="normal" title="start"/>
+                                <connections>
+                                    <action selector="StartButtonClick:" destination="bGC-aC-NbV" eventType="touchUpInside" id="Ohg-HF-5dY"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="B11-29-PtS"/>
