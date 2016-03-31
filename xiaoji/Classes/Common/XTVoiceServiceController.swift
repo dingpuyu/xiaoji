@@ -46,7 +46,9 @@ class XTVoiceServiceController: XTBaseViewController,IFlySpeechSynthesizerDelega
 // MARK: synthesizeDelegate
     //结束代理
     func onCompleted(error: IFlySpeechError!)
+    {
     
+    }
 
     func onSpeakBegin() {
         
