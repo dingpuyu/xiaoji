@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="XTNoteCollectionReusableView" customModule="xiaoji" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="和谐号，哈哈哈" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LsN-5c-ks5">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpJ-5b-uCi">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                    <connections>
+                        <action selector="actionButtonClick:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="B0b-Cl-ijQ"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="LsN-5c-ks5" secondAttribute="bottom" id="0K1-rb-cDj"/>
+                <constraint firstItem="xpJ-5b-uCi" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="1mb-IM-c10"/>
+                <constraint firstItem="LsN-5c-ks5" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="9Y0-tt-e54"/>
+                <constraint firstItem="LsN-5c-ks5" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="Idx-f9-K9V"/>
+                <constraint firstAttribute="bottom" secondItem="xpJ-5b-uCi" secondAttribute="bottom" id="P3e-PF-cey"/>
+                <constraint firstAttribute="trailing" secondItem="xpJ-5b-uCi" secondAttribute="trailing" id="Tgz-Hp-Esm"/>
+                <constraint firstItem="xpJ-5b-uCi" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="av3-De-bge"/>
+                <constraint firstAttribute="trailing" secondItem="LsN-5c-ks5" secondAttribute="trailing" id="lau-Ps-XI7"/>
+            </constraints>
+            <connections>
+                <outlet property="textLabel" destination="LsN-5c-ks5" id="SUX-KK-g0H"/>
+            </connections>
+            <point key="canvasLocation" x="339" y="222"/>
+        </collectionReusableView>
+    </objects>
+</document>
