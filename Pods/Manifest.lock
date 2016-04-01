@@ -6,12 +6,16 @@ PODS:
   - KFSwiftImageLoader (2.0.1)
   - ObjectMapper (1.1.5)
   - PKHUD (3.1.0)
+  - SDWebImage (3.7.5):
+    - SDWebImage/Core (= 3.7.5)
+  - SDWebImage/Core (3.7.5)
   - SnapKit (0.15.0)
 
 DEPENDENCIES:
   - AlamofireObjectMapper (~> 2.1)
   - KFSwiftImageLoader (~> 2.0)
   - PKHUD
+  - SDWebImage (~> 3.7)
   - SnapKit (~> 0.15.0)
 
 SPEC CHECKSUMS:
@@ -20,6 +24,7 @@ SPEC CHECKSUMS:
   KFSwiftImageLoader: a2b8a33a89116c767e7af8d2c109e8c483037b19
   ObjectMapper: 528b1a6677a6acac7747edd508576983e76a9148
   PKHUD: 4167eccdb1b3a892fd80ce2b51cb6ba412a889ab
+  SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
   SnapKit: 4962eed2ee18e48cbd2b2292fffc57efe7235f87
 
 COCOAPODS: 0.39.0

@@ -21,7 +21,6 @@ class XTCollectionCellFunctionView: UIView {
         self.closure = closure
     }
     
-    
     var addButton:UIButton? = {
         var btn = UIButton()
         btn.setTitle("添加", forState: .Normal)

@@ -14,6 +14,8 @@ class XTVoiceServiceController: XTBaseViewController,IFlySpeechSynthesizerDelega
     
     var speakString:String! = ""
     
+    var circleView:UIView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,7 +37,35 @@ class XTVoiceServiceController: XTBaseViewController,IFlySpeechSynthesizerDelega
 
         //3.启动合成会话
         iFlySpeechSynthesizer!.startSpeaking(speakString)
+        
+        circleView = UIView()
+        self.view.addSubview(circleView!)
+        circleView?.snp_makeConstraints(closure: { (make) -> Void in
+            make.center.equalTo(self.view.snp_center)
+            make.size.equalTo(CGSizeMake(200, 200))
+        })
+        circleView!.layer.cornerRadius = 100
+        circleView!.backgroundColor = UIColor(red: 0.24, green: 0.88, blue: 0.80, alpha: 0.1)
+        circleView?.clipsToBounds = true
+        
+        
+        
+        
+    }
     
+    func startAnimation(){
+        
+        let keyAnimation = CAKeyframeAnimation(keyPath: "transform")
+
+        let scale1 = CATransform3DMakeScale(0.5, 0.5, 1)
+        let scale2 = CATransform3DMakeScale(1.2, 1.2, 1)
+        
+        let array = [NSValue(CATransform3D: scale1),NSValue(CATransform3D: scale2)]
+        keyAnimation.values = array
+        keyAnimation.fillMode = kCAFillModeForwards
+        keyAnimation.duration = 1.5
+        keyAnimation.repeatCount = MAXFLOAT
+        self.circleView?.layer.addAnimation(keyAnimation, forKey: "ScaleAnimation")
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,19 +77,20 @@ class XTVoiceServiceController: XTBaseViewController,IFlySpeechSynthesizerDelega
     //结束代理
     func onCompleted(error: IFlySpeechError!)
     {
-    
+        self.circleView?.layer.removeAnimationForKey("ScaleAnimation")
+        self.dismissViewControllerAnimated(false, completion: nil)
     }
 
     func onSpeakBegin() {
-        
+        self.startAnimation()
     }
     //合成缓冲进度
     func onBufferProgress(progress: Int32, message msg: String!) {
-        
+//        print("BufferProgress:\(progress) message:\(msg)")
     }
     
     func onSpeakProgress(progress: Int32) {
-        
+//        print("progress:\(progress)")
     }
 
     

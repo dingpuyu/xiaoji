@@ -27,6 +27,7 @@ class XTToolBoxController: XTBaseViewController {
         let voiceVC = XTVoiceServiceController()
 //        self.navigationController?.pushViewController(voiceVC, animated: true)
         voiceVC.speakString = "你是谁，你在干嘛咧，说书的岳云鹏你认识吗?据说哟个跟他长得很像的小胖子，呵呵"
+        
         self.presentViewController(voiceVC, animated: false, completion: nil)
     }
     override func didReceiveMemoryWarning() {

@@ -81,7 +81,7 @@ class XTMorningNoteController: XTBaseViewController,NoteFlowViewDelegate,AddTitl
     func rightButtonAction(barItem:UIBarButtonItem){
         noteContentView?.isEdit = !(noteContentView?.isEdit)!
     }
-
+// #progma mark noteflowViewDelegate
     func noteFlowViewAddTitleAction(view: XTNoteFlowView) {
         let addTitleVC = XTAddTitleItemController()
         addTitleVC.dateString = view.dateString
@@ -89,8 +89,22 @@ class XTMorningNoteController: XTBaseViewController,NoteFlowViewDelegate,AddTitl
         self.navigationController?.pushViewController(addTitleVC, animated: true)
     }
     
+    func noteFlowViewVoiceShowAction(view: XTNoteFlowView, titleModel model: TitleModel) {
+        let voiceVC = XTVoiceServiceController()
+        
+        var speakStr = model.title
+        for itemModel in model.itemModelArray!{
+            speakStr += itemModel.question
+            speakStr += itemModel.answer
+        }
+        
+        voiceVC.speakString = speakStr
+
+    }
+
     func addTitleItemController(controller: XTAddTitleItemController, reloaddate dateStr: String) {
         noteContentView?.dateString = dateString
         noteContentView?.collectionView.reloadData()
     }
+    
 }

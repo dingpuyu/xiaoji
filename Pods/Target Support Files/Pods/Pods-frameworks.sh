@@ -89,6 +89,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/KFSwiftImageLoader.framework"
   install_framework "Pods/ObjectMapper.framework"
   install_framework "Pods/PKHUD.framework"
+  install_framework "Pods/SDWebImage.framework"
   install_framework "Pods/SnapKit.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -97,5 +98,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/KFSwiftImageLoader.framework"
   install_framework "Pods/ObjectMapper.framework"
   install_framework "Pods/PKHUD.framework"
+  install_framework "Pods/SDWebImage.framework"
   install_framework "Pods/SnapKit.framework"
 fi

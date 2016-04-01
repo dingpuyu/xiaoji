@@ -12,7 +12,7 @@ import SnapKit
 
 //日记cell事件回调，删除，退出,保存
 enum NoteCellEventType{
-    case Delete,Quit,Save,Cancel
+    case Delete,Quit,Save,Cancel,Voice
 }
 
 
@@ -242,7 +242,6 @@ class XTNoteTipsCell: UICollectionViewCell ,UITextViewDelegate{
         self.frame = CGRect(x: 0, y: 22, width: kMainScreenWidth, height: kMainScreenHeight - 22)            
             self.itemContentView.editStatus = true
             UIApplication.sharedApplication().statusBarHidden = true
-            
         }]
     }
     
@@ -257,6 +256,9 @@ class XTNoteTipsCell: UICollectionViewCell ,UITextViewDelegate{
             break;
         case .Cancel:
             self.closure!(cellView:self,model: titleModel,type: .Cancel)
+            break;
+        case .Voice:
+            self.closure!(cellView: self, model: titleModel, type: .Voice)
             break;
         }
     }

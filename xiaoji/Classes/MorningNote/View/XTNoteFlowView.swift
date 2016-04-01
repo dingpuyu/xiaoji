@@ -13,6 +13,8 @@ import PKHUD
 protocol NoteFlowViewDelegate:NSObjectProtocol{
 
     func noteFlowViewAddTitleAction(view:XTNoteFlowView)
+    //声音阅读
+    func noteFlowViewVoiceShowAction(view:XTNoteFlowView,titleModel model:TitleModel)
 }
 
 
@@ -260,6 +262,11 @@ class XTNoteFlowView: UIView, UICollectionViewDelegateFlowLayout,UICollectionVie
             collectionView.reloadData()
             break
         case .Cancel:
+            break;
+        case .Voice:
+            if self.superDelegate!.respondsToSelector(Selector("noteFlowViewVoiceShowAction:titleModel:")){
+                self.superDelegate!.noteFlowViewVoiceShowAction(self, titleModel: model)
+            }
             break;
         }
         

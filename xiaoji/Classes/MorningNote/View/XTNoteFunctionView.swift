@@ -9,7 +9,7 @@
 import UIKit
 
 enum FunctionEventType{
-    case Return,Save,Cancel
+    case Return,Save,Cancel,Voice
 }
 
 
@@ -33,8 +33,8 @@ class XTNoteFunctionView: UIView {
 
         self.addSubview(btn1)
         let btn2 = UIButton()
-        btn2.setTitle("取消", forState: .Normal)
-        btn2.addTarget(self, action: "cancelActionTouch:", forControlEvents: .TouchUpInside)
+        btn2.setTitle("语音", forState: .Normal)
+        btn2.addTarget(self, action: "voiceActionTouch:", forControlEvents: .TouchUpInside)
         self.addSubview(btn2)
         let btn3 = UIButton()
         btn3.addTarget(self, action: "saveActionTouch:", forControlEvents: .TouchUpInside)
@@ -81,6 +81,11 @@ class XTNoteFunctionView: UIView {
     func saveActionTouch(button:UIButton){
         if closure != nil{
             closure!(funcView: self,event: .Save)
+        }
+    }
+    func voiceActionTouch(button:UIButton){
+        if closure != nil{
+            closure!(funcView: self, event: .Voice)
         }
     }
 }
