@@ -1,6 +1,6 @@
 // Manager.swift
 //
-// Copyright (c) 2014–2016 Alamofire Software Foundation (http://alamofire.org/)
+// Copyright (c) 2014–2015 Alamofire Software Foundation (http://alamofire.org/)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -45,13 +45,21 @@ public class Manager {
     */
     public static let defaultHTTPHeaders: [String: String] = {
         // Accept-Encoding HTTP Header; see https://tools.ietf.org/html/rfc7230#section-4.2.3
-        let acceptEncoding: String = "gzip;q=1.0, compress;q=0.5"
+        let acceptEncoding: String = "gzip;q=1.0,compress;q=0.5"
 
         // Accept-Language HTTP Header; see https://tools.ietf.org/html/rfc7231#section-5.3.5
-        let acceptLanguage = NSLocale.preferredLanguages().prefix(6).enumerate().map { index, languageCode in
-            let quality = 1.0 - (Double(index) * 0.1)
-            return "\(languageCode);q=\(quality)"
-        }.joinWithSeparator(", ")
+        let acceptLanguage: String = {
+            var components: [String] = []
+            for (index, languageCode) in (NSLocale.preferredLanguages() as [String]).enumerate() {
+                let q = 1.0 - (Double(index) * 0.1)
+                components.append("\(languageCode);q=\(q)")
+                if q <= 0.5 {
+                    break
+                }
+            }
+
+            return components.joinWithSeparator(",")
+        }()
 
         // User-Agent Header; see https://tools.ietf.org/html/rfc7231#section-5.5.3
         let userAgent: String = {
@@ -106,12 +114,10 @@ public class Manager {
     // MARK: - Lifecycle
 
     /**
-        Initializes the `Manager` instance with the specified configuration, delegate and server trust policy.
+        Initializes the `Manager` instance with the given configuration and server trust policy.
 
         - parameter configuration:            The configuration used to construct the managed session. 
                                               `NSURLSessionConfiguration.defaultSessionConfiguration()` by default.
-        - parameter delegate:                 The delegate used when initializing the session. `SessionDelegate()` by
-                                              default.
         - parameter serverTrustPolicyManager: The server trust policy manager to use for evaluating all server trust 
                                               challenges. `nil` by default.
 
@@ -119,42 +125,13 @@ public class Manager {
     */
     public init(
         configuration: NSURLSessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration(),
-        delegate: SessionDelegate = SessionDelegate(),
         serverTrustPolicyManager: ServerTrustPolicyManager? = nil)
     {
-        self.delegate = delegate
-        self.session = NSURLSession(configuration: configuration, delegate: delegate, delegateQueue: nil)
+        self.delegate = SessionDelegate()
+        self.session = NSURLSession(configuration: configuration, delegate: self.delegate, delegateQueue: nil)
+        self.session.serverTrustPolicyManager = serverTrustPolicyManager
 
-        commonInit(serverTrustPolicyManager: serverTrustPolicyManager)
-    }
-
-    /**
-        Initializes the `Manager` instance with the specified session, delegate and server trust policy.
-
-        - parameter session:                  The URL session.
-        - parameter delegate:                 The delegate of the URL session. Must equal the URL session's delegate.
-        - parameter serverTrustPolicyManager: The server trust policy manager to use for evaluating all server trust
-                                              challenges. `nil` by default.
-
-        - returns: The new `Manager` instance if the URL session's delegate matches the delegate parameter.
-    */
-    public init?(
-        session: NSURLSession,
-        delegate: SessionDelegate,
-        serverTrustPolicyManager: ServerTrustPolicyManager? = nil)
-    {
-        self.delegate = delegate
-        self.session = session
-
-        guard delegate === session.delegate else { return nil }
-
-        commonInit(serverTrustPolicyManager: serverTrustPolicyManager)
-    }
-
-    private func commonInit(serverTrustPolicyManager serverTrustPolicyManager: ServerTrustPolicyManager?) {
-        session.serverTrustPolicyManager = serverTrustPolicyManager
-
-        delegate.sessionDidFinishEventsForBackgroundURLSession = { [weak self] session in
+        self.delegate.sessionDidFinishEventsForBackgroundURLSession = { [weak self] session in
             guard let strongSelf = self else { return }
             dispatch_async(dispatch_get_main_queue()) { strongSelf.backgroundCompletionHandler?() }
         }
@@ -201,7 +178,10 @@ public class Manager {
     */
     public func request(URLRequest: URLRequestConvertible) -> Request {
         var dataTask: NSURLSessionDataTask!
-        dispatch_sync(queue) { dataTask = self.session.dataTaskWithRequest(URLRequest.URLRequest) }
+
+        dispatch_sync(queue) {
+            dataTask = self.session.dataTaskWithRequest(URLRequest.URLRequest)
+        }
 
         let request = Request(session: session, task: dataTask)
         delegate[request.delegate.task] = request.delegate
@@ -225,23 +205,18 @@ public class Manager {
         subscript(task: NSURLSessionTask) -> Request.TaskDelegate? {
             get {
                 var subdelegate: Request.TaskDelegate?
-                dispatch_sync(subdelegateQueue) { subdelegate = self.subdelegates[task.taskIdentifier] }
+                dispatch_sync(subdelegateQueue) {
+                    subdelegate = self.subdelegates[task.taskIdentifier]
+                }
 
                 return subdelegate
             }
 
             set {
-                dispatch_barrier_async(subdelegateQueue) { self.subdelegates[task.taskIdentifier] = newValue }
+                dispatch_barrier_async(subdelegateQueue) {
+                    self.subdelegates[task.taskIdentifier] = newValue
+                }
             }
-        }
-
-        /**
-            Initializes the `SessionDelegate` instance.
-
-            - returns: The new `SessionDelegate` instance.
-        */
-        public override init() {
-            super.init()
         }
 
         // MARK: - NSURLSessionDelegate
@@ -451,8 +426,6 @@ public class Manager {
             } else if let delegate = self[task] {
                 delegate.URLSession(session, task: task, didCompleteWithError: error)
             }
-
-            NSNotificationCenter.defaultCenter().postNotificationName(Notifications.Task.DidComplete, object: task)
 
             self[task] = nil
         }

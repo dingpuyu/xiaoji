@@ -41,6 +41,8 @@ class XTHomePageController: XTBaseViewController,CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,9 +67,7 @@ class XTHomePageController: XTBaseViewController,CLLocationManagerDelegate {
         
         Alamofire.request(.GET, url, parameters: parameters,encoding: .URLEncodedInURL)
             .responseJSON { response in
-                if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
-                }
+            
         }
     }
 

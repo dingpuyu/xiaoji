@@ -19,3 +19,5 @@
 
 #import "XTUserScheduleViewController.h"
 
+#import "XTSignInService.h"
+

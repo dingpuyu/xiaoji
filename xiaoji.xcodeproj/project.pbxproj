@@ -437,6 +437,9 @@
 		2ACE47EA1C414ADF0066A303 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ACE47E81C414ADF0066A303 /* LaunchScreen.storyboard */; };
 		2ACE47F51C414ADF0066A303 /* xiaojiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACE47F41C414ADF0066A303 /* xiaojiTests.swift */; };
 		2ACE48001C414ADF0066A303 /* xiaojiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACE47FF1C414ADF0066A303 /* xiaojiUITests.swift */; };
+		BA08DCF21CB39EA500B3DDE3 /* XTLogInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA08DCF11CB39EA500B3DDE3 /* XTLogInController.swift */; };
+		BA08DCF51CB3B29C00B3DDE3 /* XTSignInService.m in Sources */ = {isa = PBXBuildFile; fileRef = BA08DCF41CB3B29C00B3DDE3 /* XTSignInService.m */; };
+		BA08DCF71CB3BDC300B3DDE3 /* logInScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = BA08DCF61CB3BDC300B3DDE3 /* logInScreen.png */; };
 		BA59ECA41C9959470037CF70 /* set_btn_del_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA59ECA01C9959470037CF70 /* set_btn_del_@2x.png */; };
 		BA59ECA51C9959470037CF70 /* set_btn_del_@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA59ECA11C9959470037CF70 /* set_btn_del_@3x.png */; };
 		BA59ECA61C9959470037CF70 /* set_btn_del_pre_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA59ECA21C9959470037CF70 /* set_btn_del_pre_@2x.png */; };
@@ -998,6 +1001,10 @@
 		2ACE48011C414ADF0066A303 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		852755B6388CEF7B356FF087 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B567EC05871D0A5FC2C77E6C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		BA08DCF11CB39EA500B3DDE3 /* XTLogInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTLogInController.swift; sourceTree = "<group>"; };
+		BA08DCF31CB3B29C00B3DDE3 /* XTSignInService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTSignInService.h; sourceTree = "<group>"; };
+		BA08DCF41CB3B29C00B3DDE3 /* XTSignInService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTSignInService.m; sourceTree = "<group>"; };
+		BA08DCF61CB3BDC300B3DDE3 /* logInScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logInScreen.png; sourceTree = "<group>"; };
 		BA59ECA01C9959470037CF70 /* set_btn_del_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "set_btn_del_@2x.png"; sourceTree = "<group>"; };
 		BA59ECA11C9959470037CF70 /* set_btn_del_@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "set_btn_del_@3x.png"; sourceTree = "<group>"; };
 		BA59ECA21C9959470037CF70 /* set_btn_del_pre_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "set_btn_del_pre_@2x.png"; sourceTree = "<group>"; };
@@ -1161,6 +1168,7 @@
 			isa = PBXGroup;
 			children = (
 				2AC921631C8C2BCE00683D7E /* Common */,
+				BA08DCF01CB39C7C00B3DDE3 /* 登陆 */,
 				2AC9215F1C8C242100683D7E /* Reinforcement(强化类) */,
 				2A14D95C1C87295700C0B1D2 /* HomePage（首页） */,
 				2AC9215B1C8C239900683D7E /* MorningNote（晨记） */,
@@ -1224,6 +1232,7 @@
 				BA8991FA1C9BCF7A00C63B3B /* 天气 */,
 				BA59EC9F1C99593B0037CF70 /* 删除按钮 */,
 				2A3FBD3D1C87203C00F548AA /* 晨记 */,
+				BA08DCF61CB3BDC300B3DDE3 /* logInScreen.png */,
 				2A3FBDC71C87203C00F548AA /* 首页切图 */,
 			);
 			path = images;
@@ -1912,6 +1921,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BA08DCF01CB39C7C00B3DDE3 /* 登陆 */ = {
+			isa = PBXGroup;
+			children = (
+				BA08DCF31CB3B29C00B3DDE3 /* XTSignInService.h */,
+				BA08DCF41CB3B29C00B3DDE3 /* XTSignInService.m */,
+				BA08DCF11CB39EA500B3DDE3 /* XTLogInController.swift */,
+			);
+			name = "登陆";
+			path = Common;
+			sourceTree = "<group>";
+		};
 		BA2F88EC1CA90AA1006EBFD1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -2345,6 +2365,7 @@
 				2A3FC0261C87203C00F548AA /* gray-circle-6@2x.png in Resources */,
 				2A3FBFC41C87203C00F548AA /* 收藏线-down@3x.png in Resources */,
 				2A3FBF781C87203C00F548AA /* iconfont-xiazai-3-down@3x.png in Resources */,
+				BA08DCF71CB3BDC300B3DDE3 /* logInScreen.png in Resources */,
 				2A3FC0381C87203C00F548AA /* search-icon@2x.png in Resources */,
 				2A3FBFBF1C87203C00F548AA /* 收藏实.png in Resources */,
 				BA8992361C9BCF8600C63B3B /* Sunrise.png in Resources */,
@@ -2779,6 +2800,7 @@
 				2A3C66C21C94175D00AC685D /* XTNoteTipsCell.swift in Sources */,
 				2AC9217B1C8C407600683D7E /* XTMorningNoteController.swift in Sources */,
 				BAF163811CA37CBE0048681A /* JTCalendarManager.m in Sources */,
+				BA08DCF51CB3B29C00B3DDE3 /* XTSignInService.m in Sources */,
 				BAF163971CA37CBE0048681A /* XTUserScheduleCell.m in Sources */,
 				2A3C66D61C9470A200AC685D /* FMDatabase.m in Sources */,
 				2ACE47E01C414ADF0066A303 /* AppDelegate.swift in Sources */,
@@ -2808,6 +2830,7 @@
 				BAE00FC91CABA851006A9965 /* UUDatePicker.m in Sources */,
 				2A3C66C71C94632C00AC685D /* XTNoteCollectionReusableView.swift in Sources */,
 				2A7F72F71C9568B900FFE217 /* NSString+MessageDigest.m in Sources */,
+				BA08DCF21CB39EA500B3DDE3 /* XTLogInController.swift in Sources */,
 				BAF163901CA37CBE0048681A /* NSString+Extension.m in Sources */,
 				BAF825451C9A80F400438A5F /* XTNoteFunctionView.swift in Sources */,
 				BAF163941CA37CBE0048681A /* XTHorizontalCalendarView.m in Sources */,

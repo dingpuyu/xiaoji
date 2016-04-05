@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '4C090B75F481CAD02395E1D2'
+               BlueprintIdentifier = '9C5439DA8957443BE5CD19CD'
                BlueprintName = 'KFSwiftImageLoader'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'KFSwiftImageLoader.framework'>

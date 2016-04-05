@@ -109,6 +109,13 @@ typedef enum : NSInteger {
     [self reloadInfo];
     _scheduleEventsArray = nil;
     [self scheduleEventsArray];
+    
+    BOOL isLogIn = [[NSUserDefaults standardUserDefaults] boolForKey:@"UserIsLogIn"];
+    
+    if (!isLogIn) {
+        [self performSegueWithIdentifier:@"LogIn" sender:self];        
+    }
+
 }
 
 - (void)viewDidLoad {

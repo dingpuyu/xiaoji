@@ -9,17 +9,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>AlamofireObjectMapper.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>KFSwiftImageLoader.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>ObjectMapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -30,6 +20,16 @@
 			<false/>
 		</dict>
 		<key>Pods.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ReactiveCocoa.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Result.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -47,7 +47,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
+		<key>0DA40BD68DE0C32F69B9E4E280765690</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>461474CE02752FC6804EDC72AF774FF6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4B2F30D90D85A544E9EFE2A49D392C25</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5585697A4C5E385ABF462535D2781B55</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>859B4B46335CC95DF3944E74E4B71B39</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,32 +77,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>976EE2EED3ABE375BD10CFDF5F8126EE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>980359A58BBAF8D8380A78F8114430F3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C5CBCAA97E951CC882334464FBDF983D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CC709D24D869B8EA8D41516C82822C66</key>
+		<key>C7A147BFDF6CB7558B07D7C689BCBBF6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>F6F0516F82D07656D12F1C0716898F73</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FBD082A0D35F7917EAB9DD9D3CCA9976</key>
 		<dict>
 			<key>primary</key>
 			<true/>

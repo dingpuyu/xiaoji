@@ -1,6 +1,6 @@
 // Result.swift
 //
-// Copyright (c) 2014–2016 Alamofire Software Foundation (http://alamofire.org/)
+// Copyright (c) 2014–2015 Alamofire Software Foundation (http://alamofire.org/)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -30,9 +30,9 @@ import Foundation
     - Failure: The request encountered an error resulting in a failure. The associated values are the original data 
                provided by the server as well as the error that caused the failure.
 */
-public enum Result<Value, Error: ErrorType> {
+public enum Result<Value> {
     case Success(Value)
-    case Failure(Error)
+    case Failure(NSData?, ErrorType)
 
     /// Returns `true` if the result is a success, `false` otherwise.
     public var isSuccess: Bool {
@@ -59,12 +59,22 @@ public enum Result<Value, Error: ErrorType> {
         }
     }
 
-    /// Returns the associated error value if the result is a failure, `nil` otherwise.
-    public var error: Error? {
+    /// Returns the associated data value if the result is a failure, `nil` otherwise.
+    public var data: NSData? {
         switch self {
         case .Success:
             return nil
-        case .Failure(let error):
+        case .Failure(let data, _):
+            return data
+        }
+    }
+
+    /// Returns the associated error value if the result is a failure, `nil` otherwise.
+    public var error: ErrorType? {
+        switch self {
+        case .Success:
+            return nil
+        case .Failure(_, let error):
             return error
         }
     }
@@ -73,8 +83,6 @@ public enum Result<Value, Error: ErrorType> {
 // MARK: - CustomStringConvertible
 
 extension Result: CustomStringConvertible {
-    /// The textual representation used when written to an output stream, which includes whether the result was a 
-    /// success or failure.
     public var description: String {
         switch self {
         case .Success:
@@ -88,14 +96,19 @@ extension Result: CustomStringConvertible {
 // MARK: - CustomDebugStringConvertible
 
 extension Result: CustomDebugStringConvertible {
-    /// The debug textual representation used when written to an output stream, which includes whether the result was a
-    /// success or failure in addition to the value or error.
     public var debugDescription: String {
         switch self {
         case .Success(let value):
             return "SUCCESS: \(value)"
-        case .Failure(let error):
-            return "FAILURE: \(error)"
+        case .Failure(let data, let error):
+            if let
+                data = data,
+                utf8Data = NSString(data: data, encoding: NSUTF8StringEncoding)
+            {
+                return "FAILURE: \(error) \(utf8Data)"
+            } else {
+                return "FAILURE with Error: \(error)"
+            }
         }
     }
 }
