@@ -101,6 +101,13 @@ class XTMorningNoteController: XTBaseViewController,NoteFlowViewDelegate,AddTitl
         voiceVC.speakString = speakStr
 
     }
+    
+    func noteFlowViewDidTouchCell(view: XTNoteFlowView, titleModel model: TitleModel) {
+        let detailController = XTnoteItemDetailController()
+        detailController.titleModel = model
+        detailController.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(detailController, animated: true)
+    }
 
     func addTitleItemController(controller: XTAddTitleItemController, reloaddate dateStr: String) {
         noteContentView?.dateString = dateString

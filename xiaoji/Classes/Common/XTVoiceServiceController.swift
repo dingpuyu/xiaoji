@@ -16,6 +16,14 @@ class XTVoiceServiceController: XTBaseViewController,IFlySpeechSynthesizerDelega
     
     var circleView:UIView?
     
+    var cancelButton:UIButton! = {
+        let button = UIButton()
+        button.setTitle("结束", forState: .Normal)
+        button.setTitleColor(hightGreenColor, forState: .Normal)
+        button.setTitleColor(lightGreenColor, forState: .Highlighted)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -50,6 +58,14 @@ class XTVoiceServiceController: XTBaseViewController,IFlySpeechSynthesizerDelega
         
         
         
+        self.view.addSubview(cancelButton)
+        cancelButton.addTarget(self, action: Selector("cancelVoiceProcess"), forControlEvents: .TouchUpInside)
+        cancelButton.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(self.view.snp_top).offset(44)
+            make.left.equalTo(self.view.snp_left).offset(20)
+            make.right.equalTo(self.view.snp_right).offset(-20)
+            make.height.equalTo(33)
+        }
         
     }
     
@@ -93,6 +109,11 @@ class XTVoiceServiceController: XTBaseViewController,IFlySpeechSynthesizerDelega
 //        print("progress:\(progress)")
     }
 
+    //#pragma mark 取消播放
+    func cancelVoiceProcess(){
+        self.iFlySpeechSynthesizer?.stopSpeaking()
+        self.navigationController?.dismissViewControllerAnimated(false, completion: nil)
+    }
     
 
 }

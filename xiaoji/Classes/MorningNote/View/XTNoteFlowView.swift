@@ -15,6 +15,8 @@ protocol NoteFlowViewDelegate:NSObjectProtocol{
     func noteFlowViewAddTitleAction(view:XTNoteFlowView)
     //声音阅读
     func noteFlowViewVoiceShowAction(view:XTNoteFlowView,titleModel model:TitleModel)
+    
+    func noteFlowViewDidTouchCell(view:XTNoteFlowView,titleModel model:TitleModel)
 }
 
 
@@ -196,11 +198,8 @@ class XTNoteFlowView: UIView, UICollectionViewDelegateFlowLayout,UICollectionVie
         cell.titleModel = itemModel
         cell.initWithClosure(noteCellFunc)
         cell.indexPath = indexPath
-
         
-        cell.isEdit = isEdit!
-        
-        cell.isFullScreen = false
+        cell.contentView.userInteractionEnabled = false
         
         return cell;
     }
@@ -213,8 +212,11 @@ class XTNoteFlowView: UIView, UICollectionViewDelegateFlowLayout,UICollectionVie
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let noteCell = collectionView.cellForItemAtIndexPath(indexPath) as! XTNoteTipsCell
-        noteCell.oldRect = UIView().convertRect(noteCell.frame, fromView: self.collectionView)
+//        noteCell.oldRect = UIView().convertRect(noteCell.frame, fromView: self.collectionView)
 
+        if self.superDelegate!.respondsToSelector(Selector("noteFlowViewDidTouchCell:titleModel:")){
+            self.superDelegate.noteFlowViewDidTouchCell(self, titleModel: noteCell.titleModel)
+        }
 //        noteCell.backgroundColor = UIColor.lightGrayColor()
         
 //        self.bringSubviewToFront(noteCell)
@@ -222,7 +224,7 @@ class XTNoteFlowView: UIView, UICollectionViewDelegateFlowLayout,UICollectionVie
 //            closure!(view:self,model:noteCell.titleModel)
 //        }
 
-        noteCell.moveToWindow()
+//        noteCell.moveToWindow()
 //        self.itemArray.removeAtIndex(indexPath.item)
 //        collectionView.deleteItemsAtIndexPaths([indexPath])
     }
@@ -269,10 +271,6 @@ class XTNoteFlowView: UIView, UICollectionViewDelegateFlowLayout,UICollectionVie
             }
             break;
         }
-        
-        
-        
-
         
     }
     

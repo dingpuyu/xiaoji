@@ -51,7 +51,7 @@ class XTNoteTipsCell: UICollectionViewCell ,UITextViewDelegate{
                  titleLabel.textColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
             }
             for textView in itemContentView.textViewArray!{
-                textView.userInteractionEnabled = isFullScreen!
+                textView.userInteractionEnabled = false
             }
             
              itemContentView.snp_updateConstraints { (make) -> Void in
@@ -136,8 +136,6 @@ class XTNoteTipsCell: UICollectionViewCell ,UITextViewDelegate{
                 make.width.equalTo(16)
                 make.height.equalTo(0)
             }
-            
-            
             
             
             self.contentView.addSubview(itemContentView)

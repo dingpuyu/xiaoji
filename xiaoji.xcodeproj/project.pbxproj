@@ -441,6 +441,9 @@
 		BA59ECA51C9959470037CF70 /* set_btn_del_@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA59ECA11C9959470037CF70 /* set_btn_del_@3x.png */; };
 		BA59ECA61C9959470037CF70 /* set_btn_del_pre_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA59ECA21C9959470037CF70 /* set_btn_del_pre_@2x.png */; };
 		BA59ECA71C9959470037CF70 /* set_btn_del_pre_@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA59ECA31C9959470037CF70 /* set_btn_del_pre_@3x.png */; };
+		BA6A4D661CB3461900994E9E /* XTnoteItemDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A4D651CB3461900994E9E /* XTnoteItemDetailController.swift */; };
+		BA6A4D691CB34E3100994E9E /* sound@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA6A4D671CB34E3100994E9E /* sound@2x.png */; };
+		BA6A4D6A1CB34E3100994E9E /* sound@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA6A4D681CB34E3100994E9E /* sound@3x.png */; };
 		BA8991F91C9BA5A500C63B3B /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8991F81C9BA5A500C63B3B /* LocationService.swift */; };
 		BA89921A1C9BCF8600C63B3B /* Cloud-thin.png in Resources */ = {isa = PBXBuildFile; fileRef = BA8991FB1C9BCF8600C63B3B /* Cloud-thin.png */; };
 		BA89921B1C9BCF8600C63B3B /* Cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = BA8991FC1C9BCF8600C63B3B /* Cloud.png */; };
@@ -999,6 +1002,9 @@
 		BA59ECA11C9959470037CF70 /* set_btn_del_@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "set_btn_del_@3x.png"; sourceTree = "<group>"; };
 		BA59ECA21C9959470037CF70 /* set_btn_del_pre_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "set_btn_del_pre_@2x.png"; sourceTree = "<group>"; };
 		BA59ECA31C9959470037CF70 /* set_btn_del_pre_@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "set_btn_del_pre_@3x.png"; sourceTree = "<group>"; };
+		BA6A4D651CB3461900994E9E /* XTnoteItemDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTnoteItemDetailController.swift; sourceTree = "<group>"; };
+		BA6A4D671CB34E3100994E9E /* sound@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sound@2x.png"; sourceTree = "<group>"; };
+		BA6A4D681CB34E3100994E9E /* sound@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sound@3x.png"; sourceTree = "<group>"; };
 		BA8991F81C9BA5A500C63B3B /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		BA8991FB1C9BCF8600C63B3B /* Cloud-thin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cloud-thin.png"; sourceTree = "<group>"; };
 		BA8991FC1C9BCF8600C63B3B /* Cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cloud.png; sourceTree = "<group>"; };
@@ -1226,6 +1232,8 @@
 		2A3FBD3D1C87203C00F548AA /* 晨记 */ = {
 			isa = PBXGroup;
 			children = (
+				BA6A4D671CB34E3100994E9E /* sound@2x.png */,
+				BA6A4D681CB34E3100994E9E /* sound@3x.png */,
 				2A5BBBA01C9D8C6B0071C672 /* iconfont-shezhi-拷贝@2x.png */,
 				2A5BBBA11C9D8C6B0071C672 /* iconfont-shezhi-拷贝@3x.png */,
 				2A3FBD3E1C87203C00F548AA /* blackArrowDown@2x.png */,
@@ -1761,6 +1769,7 @@
 				2A3E48231CA16B7F00FFFC38 /* 添加问题控制器 */,
 				2AC921781C8C407600683D7E /* XTMorningNoteController.swift */,
 				2A3013001C99B723003E098A /* XTNoteItemEditController.swift */,
+				BA6A4D651CB3461900994E9E /* XTnoteItemDetailController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2423,6 +2432,7 @@
 				2A3FBFBA1C87203C00F548AA /* 报@2x.png in Resources */,
 				2A3FC0161C87203C00F548AA /* 38-lan.png in Resources */,
 				2A3FC0B31C87203D00F548AA /* 报@3x.png in Resources */,
+				BA6A4D691CB34E3100994E9E /* sound@2x.png in Resources */,
 				2A3FC04F1C87203D00F548AA /* 图层-9@2x.png in Resources */,
 				2A3FC03A1C87203D00F548AA /* shape-1-down.png in Resources */,
 				2A3FC0851C87203D00F548AA /* iconfont-yijianfankui-4-down.png in Resources */,
@@ -2639,6 +2649,7 @@
 				BA8992201C9BCF8600C63B3B /* Haze.png in Resources */,
 				2A3FC0501C87203D00F548AA /* 图层-9@3x.png in Resources */,
 				2A3FC07B1C87203D00F548AA /* iconfont-wenhao-white@3x.png in Resources */,
+				BA6A4D6A1CB34E3100994E9E /* sound@3x.png in Resources */,
 				2A3FBFE91C87203C00F548AA /* iconfont-calendar@2x.png in Resources */,
 				2A3FBFB61C87203C00F548AA /* 报-down.png in Resources */,
 				2A3FC0271C87203C00F548AA /* gray-circle-6@3x.png in Resources */,
@@ -2787,6 +2798,7 @@
 				2A3013011C99B723003E098A /* XTNoteItemEditController.swift in Sources */,
 				BAF163851CA37CBE0048681A /* JTCalendarScrollManager.m in Sources */,
 				BAF1638C1CA37CBE0048681A /* JTVerticalCalendarView.m in Sources */,
+				BA6A4D661CB3461900994E9E /* XTnoteItemDetailController.swift in Sources */,
 				2AABDAFE1C8DD76A00A0E078 /* PopupView.m in Sources */,
 				BAF1638B1CA37CBE0048681A /* JTHorizontalCalendarView.m in Sources */,
 				2AC921801C8C40A300683D7E /* XTToolBoxController.swift in Sources */,

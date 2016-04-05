@@ -134,7 +134,7 @@ class XTNoteItemView: UIView,UITextFieldDelegate,UITextViewDelegate,UIScrollView
             lastTextView.sizeToFit()
             lastTextView.layer.borderColor = UIColor.lightGrayColor().CGColor
             lastTextView.layer.borderWidth = 0.5
-            
+            lastTextView.returnKeyType = .Done
             label.numberOfLines = 0
             label.sizeToFit()
             
@@ -169,6 +169,7 @@ class XTNoteItemView: UIView,UITextFieldDelegate,UITextViewDelegate,UIScrollView
                 label.numberOfLines = 0
                 label.sizeToFit()
                 let textView = UITextView()
+                textView.returnKeyType = .Done
                 textView.backgroundColor = UIColor.whiteColor()
                 textView.delegate = self
                 textView.sizeToFit()
@@ -220,13 +221,13 @@ class XTNoteItemView: UIView,UITextFieldDelegate,UITextViewDelegate,UIScrollView
         return true
     }
     
-//    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-//        if text == "\n"{
-//            textView.endEditing(true)
-//            return false
-//        }
-//        return true
-//    }
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n"{
+            textView.endEditing(true)
+            return false
+        }
+        return true
+    }
     
     override func willMoveToSuperview(newSuperview: UIView?) {
 //        contentView =
@@ -248,6 +249,7 @@ class XTNoteItemView: UIView,UITextFieldDelegate,UITextViewDelegate,UIScrollView
         return true
     }
     
+        
     func keyboardWillChangeFrameNotification(notification:NSNotification){
         
         let userInfo:NSDictionary = notification.userInfo!
@@ -263,10 +265,11 @@ class XTNoteItemView: UIView,UITextFieldDelegate,UITextViewDelegate,UIScrollView
             if editingTextView == nil{
                 return
             }
-            let textViewY:CGFloat = CGRectGetMaxY((editingTextView?.frame)!) - scrollView.contentOffset.y + self.frame.origin.y + 22 + CGFloat(functionViewHeight)
+            let textViewY:CGFloat = CGRectGetMaxY((editingTextView?.frame)!) - scrollView.contentOffset.y + self.frame.origin.y + 12 + CGFloat(functionViewHeight)
             let distance:CGFloat = rect.origin.y - textViewY
-            
+
             if distance >= 0.0{
+                oldContentOffsetY = -64.0
                 return
             }
             
@@ -274,9 +277,6 @@ class XTNoteItemView: UIView,UITextFieldDelegate,UITextViewDelegate,UIScrollView
             scrollView.contentOffset = CGPointMake(0, -distance + scrollView.contentOffset.y)
         }
         
-        
-        
-
         UIView.animateWithDuration(keyboardDuration) { () -> Void in
             self.layoutIfNeeded()
         }
