@@ -228,6 +228,9 @@
                                     <constraint firstAttribute="height" constant="33" id="nqF-I8-Olp"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="Haze-back.png"/>
+                                <connections>
+                                    <action selector="weatherButtonClick:" destination="dCY-jc-dbL" eventType="touchUpInside" id="ime-zJ-DXX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="2003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jrL-pD-JU4">
                                 <rect key="frame" x="184" y="187" width="33" height="33"/>
@@ -236,6 +239,9 @@
                                     <constraint firstAttribute="width" constant="33" id="T6O-8y-COJ"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="PartlySunny-back.png"/>
+                                <connections>
+                                    <action selector="weatherButtonClick:" destination="dCY-jc-dbL" eventType="touchUpInside" id="YIZ-g9-vbk"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="2004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcX-bZ-oCl">
                                 <rect key="frame" x="264" y="187" width="33" height="33"/>
@@ -244,10 +250,16 @@
                                     <constraint firstAttribute="height" constant="33" id="dOd-uA-e8F"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="Rain-back.png"/>
+                                <connections>
+                                    <action selector="weatherButtonClick:" destination="dCY-jc-dbL" eventType="touchUpInside" id="Voy-Pz-1tr"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="2006" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qvZ-Xx-Qyr">
                                 <rect key="frame" x="104" y="238" width="33" height="33"/>
                                 <state key="normal" backgroundImage="Storm-back.png"/>
+                                <connections>
+                                    <action selector="weatherButtonClick:" destination="dCY-jc-dbL" eventType="touchUpInside" id="asK-jc-9BV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="2001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wou-F8-Hbp">
                                 <rect key="frame" x="24" y="187" width="33" height="33"/>
@@ -256,19 +268,41 @@
                                     <constraint firstAttribute="height" constant="33" id="mhP-yh-ExB"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="Hail-back.png"/>
+                                <connections>
+                                    <action selector="weatherButtonClick:" destination="dCY-jc-dbL" eventType="touchUpInside" id="0YL-Md-c6I"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="2007" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNO-JN-In0">
                                 <rect key="frame" x="184" y="238" width="33" height="33"/>
                                 <state key="normal" backgroundImage="Sun-back.png"/>
+                                <connections>
+                                    <action selector="weatherButtonClick:" destination="dCY-jc-dbL" eventType="touchUpInside" id="cEX-QB-g3m"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="2008" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIx-RM-iOi">
                                 <rect key="frame" x="264" y="238" width="33" height="33"/>
                                 <state key="normal" backgroundImage="Tornado-back.png"/>
+                                <connections>
+                                    <action selector="weatherButtonClick:" destination="dCY-jc-dbL" eventType="touchUpInside" id="uXe-CW-xHw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="2005" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WpE-9k-fE0">
                                 <rect key="frame" x="24" y="238" width="33" height="33"/>
                                 <state key="normal" backgroundImage="Snow-back.png"/>
+                                <connections>
+                                    <action selector="weatherButtonClick:" destination="dCY-jc-dbL" eventType="touchUpInside" id="GST-7w-AeR"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="天气：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfC-yh-rpq">
+                                <rect key="frame" x="24" y="141" width="132" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="132" id="9MB-wj-R8D"/>
+                                    <constraint firstAttribute="height" constant="21" id="b9k-B2-jD6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -281,6 +315,7 @@
                             <constraint firstItem="WpE-9k-fE0" firstAttribute="top" secondItem="Wou-F8-Hbp" secondAttribute="bottom" constant="18" id="EC8-tt-fjB"/>
                             <constraint firstItem="KIx-RM-iOi" firstAttribute="width" secondItem="tcX-bZ-oCl" secondAttribute="height" multiplier="1:1" id="FNt-fv-BQE"/>
                             <constraint firstItem="YNO-JN-In0" firstAttribute="centerX" secondItem="jrL-pD-JU4" secondAttribute="centerX" id="FkS-LN-ckj"/>
+                            <constraint firstItem="vfC-yh-rpq" firstAttribute="leading" secondItem="Wou-F8-Hbp" secondAttribute="leading" id="InP-mc-uS5"/>
                             <constraint firstItem="KIx-RM-iOi" firstAttribute="top" secondItem="tcX-bZ-oCl" secondAttribute="bottom" constant="18" id="Nqg-AU-haO"/>
                             <constraint firstItem="E9B-pA-RKi" firstAttribute="top" secondItem="wpF-YT-NRe" secondAttribute="bottom" constant="123" id="TO2-r8-iRC"/>
                             <constraint firstItem="KIx-RM-iOi" firstAttribute="width" secondItem="tcX-bZ-oCl" secondAttribute="width" id="TPG-jJ-eoz"/>
@@ -300,6 +335,7 @@
                             <constraint firstItem="WpE-9k-fE0" firstAttribute="height" secondItem="Wou-F8-Hbp" secondAttribute="height" id="veh-7U-7c7"/>
                             <constraint firstItem="jrL-pD-JU4" firstAttribute="centerX" secondItem="gUt-vk-H2s" secondAttribute="centerX" multiplier="1.25" id="vpi-Mi-7Es"/>
                             <constraint firstItem="qvZ-Xx-Qyr" firstAttribute="width" secondItem="E9B-pA-RKi" secondAttribute="height" multiplier="1:1" id="wEw-sg-nMN"/>
+                            <constraint firstItem="Wou-F8-Hbp" firstAttribute="top" secondItem="vfC-yh-rpq" secondAttribute="bottom" constant="25" id="xNf-Gz-Shn"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
@@ -338,13 +374,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wt3-Od-Wtv">
-                                <rect key="frame" x="152" y="200" width="32" height="30"/>
-                                <state key="normal" title="start"/>
-                                <connections>
-                                    <action selector="StartButtonClick:" destination="bGC-aC-NbV" eventType="touchUpInside" id="Ohg-HF-5dY"/>
-                                </connections>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TaL-Ew-i93">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

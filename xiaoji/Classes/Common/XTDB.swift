@@ -34,6 +34,10 @@ class XTDB: NSObject {
                 if !db.executeStatements(sql_stmt) {
                     print("Error: \(db.lastErrorMessage())")
                 }
+                sql_stmt = "CREATE TABLE IF NOT EXISTS WEATHERTABLE(WEATHERID INTEGER PRIMARY KEY autoincrement,WEATHERTYPE INTEGER,DATETIME TEXT)"
+                if !db.executeStatements(sql_stmt){
+                    print("Error: \(db.lastErrorMessage())")
+                }
                 db.close()
             } else {
                 print("Error: \(db.lastErrorMessage())")
@@ -62,6 +66,8 @@ class XTDB: NSObject {
         db.executeUpdate(sql2, withArgumentsInArray: [id])
         db.close()
     }
+    
+    
     
     class func selectTitleWithID(id:Int)->TitleModel?{
         let sql = "SELECT * FROM TITLETABLE WHERE TITLEID = ?"
@@ -256,9 +262,39 @@ class XTDB: NSObject {
                 }
             }
         }
-        
-        
 
+        return success
+    }
+    
+    class func selectWeatherTypeWithDateString(dateStr:String) -> Int {
+        if dateStr == ""{
+           return 0
+        }
+        let sql = "SELECT * FROM WEATHERTABLE WHERE DATETIME = ?"
+        
+        let db = XTDB.getDb()
+        db.open()
+        let rs = db.executeQuery(sql, withArgumentsInArray: [dateStr])
+        var type = 0
+        
+        while rs.next() {
+            type = Int(rs.intForColumn("WEATHERTYPE"))
+        }
+        return type
+    }
+    
+    class func updateWeatherTypeWithDateString(dateStr:String,type:Int) -> Bool{
+        let db = XTDB.getDb()
+        db.open()
+        var sql = "DELETE FROM WEATHERTABLE WHERE DATETIME=?"
+        db.executeUpdate(sql, withArgumentsInArray: [dateStr])
+        
+        sql = "INSERT INTO WEATHERTABLE(WEATHERTYPE,DATETIME) "+"VALUES(?,?)"
+        let success:Bool = db.executeUpdate(sql, withArgumentsInArray: [type,dateStr])
+        
+//        sql = "UPDATE WEATHERTABLE SET WEATHERTYPE=?,DATETIME=? WHERE DATETIME=?"
+//        let success:Bool = db.executeUpdate(sql, withArgumentsInArray: [type,dateStr])
+        db.close()
         return success
     }
     

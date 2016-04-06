@@ -62,6 +62,8 @@ class XTMorningNoteController: XTBaseViewController,NoteFlowViewDelegate,AddTitl
         
         XTDB.initTitieAndItemWithDate(dateFormatter.stringFromDate(currentDate))
         
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("reloadCollectionHeaderView"), name: "ReloadHeaderWeatherView", object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -120,12 +122,21 @@ class XTMorningNoteController: XTBaseViewController,NoteFlowViewDelegate,AddTitl
         noteContentView?.collectionView.reloadData()
     }
     
+    func reloadCollectionHeaderView(){
+        self.noteContentView?.collectionView.reloadData()
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "TopInfoController"{
             let destVC = segue.destinationViewController as! TopInfoBarViewController
             destVC.dateString = self.dateString
         }
     }
-
     
+
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
 }
+
+

@@ -60,7 +60,7 @@ class XTNoteFlowView: UIView, UICollectionViewDelegateFlowLayout,UICollectionVie
     
     var dateString:String?{
         didSet{
-               
+            
         }
     }
     
@@ -302,6 +302,7 @@ class XTNoteFlowView: UIView, UICollectionViewDelegateFlowLayout,UICollectionVie
             view = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: String(XTNoteCollectionReusableView), forIndexPath: indexPath) as! XTNoteCollectionReusableView
             view.initWithClosure(headActionClosure)
             view.textLabel.text = dateString
+            view.dateString = dateString
             return view
         }
         return view;
