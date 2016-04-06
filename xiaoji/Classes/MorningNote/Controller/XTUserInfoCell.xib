@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="65" id="KGk-i7-Jjw" customClass="XTUserInfoCell" customModule="xiaoji" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar.png" translatesAutoresizingMaskIntoConstraints="NO" id="AtQ-Yc-rkI">
+                        <rect key="frame" x="8" y="7" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="J4O-OD-sJ7"/>
+                            <constraint firstAttribute="height" constant="50" id="nRQ-da-ekt"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="临渊羡鱼，不如退而织网！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udL-72-Gb8">
+                        <rect key="frame" x="80" y="37" width="204" height="29"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="29" id="AfS-AU-EF9"/>
+                            <constraint firstAttribute="width" constant="204" id="Qbw-eK-FRT"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="一念寻风" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eN4-Ul-ju9">
+                        <rect key="frame" x="80" y="7" width="136" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="136" id="gqb-Xi-vCH"/>
+                            <constraint firstAttribute="height" constant="21" id="s2I-h3-zfr"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="udL-72-Gb8" firstAttribute="top" secondItem="eN4-Ul-ju9" secondAttribute="bottom" constant="9" id="MOT-ru-KX6"/>
+                    <constraint firstItem="udL-72-Gb8" firstAttribute="leading" secondItem="eN4-Ul-ju9" secondAttribute="leading" id="clS-gZ-HKb"/>
+                    <constraint firstItem="eN4-Ul-ju9" firstAttribute="top" secondItem="AtQ-Yc-rkI" secondAttribute="top" id="gnV-Bq-5LJ"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="AtQ-Yc-rkI" secondAttribute="leading" id="hNP-MM-Cf1"/>
+                    <constraint firstItem="AtQ-Yc-rkI" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="r53-5s-k2H"/>
+                    <constraint firstItem="eN4-Ul-ju9" firstAttribute="leading" secondItem="AtQ-Yc-rkI" secondAttribute="trailing" constant="22" id="rRe-bk-PVY"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="502" y="391.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="avatar.png" width="170" height="178"/>
+    </resources>
+</document>

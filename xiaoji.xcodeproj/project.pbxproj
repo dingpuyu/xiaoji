@@ -520,6 +520,11 @@
 		BAF1639D1CA37CBE0048681A /* XTUserScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF1637F1CA37CBE0048681A /* XTUserScheduleViewController.m */; };
 		BAF163A11CA3D7670048681A /* XTNoteIteShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF163A01CA3D7660048681A /* XTNoteIteShowCell.swift */; };
 		BAF825451C9A80F400438A5F /* XTNoteFunctionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF825441C9A80F400438A5F /* XTNoteFunctionView.swift */; };
+		BAFC144D1CB4FCBE00149F4E /* XTQuitLogInCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFC144B1CB4FCBE00149F4E /* XTQuitLogInCell.swift */; };
+		BAFC144E1CB4FCBE00149F4E /* XTQuitLogInCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAFC144C1CB4FCBE00149F4E /* XTQuitLogInCell.xib */; };
+		BAFC14511CB501E200149F4E /* XTUserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFC144F1CB501E200149F4E /* XTUserInfoCell.swift */; };
+		BAFC14521CB501E200149F4E /* XTUserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAFC14501CB501E200149F4E /* XTUserInfoCell.xib */; };
+		BAFC14541CB503A400149F4E /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFC14531CB503A400149F4E /* avatar.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1123,6 +1128,11 @@
 		BAF1637F1CA37CBE0048681A /* XTUserScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTUserScheduleViewController.m; sourceTree = "<group>"; };
 		BAF163A01CA3D7660048681A /* XTNoteIteShowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XTNoteIteShowCell.swift; path = xiaoji/Classes/MorningNote/View/XTNoteIteShowCell.swift; sourceTree = SOURCE_ROOT; };
 		BAF825441C9A80F400438A5F /* XTNoteFunctionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTNoteFunctionView.swift; sourceTree = "<group>"; };
+		BAFC144B1CB4FCBE00149F4E /* XTQuitLogInCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XTQuitLogInCell.swift; path = xiaoji/Classes/MorningNote/Controller/XTQuitLogInCell.swift; sourceTree = SOURCE_ROOT; };
+		BAFC144C1CB4FCBE00149F4E /* XTQuitLogInCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = XTQuitLogInCell.xib; path = xiaoji/Classes/MorningNote/Controller/XTQuitLogInCell.xib; sourceTree = SOURCE_ROOT; };
+		BAFC144F1CB501E200149F4E /* XTUserInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XTUserInfoCell.swift; path = xiaoji/Classes/MorningNote/Controller/XTUserInfoCell.swift; sourceTree = SOURCE_ROOT; };
+		BAFC14501CB501E200149F4E /* XTUserInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = XTUserInfoCell.xib; path = xiaoji/Classes/MorningNote/Controller/XTUserInfoCell.xib; sourceTree = SOURCE_ROOT; };
+		BAFC14531CB503A400149F4E /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1242,6 +1252,7 @@
 		2A3FBD3D1C87203C00F548AA /* 晨记 */ = {
 			isa = PBXGroup;
 			children = (
+				BAFC14531CB503A400149F4E /* avatar.png */,
 				BA6A4D671CB34E3100994E9E /* sound@2x.png */,
 				BA6A4D681CB34E3100994E9E /* sound@3x.png */,
 				2A5BBBA01C9D8C6B0071C672 /* iconfont-shezhi-拷贝@2x.png */,
@@ -1829,6 +1840,10 @@
 		2AC9217F1C8C40A300683D7E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BAFC144F1CB501E200149F4E /* XTUserInfoCell.swift */,
+				BAFC14501CB501E200149F4E /* XTUserInfoCell.xib */,
+				BAFC144B1CB4FCBE00149F4E /* XTQuitLogInCell.swift */,
+				BAFC144C1CB4FCBE00149F4E /* XTQuitLogInCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2554,6 +2569,7 @@
 				2A3FBF821C87203C00F548AA /* iconfont-zhiding-3-down@2x.png in Resources */,
 				2A3FBF711C87203C00F548AA /* iconfont-sousuo-hui@2x.png in Resources */,
 				2A3FC0631C87203D00F548AA /* baobeijilu@2x.png in Resources */,
+				BAFC14541CB503A400149F4E /* avatar.png in Resources */,
 				2A3FBFB31C87203C00F548AA /* 圆角矩形-up@2x.png in Resources */,
 				2A3FC0911C87203D00F548AA /* shape-6@3x.png in Resources */,
 				2A3FBF921C87203C00F548AA /* pin-2.png in Resources */,
@@ -2595,6 +2611,7 @@
 				2A3FBFCA1C87203C00F548AA /* 椭圆-3-拷贝@3x.png in Resources */,
 				2A3FBFBD1C87203C00F548AA /* 收藏实-down@2x.png in Resources */,
 				2A3FC0C81C87203D00F548AA /* 楼盘实@3x.png in Resources */,
+				BAFC14521CB501E200149F4E /* XTUserInfoCell.xib in Resources */,
 				2A3FC05C1C87203D00F548AA /* iconfont-dingwei@3x.png in Resources */,
 				2A3FBFD81C87203C00F548AA /* 顶.png in Resources */,
 				2A3FBFED1C87203C00F548AA /* iconfont-direction-up@2x.png in Resources */,
@@ -2628,6 +2645,7 @@
 				2A3FBF641C87203C00F548AA /* iconfont-jiantou-2-down.png in Resources */,
 				2A3FBF661C87203C00F548AA /* iconfont-jiantou-2-down@3x.png in Resources */,
 				2A3FBFBB1C87203C00F548AA /* 报@3x.png in Resources */,
+				BAFC144E1CB4FCBE00149F4E /* XTQuitLogInCell.xib in Resources */,
 				2A3FBFD11C87203C00F548AA /* 热@2x.png in Resources */,
 				2A3FC0CE1C87203D00F548AA /* 添加客户-down@3x.png in Resources */,
 				2A3FC0821C87203D00F548AA /* iconfont-yeguoditu.png in Resources */,
@@ -2825,6 +2843,7 @@
 				BAF163801CA37CBE0048681A /* BaseViewController.m in Sources */,
 				BAE00FC21CABA812006A9965 /* XTMonthDateSelectView.m in Sources */,
 				2AC921661C8C2BF400683D7E /* XTBaseViewController.swift in Sources */,
+				BAFC14511CB501E200149F4E /* XTUserInfoCell.swift in Sources */,
 				BAF1638F1CA37CBE0048681A /* UITableViewRowAction.m in Sources */,
 				BAF163921CA37CBE0048681A /* XTCalendarPageView.m in Sources */,
 				2A3C66DA1C9470A200AC685D /* FMResultSet.m in Sources */,
@@ -2833,6 +2852,7 @@
 				2A3C66BE1C9413F900AC685D /* XTNoteFlowLayout.swift in Sources */,
 				BAF163831CA37CBE0048681A /* JTDateHelper.m in Sources */,
 				BAF163911CA37CBE0048681A /* RemindResult.m in Sources */,
+				BAFC144D1CB4FCBE00149F4E /* XTQuitLogInCell.swift in Sources */,
 				2A3013011C99B723003E098A /* XTNoteItemEditController.swift in Sources */,
 				BAF163851CA37CBE0048681A /* JTCalendarScrollManager.m in Sources */,
 				BAF1638C1CA37CBE0048681A /* JTVerticalCalendarView.m in Sources */,

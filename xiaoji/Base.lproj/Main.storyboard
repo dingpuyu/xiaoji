@@ -125,7 +125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="88z-sr-4T4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1080" y="-745"/>
+            <point key="canvasLocation" x="1450" y="286"/>
         </scene>
         <!--首页-->
         <scene sceneID="jlP-3r-GuU">
@@ -383,6 +383,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="B11-29-PtS"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <segue destination="zVO-Rm-oMm" kind="modal" identifier="LogIn" id="5Wm-zl-vd4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BrX-ps-1f2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -406,4 +409,7 @@
         <image name="首页实.png" width="25" height="25"/>
         <image name="首页线.png" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="5Wm-zl-vd4"/>
+    </inferredMetricsTieBreakers>
 </document>

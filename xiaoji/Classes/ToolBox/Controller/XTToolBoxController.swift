@@ -12,11 +12,12 @@ class XTToolBoxController: XTBaseViewController,UITableViewDelegate,UITableViewD
 
     var tableView:UITableView! = {
         var view = UITableView()
+        view.separatorStyle = .None
         return view
     }()
     
     var cellTitleArray:NSArray! = {
-        return ["账户与密码管理","个人资料","语音助手设置","退出当前账户"]
+        return ["头像","账户与密码管理","个人资料","语音助手设置","退出当前账户"]
     }()
     
     override func viewDidLoad() {
@@ -40,8 +41,13 @@ class XTToolBoxController: XTBaseViewController,UITableViewDelegate,UITableViewD
             make.left.right.bottom.equalTo(self.view)
         }
         
+        
+        
         tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: String(UITableViewCell))
         
+        tableView.registerNib(UINib(nibName: String(XTQuitLogInCell), bundle: NSBundle.mainBundle()), forCellReuseIdentifier: String(XTQuitLogInCell))
+        
+        tableView.registerNib(UINib(nibName: String(XTUserInfoCell), bundle: nil), forCellReuseIdentifier: String(XTUserInfoCell))
     }
 
     
@@ -56,9 +62,31 @@ class XTToolBoxController: XTBaseViewController,UITableViewDelegate,UITableViewD
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if indexPath.row == 0{
+            let cell = tableView.dequeueReusableCellWithIdentifier(String(XTUserInfoCell)) as! XTUserInfoCell
+            return cell
+        }
+        if indexPath.row == cellTitleArray.count - 1{
+            let cell = tableView.dequeueReusableCellWithIdentifier(String(XTQuitLogInCell)) as! XTQuitLogInCell
+            cell.initWithClosure(logOutActionClosure)
+            return cell
+        }
         let cell = tableView.dequeueReusableCellWithIdentifier(String(UITableViewCell))
         cell?.textLabel?.text = cellTitleArray[indexPath.row] as? String
         return cell!
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.row == 0{
+            return 64
+        }
+        return 55
+    }
+    
+    func logOutActionClosure() -> Void{
+        NSUserDefaults.standardUserDefaults().setBool(false, forKey:isLogInKey)
+        
+        self.performSegueWithIdentifier("LogIn", sender: self)
     }
     
     
