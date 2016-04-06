@@ -15,8 +15,10 @@ protocol NoteFlowViewDelegate:NSObjectProtocol{
     func noteFlowViewAddTitleAction(view:XTNoteFlowView)
     //声音阅读
     func noteFlowViewVoiceShowAction(view:XTNoteFlowView,titleModel model:TitleModel)
-    
+    //选中了某个cell
     func noteFlowViewDidTouchCell(view:XTNoteFlowView,titleModel model:TitleModel)
+//    选中了头视图
+    func noteFlowViewDidTouchHeaderView(view:XTNoteFlowView)
 }
 
 
@@ -310,11 +312,17 @@ class XTNoteFlowView: UIView, UICollectionViewDelegateFlowLayout,UICollectionVie
     weak var weakSelf:XTNoteFlowView? = nil
     func headActionClosure() -> Void{
         
+    
+        if self.superDelegate.respondsToSelector(Selector("noteFlowViewDidTouchHeaderView:")){
+            self.superDelegate.noteFlowViewDidTouchHeaderView(self)
+        }
+        
 //        let titleModel =  TitleModel(title: "梦想与现实，执着与超越", subtitle: "", sortNumber: self.itemArray().count+1, type: 1, dateTime: dateString!)
 //        XTDB.insertTitle(titleModel)
         
 //      weakSelf?.collectionView.reloadData() 
     }
+    
     
 //    collectionViewfunctionviewclosure
     func functionCellFunctionViewClosure(funcview:XTCollectionCellFunctionView,type:collectionEditType)->Void{

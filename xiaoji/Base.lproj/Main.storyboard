@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wuM-Lz-HBN">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
@@ -47,7 +49,7 @@
                                     <constraint firstAttribute="height" constant="21" id="yCa-M1-h26"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密    码：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDz-2v-B54">
@@ -57,7 +59,7 @@
                                     <constraint firstAttribute="height" constant="21" id="WUK-Sc-5Ig"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ur7-AS-snX">
@@ -199,10 +201,112 @@
                     </view>
                     <navigationItem key="navigationItem" id="n3H-tn-Znr"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <segue destination="dCY-jc-dbL" kind="show" identifier="TopInfoController" id="gbl-ZU-gKf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="caR-GV-8VE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="676" y="2"/>
+        </scene>
+        <!--Top Info Bar View Controller-->
+        <scene sceneID="Sih-HK-kjs">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="dCY-jc-dbL" customClass="TopInfoBarViewController" customModule="xiaoji" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wpF-YT-NRe"/>
+                        <viewControllerLayoutGuide type="bottom" id="dW2-zV-xlU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gUt-vk-H2s">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" tag="2002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9B-pA-RKi">
+                                <rect key="frame" x="104" y="187" width="33" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="33" id="EvB-Rw-DlW"/>
+                                    <constraint firstAttribute="height" constant="33" id="nqF-I8-Olp"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Haze-back.png"/>
+                            </button>
+                            <button opaque="NO" tag="2003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jrL-pD-JU4">
+                                <rect key="frame" x="184" y="187" width="33" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="MLh-ds-eyY"/>
+                                    <constraint firstAttribute="width" constant="33" id="T6O-8y-COJ"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="PartlySunny-back.png"/>
+                            </button>
+                            <button opaque="NO" tag="2004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcX-bZ-oCl">
+                                <rect key="frame" x="264" y="187" width="33" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="33" id="A4T-uN-E0o"/>
+                                    <constraint firstAttribute="height" constant="33" id="dOd-uA-e8F"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Rain-back.png"/>
+                            </button>
+                            <button opaque="NO" tag="2006" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qvZ-Xx-Qyr">
+                                <rect key="frame" x="104" y="238" width="33" height="33"/>
+                                <state key="normal" backgroundImage="Storm-back.png"/>
+                            </button>
+                            <button opaque="NO" tag="2001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wou-F8-Hbp">
+                                <rect key="frame" x="24" y="187" width="33" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="33" id="eqM-zL-Vr3"/>
+                                    <constraint firstAttribute="height" constant="33" id="mhP-yh-ExB"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Hail-back.png"/>
+                            </button>
+                            <button opaque="NO" tag="2007" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNO-JN-In0">
+                                <rect key="frame" x="184" y="238" width="33" height="33"/>
+                                <state key="normal" backgroundImage="Sun-back.png"/>
+                            </button>
+                            <button opaque="NO" tag="2008" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIx-RM-iOi">
+                                <rect key="frame" x="264" y="238" width="33" height="33"/>
+                                <state key="normal" backgroundImage="Tornado-back.png"/>
+                            </button>
+                            <button opaque="NO" tag="2005" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WpE-9k-fE0">
+                                <rect key="frame" x="24" y="238" width="33" height="33"/>
+                                <state key="normal" backgroundImage="Snow-back.png"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WpE-9k-fE0" firstAttribute="centerX" secondItem="Wou-F8-Hbp" secondAttribute="centerX" id="0O4-ow-Ywn"/>
+                            <constraint firstItem="Wou-F8-Hbp" firstAttribute="centerX" secondItem="gUt-vk-H2s" secondAttribute="centerX" multiplier="0.25" id="2gR-Jy-kv0"/>
+                            <constraint firstItem="Wou-F8-Hbp" firstAttribute="top" secondItem="wpF-YT-NRe" secondAttribute="bottom" constant="123" id="9Hi-Fg-xjX"/>
+                            <constraint firstItem="KIx-RM-iOi" firstAttribute="height" secondItem="tcX-bZ-oCl" secondAttribute="height" id="9fM-8j-25m"/>
+                            <constraint firstItem="qvZ-Xx-Qyr" firstAttribute="centerX" secondItem="E9B-pA-RKi" secondAttribute="centerX" id="AF1-aN-Z1x"/>
+                            <constraint firstItem="qvZ-Xx-Qyr" firstAttribute="top" secondItem="E9B-pA-RKi" secondAttribute="bottom" constant="18" id="Bik-uz-RKf"/>
+                            <constraint firstItem="WpE-9k-fE0" firstAttribute="top" secondItem="Wou-F8-Hbp" secondAttribute="bottom" constant="18" id="EC8-tt-fjB"/>
+                            <constraint firstItem="KIx-RM-iOi" firstAttribute="width" secondItem="tcX-bZ-oCl" secondAttribute="height" multiplier="1:1" id="FNt-fv-BQE"/>
+                            <constraint firstItem="YNO-JN-In0" firstAttribute="centerX" secondItem="jrL-pD-JU4" secondAttribute="centerX" id="FkS-LN-ckj"/>
+                            <constraint firstItem="KIx-RM-iOi" firstAttribute="top" secondItem="tcX-bZ-oCl" secondAttribute="bottom" constant="18" id="Nqg-AU-haO"/>
+                            <constraint firstItem="E9B-pA-RKi" firstAttribute="top" secondItem="wpF-YT-NRe" secondAttribute="bottom" constant="123" id="TO2-r8-iRC"/>
+                            <constraint firstItem="KIx-RM-iOi" firstAttribute="width" secondItem="tcX-bZ-oCl" secondAttribute="width" id="TPG-jJ-eoz"/>
+                            <constraint firstItem="tcX-bZ-oCl" firstAttribute="centerX" secondItem="gUt-vk-H2s" secondAttribute="centerX" multiplier="1.75" id="TXa-kP-usY"/>
+                            <constraint firstItem="KIx-RM-iOi" firstAttribute="centerX" secondItem="tcX-bZ-oCl" secondAttribute="centerX" id="Vz4-H6-wBe"/>
+                            <constraint firstItem="YNO-JN-In0" firstAttribute="width" secondItem="jrL-pD-JU4" secondAttribute="height" multiplier="1:1" id="YOP-NQ-Hq5"/>
+                            <constraint firstItem="tcX-bZ-oCl" firstAttribute="top" secondItem="wpF-YT-NRe" secondAttribute="bottom" constant="123" id="ZQ3-Po-1JX"/>
+                            <constraint firstItem="WpE-9k-fE0" firstAttribute="width" secondItem="Wou-F8-Hbp" secondAttribute="width" id="dyA-g7-SXQ"/>
+                            <constraint firstItem="jrL-pD-JU4" firstAttribute="top" secondItem="wpF-YT-NRe" secondAttribute="bottom" constant="123" id="fLb-8P-lHI"/>
+                            <constraint firstItem="YNO-JN-In0" firstAttribute="height" secondItem="jrL-pD-JU4" secondAttribute="height" id="fYY-jl-BlM"/>
+                            <constraint firstItem="qvZ-Xx-Qyr" firstAttribute="height" secondItem="E9B-pA-RKi" secondAttribute="height" id="iGC-2s-xpL"/>
+                            <constraint firstItem="YNO-JN-In0" firstAttribute="width" secondItem="jrL-pD-JU4" secondAttribute="width" id="jQG-xS-Yrv"/>
+                            <constraint firstItem="qvZ-Xx-Qyr" firstAttribute="width" secondItem="E9B-pA-RKi" secondAttribute="width" id="pc3-1o-klA"/>
+                            <constraint firstItem="YNO-JN-In0" firstAttribute="top" secondItem="jrL-pD-JU4" secondAttribute="bottom" constant="18" id="tDe-S8-Rdy"/>
+                            <constraint firstItem="E9B-pA-RKi" firstAttribute="centerX" secondItem="gUt-vk-H2s" secondAttribute="centerX" multiplier="0.75" id="uJd-JQ-YzS"/>
+                            <constraint firstItem="WpE-9k-fE0" firstAttribute="width" secondItem="Wou-F8-Hbp" secondAttribute="height" multiplier="1:1" id="v2i-82-0LC"/>
+                            <constraint firstItem="WpE-9k-fE0" firstAttribute="height" secondItem="Wou-F8-Hbp" secondAttribute="height" id="veh-7U-7c7"/>
+                            <constraint firstItem="jrL-pD-JU4" firstAttribute="centerX" secondItem="gUt-vk-H2s" secondAttribute="centerX" multiplier="1.25" id="vpi-Mi-7Es"/>
+                            <constraint firstItem="qvZ-Xx-Qyr" firstAttribute="width" secondItem="E9B-pA-RKi" secondAttribute="height" multiplier="1:1" id="wEw-sg-nMN"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wkO-k2-fCY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1114" y="-152"/>
         </scene>
         <!--工具-->
         <scene sceneID="hYw-W0-X0g">
@@ -253,6 +357,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Hail-back.png" width="72" height="72"/>
+        <image name="Haze-back.png" width="72" height="72"/>
+        <image name="PartlySunny-back.png" width="72" height="72"/>
+        <image name="Rain-back.png" width="72" height="72"/>
+        <image name="Snow-back.png" width="72" height="72"/>
+        <image name="Storm-back.png" width="72" height="72"/>
+        <image name="Sun-back.png" width="72" height="72"/>
+        <image name="Tornado-back.png" width="72" height="72"/>
         <image name="bao-down.png" width="25" height="25"/>
         <image name="bao.png" width="25" height="25"/>
         <image name="logInScreen.png" width="348" height="605"/>

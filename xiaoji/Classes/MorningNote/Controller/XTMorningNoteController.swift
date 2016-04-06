@@ -108,10 +108,24 @@ class XTMorningNoteController: XTBaseViewController,NoteFlowViewDelegate,AddTitl
         detailController.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(detailController, animated: true)
     }
+//    点击了头部视图，编辑天气
+    func noteFlowViewDidTouchHeaderView(view: XTNoteFlowView) {
+//        let topEditVC = TopInfoBarViewController()
+//        self.presentViewController(topEditVC, animated: true, completion: nil)
+        self.performSegueWithIdentifier("TopInfoController", sender: self)
+    }
 
     func addTitleItemController(controller: XTAddTitleItemController, reloaddate dateStr: String) {
         noteContentView?.dateString = dateString
         noteContentView?.collectionView.reloadData()
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "TopInfoController"{
+            let destVC = segue.destinationViewController as! TopInfoBarViewController
+            destVC.dateString = self.dateString
+        }
+    }
+
     
 }
