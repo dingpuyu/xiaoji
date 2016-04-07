@@ -51,8 +51,10 @@ class XTLogInController: UIViewController,UITextFieldDelegate{
         var password:String = passwordTextField.text!
 
         
+        
         if textField.tag == 1000{
             userName += string
+            
             if string == ""{
                 let index = userName.endIndex.advancedBy(-1)
                 userName = userName.substringToIndex(index)

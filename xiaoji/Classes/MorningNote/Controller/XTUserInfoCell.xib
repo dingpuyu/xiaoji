@@ -52,6 +52,11 @@
                     <constraint firstItem="eN4-Ul-ju9" firstAttribute="leading" secondItem="AtQ-Yc-rkI" secondAttribute="trailing" constant="22" id="rRe-bk-PVY"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="avatarImageView" destination="AtQ-Yc-rkI" id="rzp-v1-pi5"/>
+                <outlet property="nickNameLabel" destination="eN4-Ul-ju9" id="7bz-RU-FxU"/>
+                <outlet property="signatureLabel" destination="udL-72-Gb8" id="Ob5-5y-znn"/>
+            </connections>
             <point key="canvasLocation" x="502" y="391.5"/>
         </tableViewCell>
     </objects>

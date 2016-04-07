@@ -48,6 +48,8 @@ class XTToolBoxController: XTBaseViewController,UITableViewDelegate,UITableViewD
         tableView.registerNib(UINib(nibName: String(XTQuitLogInCell), bundle: NSBundle.mainBundle()), forCellReuseIdentifier: String(XTQuitLogInCell))
         
         tableView.registerNib(UINib(nibName: String(XTUserInfoCell), bundle: nil), forCellReuseIdentifier: String(XTUserInfoCell))
+        
+        tableView.registerNib(UINib(nibName: String(XTUserSettingCell), bundle: nil), forCellReuseIdentifier: String(XTUserSettingCell))
     }
 
     
@@ -71,9 +73,9 @@ class XTToolBoxController: XTBaseViewController,UITableViewDelegate,UITableViewD
             cell.initWithClosure(logOutActionClosure)
             return cell
         }
-        let cell = tableView.dequeueReusableCellWithIdentifier(String(UITableViewCell))
-        cell?.textLabel?.text = cellTitleArray[indexPath.row] as? String
-        return cell!
+        let cell = tableView.dequeueReusableCellWithIdentifier(String(XTUserSettingCell)) as! XTUserSettingCell
+        cell.titleLabel.text = (cellTitleArray[indexPath.row] as! String)
+        return cell
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

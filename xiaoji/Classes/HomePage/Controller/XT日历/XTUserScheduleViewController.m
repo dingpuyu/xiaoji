@@ -21,7 +21,7 @@
 //#import "CustomerFollowDetailViewController.h"
 #import "xiaoji-Swift.h"
 #import "XTMonthDateSelectView.h"
-
+#import "SearchBarButton.h"
 //#import "XTHelpView.h"
 
 #define WeekViewHeight 57.0f
@@ -115,6 +115,11 @@ typedef enum : NSInteger {
     if (!isLogIn) {
         [self performSegueWithIdentifier:@"LogIn" sender:self];        
     }
+    SearchBarButton* searchButton = [[SearchBarButton alloc]initWithFrame:CGRectMake(0, 0, 44, 44)];
+    [searchButton setImage:[UIImage imageNamed:@"icon_search"] forState:UIControlStateNormal];
+    [searchButton addTarget:self action:@selector(searchButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:searchButton];
+    
 
 }
 
@@ -712,6 +717,12 @@ typedef enum : NSInteger {
     [window addSubview:view];
 }
 
+#pragma makr - 搜索按钮点击
+- (void)searchButtonClick:(UIButton*)btn{
+    XTSearchNoteController * searchVC = [[XTSearchNoteController alloc]init];
+    searchVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController presentViewController:searchVC animated:true completion:nil];
+}
 
 #pragma mark - 返回今日
 - (void)goBackToday:(UIButton*)btn{

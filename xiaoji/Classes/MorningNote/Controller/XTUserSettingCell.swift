@@ -1,20 +1,16 @@
 //
-//  XTUserInfoCell.swift
+//  XTUserSettingCell.swift
 //  xiaoji
 //
-//  Created by xiaotei's on 16/4/6.
+//  Created by xiaotei's on 16/4/7.
 //  Copyright © 2016年 xiaotei's MacBookPro. All rights reserved.
 //
 
 import UIKit
 
-class XTUserInfoCell: UITableViewCell {
+class XTUserSettingCell: UITableViewCell {
 
-    @IBOutlet weak var avatarImageView: UIImageView!
-    
-    @IBOutlet weak var nickNameLabel: UILabel!
-    
-    @IBOutlet weak var signatureLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

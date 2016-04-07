@@ -58,10 +58,14 @@ class XTnoteItemDetailController: UIViewController {
     
 //    保存
     func rightButtonClick(){
-        for itemModel in (self.noteImteView!.titleModel?.itemModelArray)!{
-            XTDB.updateItemWithItemModel(itemModel)
+//        for itemModel in (self.noteImteView!.titleModel?.itemModelArray)!{
+//            XTDB.updateItemWithItemModel(noteImteView)
+//        }
+        for i in 0..<(self.noteImteView?.titleViewArray?.count)!{
+            let model = self.noteImteView?.itemModelArray![i]
+            model?.answer = (noteImteView?.textViewArray![i].text)!
+            XTDB.updateItemWithItemModel(model!)
         }
-        
     }
 
     override func didReceiveMemoryWarning() {

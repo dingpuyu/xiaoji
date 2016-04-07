@@ -38,6 +38,22 @@ class XTDB: NSObject {
                 if !db.executeStatements(sql_stmt){
                     print("Error: \(db.lastErrorMessage())")
                 }
+                sql_stmt = "CREATE TABLE IF NOT EXISTS USERTABLE(USERID INTEGER PRIMARY KEY autoincrement,ACCOUNT TEXT,PASSWORD TEXT,NICKNAME TEXT,SIGNATURE TEXT,BIRTHDAY TEXT,LOCATION TEXT,AVATAR TEXT,AVATARDATE TEXT,LOGINSTATE INTEGER)"
+                if !db.executeStatements(sql_stmt){
+                    print("Error: \(db.lastErrorMessage())")
+                }
+                sql_stmt = "CREATE TABLE IF NOT EXISTS RECORDTABLE(VOICEID INTEGER PRIMARY KEY autoincrement,TITMEID INTEGER,VOICELOCATION TEXT,SORTNUMBER INTEGER)"
+                if !db.executeStatements(sql_stmt){
+                    print("Error: \(db.lastErrorMessage())")
+                }
+                sql_stmt = "CREATE TABLE IF NOT EXISTS PICTURETABLE(PICTUREID INTEGER PRIMARY KEY autoincrement,TITLEID INTEGER,PICTURELOCATION TEXT,SORTNUMBER INTEGER)"
+                if !db.executeStatements(sql_stmt){
+                    print("Error: \(db.lastErrorMessage())")
+                }
+                sql_stmt = "CREATE TABLE IF NOT EXISTS VOICESETTABLE(VOICEID INTEGER PRIMARY KEY autoincrement,USERID INTEGER,VOLUME INTEGER,SPEED INTEGER,SOUNDPEOPLE TEXT)"
+                if !db.executeStatements(sql_stmt){
+                    print("Error: \(db.lastErrorMessage())")
+                }
                 db.close()
             } else {
                 print("Error: \(db.lastErrorMessage())")
@@ -66,8 +82,6 @@ class XTDB: NSObject {
         db.executeUpdate(sql2, withArgumentsInArray: [id])
         db.close()
     }
-    
-    
     
     class func selectTitleWithID(id:Int)->TitleModel?{
         let sql = "SELECT * FROM TITLETABLE WHERE TITLEID = ?"
@@ -328,8 +342,12 @@ class XTDB: NSObject {
         
         //        sql = "UPDATE WEATHERTABLE SET WEATHERTYPE=?,DATETIME=? WHERE DATETIME=?"
         //        let success:Bool = db.executeUpdate(sql, withArgumentsInArray: [type,dateStr])
+    
         db.close()
         return success
     }
+    
+    
+    
     
 }

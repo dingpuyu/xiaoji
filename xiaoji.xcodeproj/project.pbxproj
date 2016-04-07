@@ -446,6 +446,19 @@
 		BA2BE6A51CB5F66C0077AEF5 /* emotion_haha.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2BE69F1CB5F66C0077AEF5 /* emotion_haha.png */; };
 		BA2BE6A61CB5F66C0077AEF5 /* emotion_hungry.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2BE6A01CB5F66C0077AEF5 /* emotion_hungry.png */; };
 		BA2BE6A71CB5F66C0077AEF5 /* emotion_medic.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2BE6A11CB5F66C0077AEF5 /* emotion_medic.png */; };
+		BA2BE6AB1CB638B40077AEF5 /* XTUserSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2BE6A91CB638B40077AEF5 /* XTUserSettingCell.swift */; };
+		BA2BE6AC1CB638B40077AEF5 /* XTUserSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA2BE6AA1CB638B40077AEF5 /* XTUserSettingCell.xib */; };
+		BA2BE6AF1CB6392F0077AEF5 /* rightdest@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2BE6AD1CB6392F0077AEF5 /* rightdest@2x.png */; };
+		BA2BE6B01CB6392F0077AEF5 /* rightdest@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2BE6AE1CB6392F0077AEF5 /* rightdest@3x.png */; };
+		BA2BE6B31CB63FD10077AEF5 /* icon_search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2BE6B11CB63FD10077AEF5 /* icon_search@2x.png */; };
+		BA2BE6B41CB63FD10077AEF5 /* icon_search@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2BE6B21CB63FD10077AEF5 /* icon_search@3x.png */; };
+		BA2BE6B71CB63FF80077AEF5 /* SearchBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2BE6B61CB63FF80077AEF5 /* SearchBarButton.m */; };
+		BA2BE6BA1CB64A6C0077AEF5 /* XTSearchNoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2BE6B91CB64A6C0077AEF5 /* XTSearchNoteController.swift */; };
+		BA2BE6BC1CB64B120077AEF5 /* XTSearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2BE6BB1CB64B120077AEF5 /* XTSearchBarView.swift */; };
+		BA2BE6BE1CB65B9A0077AEF5 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2BE6BD1CB65B9A0077AEF5 /* DataService.swift */; };
+		BA2BE6C31CB6660F0077AEF5 /* XTSearchResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2BE6C21CB6660F0077AEF5 /* XTSearchResultViewModel.swift */; };
+		BA2BE6C61CB667590077AEF5 /* XTSearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2BE6C41CB667590077AEF5 /* XTSearchResultCell.swift */; };
+		BA2BE6C71CB667590077AEF5 /* XTSearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA2BE6C51CB667590077AEF5 /* XTSearchResultCell.xib */; };
 		BA2D0F791CB4945800E45567 /* TopInfoBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2D0F781CB4945800E45567 /* TopInfoBarViewController.swift */; };
 		BA2D0F941CB4ABF900E45567 /* Hail-back.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2D0F8C1CB4ABF900E45567 /* Hail-back.png */; };
 		BA2D0F951CB4ABF900E45567 /* Haze-back.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2D0F8D1CB4ABF900E45567 /* Haze-back.png */; };
@@ -1022,6 +1035,20 @@
 		BA2BE69F1CB5F66C0077AEF5 /* emotion_haha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emotion_haha.png; sourceTree = "<group>"; };
 		BA2BE6A01CB5F66C0077AEF5 /* emotion_hungry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emotion_hungry.png; sourceTree = "<group>"; };
 		BA2BE6A11CB5F66C0077AEF5 /* emotion_medic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emotion_medic.png; sourceTree = "<group>"; };
+		BA2BE6A91CB638B40077AEF5 /* XTUserSettingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XTUserSettingCell.swift; path = xiaoji/Classes/MorningNote/Controller/XTUserSettingCell.swift; sourceTree = SOURCE_ROOT; };
+		BA2BE6AA1CB638B40077AEF5 /* XTUserSettingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = XTUserSettingCell.xib; path = xiaoji/Classes/MorningNote/Controller/XTUserSettingCell.xib; sourceTree = SOURCE_ROOT; };
+		BA2BE6AD1CB6392F0077AEF5 /* rightdest@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "rightdest@2x.png"; path = "../rightdest@2x.png"; sourceTree = "<group>"; };
+		BA2BE6AE1CB6392F0077AEF5 /* rightdest@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "rightdest@3x.png"; path = "../rightdest@3x.png"; sourceTree = "<group>"; };
+		BA2BE6B11CB63FD10077AEF5 /* icon_search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_search@2x.png"; sourceTree = "<group>"; };
+		BA2BE6B21CB63FD10077AEF5 /* icon_search@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_search@3x.png"; sourceTree = "<group>"; };
+		BA2BE6B51CB63FF80077AEF5 /* SearchBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchBarButton.h; path = xiaoji/Classes/MorningNote/Controller/SearchBarButton.h; sourceTree = SOURCE_ROOT; };
+		BA2BE6B61CB63FF80077AEF5 /* SearchBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchBarButton.m; path = xiaoji/Classes/MorningNote/Controller/SearchBarButton.m; sourceTree = SOURCE_ROOT; };
+		BA2BE6B91CB64A6C0077AEF5 /* XTSearchNoteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTSearchNoteController.swift; sourceTree = "<group>"; };
+		BA2BE6BB1CB64B120077AEF5 /* XTSearchBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XTSearchBarView.swift; path = xiaoji/Classes/HomePage/Controller/XTSearchBarView.swift; sourceTree = SOURCE_ROOT; };
+		BA2BE6BD1CB65B9A0077AEF5 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		BA2BE6C21CB6660F0077AEF5 /* XTSearchResultViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTSearchResultViewModel.swift; sourceTree = "<group>"; };
+		BA2BE6C41CB667590077AEF5 /* XTSearchResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XTSearchResultCell.swift; path = xiaoji/Classes/HomePage/XTSearchResultCell.swift; sourceTree = SOURCE_ROOT; };
+		BA2BE6C51CB667590077AEF5 /* XTSearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = XTSearchResultCell.xib; path = xiaoji/Classes/HomePage/XTSearchResultCell.xib; sourceTree = SOURCE_ROOT; };
 		BA2D0F781CB4945800E45567 /* TopInfoBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopInfoBarViewController.swift; sourceTree = "<group>"; };
 		BA2D0F8C1CB4ABF900E45567 /* Hail-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hail-back.png"; sourceTree = "<group>"; };
 		BA2D0F8D1CB4ABF900E45567 /* Haze-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Haze-back.png"; sourceTree = "<group>"; };
@@ -1204,6 +1231,7 @@
 			children = (
 				2AC921721C8C402900683D7E /* Controller */,
 				BA91E6FC1C98EA0B008CA5C1 /* Model */,
+				BA2BE6C11CB665FB0077AEF5 /* ViewModel */,
 				BA91E6FD1C98EA0B008CA5C1 /* View */,
 				BA2F88EC1CA90AA1006EBFD1 /* ViewModel */,
 			);
@@ -1265,6 +1293,10 @@
 		2A3FBD3D1C87203C00F548AA /* 晨记 */ = {
 			isa = PBXGroup;
 			children = (
+				BA2BE6B11CB63FD10077AEF5 /* icon_search@2x.png */,
+				BA2BE6B21CB63FD10077AEF5 /* icon_search@3x.png */,
+				BA2BE6AD1CB6392F0077AEF5 /* rightdest@2x.png */,
+				BA2BE6AE1CB6392F0077AEF5 /* rightdest@3x.png */,
 				BAFC14531CB503A400149F4E /* avatar.png */,
 				BA6A4D671CB34E3100994E9E /* sound@2x.png */,
 				BA6A4D681CB34E3100994E9E /* sound@3x.png */,
@@ -1756,6 +1788,7 @@
 			children = (
 				2AC9217C1C8C40A300683D7E /* Controller */,
 				2AC9217E1C8C40A300683D7E /* Model */,
+				BA2BE6A81CB637DD0077AEF5 /* ViewModel */,
 				2AC9217F1C8C40A300683D7E /* View */,
 			);
 			name = "ToolBox（工具箱）";
@@ -1781,6 +1814,7 @@
 				2A3C66C91C9470A200AC685D /* fmdb */,
 				2ACAC0EF1C93E01B00429C08 /* Define.swift */,
 				2A3C66DE1C94716F00AC685D /* XTDB.swift */,
+				BA2BE6BD1CB65B9A0077AEF5 /* DataService.swift */,
 				2A7F72F51C9568B900FFE217 /* NSString+MessageDigest.h */,
 				2A7F72F61C9568B900FFE217 /* NSString+MessageDigest.m */,
 				BA8991F81C9BA5A500C63B3B /* LocationService.swift */,
@@ -1791,6 +1825,7 @@
 		2AC921721C8C402900683D7E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BA2BE6B81CB64A400077AEF5 /* 检索日记控制器 */,
 				BAF1633A1CA37CB40048681A /* XT日历 */,
 				2AC921731C8C402900683D7E /* XTHomePageController.swift */,
 			);
@@ -1857,6 +1892,8 @@
 				BAFC14501CB501E200149F4E /* XTUserInfoCell.xib */,
 				BAFC144B1CB4FCBE00149F4E /* XTQuitLogInCell.swift */,
 				BAFC144C1CB4FCBE00149F4E /* XTQuitLogInCell.xib */,
+				BA2BE6A91CB638B40077AEF5 /* XTUserSettingCell.swift */,
+				BA2BE6AA1CB638B40077AEF5 /* XTUserSettingCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1975,6 +2012,29 @@
 			path = "心情图标";
 			sourceTree = "<group>";
 		};
+		BA2BE6A81CB637DD0077AEF5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		BA2BE6B81CB64A400077AEF5 /* 检索日记控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				BA2BE6B91CB64A6C0077AEF5 /* XTSearchNoteController.swift */,
+			);
+			name = "检索日记控制器";
+			sourceTree = "<group>";
+		};
+		BA2BE6C11CB665FB0077AEF5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BA2BE6C21CB6660F0077AEF5 /* XTSearchResultViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
 		BA2D0F771CB4943600E45567 /* 顶部信息栏编辑控制器 */ = {
 			isa = PBXGroup;
 			children = (
@@ -2067,6 +2127,11 @@
 				BAE00FC31CABA846006A9965 /* UUDataPicker */,
 				BAE00FBF1CABA7F7006A9965 /* 月份选择 */,
 				BAF163A01CA3D7660048681A /* XTNoteIteShowCell.swift */,
+				BA2BE6B51CB63FF80077AEF5 /* SearchBarButton.h */,
+				BA2BE6B61CB63FF80077AEF5 /* SearchBarButton.m */,
+				BA2BE6BB1CB64B120077AEF5 /* XTSearchBarView.swift */,
+				BA2BE6C41CB667590077AEF5 /* XTSearchResultCell.swift */,
+				BA2BE6C51CB667590077AEF5 /* XTSearchResultCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2407,6 +2472,7 @@
 				2A3FC0731C87203D00F548AA /* iconfont-iconyong@3x.png in Resources */,
 				2A3FC0AB1C87203D00F548AA /* 我线.png in Resources */,
 				2A3FC0D01C87203D00F548AA /* 添加客户@2x.png in Resources */,
+				BA2BE6C71CB667590077AEF5 /* XTSearchResultCell.xib in Resources */,
 				2A3FC0131C87203C00F548AA /* iconfont-shanchu.png in Resources */,
 				2A3FBFB71C87203C00F548AA /* 报-down@2x.png in Resources */,
 				2A3FBF6D1C87203C00F548AA /* iconfont-sousuo-down.png in Resources */,
@@ -2454,6 +2520,7 @@
 				2A3FC02E1C87203C00F548AA /* iconfont-sousuo.png in Resources */,
 				2A3FC0A61C87203D00F548AA /* 形状-6@2x.png in Resources */,
 				2A3FC01C1C87203C00F548AA /* bluecircle-copy-2@2x.png in Resources */,
+				BA2BE6B31CB63FD10077AEF5 /* icon_search@2x.png in Resources */,
 				2A3FBF7B1C87203C00F548AA /* iconfont-xiazai-3@3x.png in Resources */,
 				2A3FC0AC1C87203D00F548AA /* 我线@2x.png in Resources */,
 				2A3FC0A21C87203D00F548AA /* 形状-2.png in Resources */,
@@ -2469,6 +2536,7 @@
 				2A3FC07E1C87203D00F548AA /* iconfont-xiaoxi-2-down@3x.png in Resources */,
 				2A3FBFEB1C87203C00F548AA /* iconfont-direction-down@2x.png in Resources */,
 				2A3FBF651C87203C00F548AA /* iconfont-jiantou-2-down@2x.png in Resources */,
+				BA2BE6AC1CB638B40077AEF5 /* XTUserSettingCell.xib in Resources */,
 				2A3FBFF61C87203C00F548AA /* point-down@3x.png in Resources */,
 				2A3FC0141C87203C00F548AA /* iconfont-shanchu@2x.png in Resources */,
 				2A3FBFC81C87203C00F548AA /* 椭圆-3-拷贝.png in Resources */,
@@ -2553,6 +2621,7 @@
 				2ACE47E71C414ADF0066A303 /* Assets.xcassets in Resources */,
 				BA59ECA51C9959470037CF70 /* set_btn_del_@3x.png in Resources */,
 				2A3FC0661C87203D00F548AA /* bluecircle-copy-2@3x.png in Resources */,
+				BA2BE6AF1CB6392F0077AEF5 /* rightdest@2x.png in Resources */,
 				2A3FC0CF1C87203D00F548AA /* 添加客户.png in Resources */,
 				2A3FBFA91C87203C00F548AA /* 取消置顶@3x.png in Resources */,
 				2A3FC05D1C87203D00F548AA /* bao-down@2x.png in Resources */,
@@ -2732,6 +2801,7 @@
 				2A3FC0221C87203C00F548AA /* clock-down@2x.png in Resources */,
 				2A3FC0551C87203D00F548AA /* 顶@2x.png in Resources */,
 				2A3FBF9E1C87203C00F548AA /* shareicon_3@2x.png in Resources */,
+				BA2BE6B41CB63FD10077AEF5 /* icon_search@3x.png in Resources */,
 				2A3FC0861C87203D00F548AA /* iconfont-yijianfankui-4-down@2x.png in Resources */,
 				2A3FC0501C87203D00F548AA /* 图层-9@3x.png in Resources */,
 				2A3FC07B1C87203D00F548AA /* iconfont-wenhao-white@3x.png in Resources */,
@@ -2760,6 +2830,7 @@
 				2A3FC0291C87203C00F548AA /* iconfont-erweima@2x.png in Resources */,
 				2A3FBFC51C87203C00F548AA /* 收藏线.png in Resources */,
 				2A3FC0521C87203D00F548AA /* 热@2x.png in Resources */,
+				BA2BE6B01CB6392F0077AEF5 /* rightdest@3x.png in Resources */,
 				2A3FBFFE1C87203C00F548AA /* today@3x.png in Resources */,
 				2A3FC0081C87203C00F548AA /* btn-deletePic@2x.png in Resources */,
 				2A3FC05B1C87203D00F548AA /* iconfont-dingwei@2x.png in Resources */,
@@ -2854,11 +2925,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A7F72FA1C96EA5A00FFE217 /* Brush-Script.ttf in Sources */,
+				BA2BE6C61CB667590077AEF5 /* XTSearchResultCell.swift in Sources */,
 				2A3E48281CA1821E00FFFC38 /* XTAddNoteQuestionCell.swift in Sources */,
 				BAF163961CA37CBE0048681A /* XTScheduleInfoTableView.m in Sources */,
 				BAF1638E1CA37CBE0048681A /* UITableViewRowAction+JZExtension.m in Sources */,
 				2A7F72F41C95583A00FFE217 /* XTNoteModel.swift in Sources */,
 				2AC921761C8C402900683D7E /* XTHomePageController.swift in Sources */,
+				BA2BE6BA1CB64A6C0077AEF5 /* XTSearchNoteController.swift in Sources */,
 				BAF1638D1CA37CBE0048681A /* UITableViewCell+JZExtension.m in Sources */,
 				BAF163871CA37CBE0048681A /* JTCalendarMenuView.m in Sources */,
 				BA2D0F791CB4945800E45567 /* TopInfoBarViewController.swift in Sources */,
@@ -2872,6 +2945,7 @@
 				2ACE47E01C414ADF0066A303 /* AppDelegate.swift in Sources */,
 				2A3C66DF1C94716F00AC685D /* XTDB.swift in Sources */,
 				BAE00FCE1CABB743006A9965 /* XTVoiceServiceController.swift in Sources */,
+				BA2BE6AB1CB638B40077AEF5 /* XTUserSettingCell.swift in Sources */,
 				BAF163801CA37CBE0048681A /* BaseViewController.m in Sources */,
 				BAE00FC21CABA812006A9965 /* XTMonthDateSelectView.m in Sources */,
 				2AC921661C8C2BF400683D7E /* XTBaseViewController.swift in Sources */,
@@ -2879,12 +2953,14 @@
 				BAF1638F1CA37CBE0048681A /* UITableViewRowAction.m in Sources */,
 				BAF163921CA37CBE0048681A /* XTCalendarPageView.m in Sources */,
 				2A3C66DA1C9470A200AC685D /* FMResultSet.m in Sources */,
+				BA2BE6B71CB63FF80077AEF5 /* SearchBarButton.m in Sources */,
 				BAF163931CA37CBE0048681A /* XTCalendarView.m in Sources */,
 				2A7A8FE31C9049A600435940 /* XTNoteFlowView.swift in Sources */,
 				2A3C66BE1C9413F900AC685D /* XTNoteFlowLayout.swift in Sources */,
 				BAF163831CA37CBE0048681A /* JTDateHelper.m in Sources */,
 				BAF163911CA37CBE0048681A /* RemindResult.m in Sources */,
 				BAFC144D1CB4FCBE00149F4E /* XTQuitLogInCell.swift in Sources */,
+				BA2BE6C31CB6660F0077AEF5 /* XTSearchResultViewModel.swift in Sources */,
 				2A3013011C99B723003E098A /* XTNoteItemEditController.swift in Sources */,
 				BAF163851CA37CBE0048681A /* JTCalendarScrollManager.m in Sources */,
 				BAF1638C1CA37CBE0048681A /* JTVerticalCalendarView.m in Sources */,
@@ -2904,6 +2980,7 @@
 				BAF163941CA37CBE0048681A /* XTHorizontalCalendarView.m in Sources */,
 				BAF163981CA37CBE0048681A /* XTUserScheduleCellFrame.m in Sources */,
 				BAF163841CA37CBE0048681A /* JTCalendarDelegateManager.m in Sources */,
+				BA2BE6BE1CB65B9A0077AEF5 /* DataService.swift in Sources */,
 				2A6B01E11C99916D00F34004 /* XTNoteItemContentView.swift in Sources */,
 				BAF163861CA37CBE0048681A /* JTCalendarDayView.m in Sources */,
 				BAE00FC81CABA851006A9965 /* UUDatePicker_DateModel.m in Sources */,
@@ -2914,6 +2991,7 @@
 				BA8991F91C9BA5A500C63B3B /* LocationService.swift in Sources */,
 				BAF1638A1CA37CBE0048681A /* JTCalendarWeekView.m in Sources */,
 				BAB089C51CA23CB20080706D /* XTAddNoteTitleHeaderCell.swift in Sources */,
+				BA2BE6BC1CB64B120077AEF5 /* XTSearchBarView.swift in Sources */,
 				2A3E482A1CA186B700FFFC38 /* XTNoteItemAddButtonCell.swift in Sources */,
 				BAF1639D1CA37CBE0048681A /* XTUserScheduleViewController.m in Sources */,
 				BAF163821CA37CBE0048681A /* JTCalendarSettings.m in Sources */,
