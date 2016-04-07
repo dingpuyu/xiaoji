@@ -24,10 +24,17 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Xg-0F-bGr">
-                    <rect key="frame" x="265" y="17" width="33" height="33"/>
+                    <rect key="frame" x="273" y="17" width="33" height="33"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="33" id="QnH-Sa-1XB"/>
                         <constraint firstAttribute="height" constant="33" id="alY-Zj-e8c"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2dX-cG-KCm">
+                    <rect key="frame" x="236" y="21" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="NVZ-ob-qTY"/>
+                        <constraint firstAttribute="height" constant="24" id="TPP-ry-fkb"/>
                     </constraints>
                 </imageView>
             </subviews>
@@ -35,15 +42,18 @@
                 <constraint firstAttribute="bottom" secondItem="LsN-5c-ks5" secondAttribute="bottom" id="0K1-rb-cDj"/>
                 <constraint firstItem="xpJ-5b-uCi" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="1mb-IM-c10"/>
                 <constraint firstItem="LsN-5c-ks5" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="9Y0-tt-e54"/>
+                <constraint firstItem="0Xg-0F-bGr" firstAttribute="leading" secondItem="2dX-cG-KCm" secondAttribute="trailing" constant="13" id="BTw-xz-USV"/>
                 <constraint firstItem="LsN-5c-ks5" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="Idx-f9-K9V"/>
                 <constraint firstAttribute="bottom" secondItem="xpJ-5b-uCi" secondAttribute="bottom" id="P3e-PF-cey"/>
                 <constraint firstAttribute="trailing" secondItem="xpJ-5b-uCi" secondAttribute="trailing" id="Tgz-Hp-Esm"/>
-                <constraint firstAttribute="trailing" secondItem="0Xg-0F-bGr" secondAttribute="trailing" constant="22" id="Y8w-py-LLD"/>
+                <constraint firstAttribute="trailing" secondItem="0Xg-0F-bGr" secondAttribute="trailing" constant="14" id="Y8w-py-LLD"/>
                 <constraint firstItem="xpJ-5b-uCi" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="av3-De-bge"/>
                 <constraint firstAttribute="trailing" secondItem="LsN-5c-ks5" secondAttribute="trailing" id="lau-Ps-XI7"/>
+                <constraint firstAttribute="bottom" secondItem="2dX-cG-KCm" secondAttribute="bottom" constant="5" id="wlC-ec-jh4"/>
                 <constraint firstAttribute="bottom" secondItem="0Xg-0F-bGr" secondAttribute="bottom" id="y4d-N1-cUK"/>
             </constraints>
             <connections>
+                <outlet property="moodImageView" destination="2dX-cG-KCm" id="1sX-hV-BCS"/>
                 <outlet property="textLabel" destination="LsN-5c-ks5" id="SUX-KK-g0H"/>
                 <outlet property="weatherImageView" destination="0Xg-0F-bGr" id="8ru-j2-qQK"/>
             </connections>

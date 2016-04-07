@@ -68,8 +68,46 @@ class TopInfoBarViewController: UIViewController {
         
         HUD.flash(.Label(showStr), delay: 1.5)
         NSNotificationCenter.defaultCenter().postNotificationName("ReloadHeaderWeatherView", object: self)
-        self.navigationController?.popViewControllerAnimated(true)
+//        self.navigationController?.popViewControllerAnimated(true)
     }
+    
+    
+    @IBAction func moodButtonClick(sender: UIButton) {
+        
+        var showStr:String = "惊喜"
+        switch sender.tag{
+        case 3001:
+            showStr = "惊喜"
+            XTDB.updateMoodTypeWithDateString(dateString!, type: 1)
+            break
+        case 3002:
+            showStr = "困惑"
+            XTDB.updateMoodTypeWithDateString(dateString!, type: 2)
+            break
+        case 3003:
+            showStr = "非常开心"
+            XTDB.updateMoodTypeWithDateString(dateString!, type: 3)
+            break
+        case 3004:
+            showStr = "哈哈"
+            XTDB.updateMoodTypeWithDateString(dateString!, type: 4)
+            break
+        case 3005:
+            showStr = "饥饿难耐撒"
+            XTDB.updateMoodTypeWithDateString(dateString!, type: 5)
+            break
+        case 3006:
+            showStr = "生病了..."
+            XTDB.updateMoodTypeWithDateString(dateString!, type: 6)
+            break
+        default:
+            break
+        }
+        HUD.flash(.Label(showStr), delay: 1.5)
+        NSNotificationCenter.defaultCenter().postNotificationName("ReloadHeaderWeatherView", object: self)
+//        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -14,11 +14,12 @@ class XTNoteCollectionReusableView: UICollectionReusableView {
 
     @IBOutlet weak var weatherImageView: UIImageView!
     
+    @IBOutlet weak var moodImageView: UIImageView!
     var myClosure:actionClosure?
     
     var dateString:String?{
         didSet{
-            let type = XTDB.selectWeatherTypeWithDateString(dateString!)
+            var type = XTDB.selectWeatherTypeWithDateString(dateString!)
             var imageString = ""
             switch type{
             case 1:
@@ -49,6 +50,30 @@ class XTNoteCollectionReusableView: UICollectionReusableView {
                 break
             }
             self.weatherImageView.image = UIImage(named: imageString)
+            type = XTDB.selectMoodTypeWithDateString(dateString!)
+            switch type{
+            case 1:
+                imageString = "emotion_amazing"
+                break
+            case 2:
+                imageString = "emotion_baffle"
+                break
+            case 3:
+                imageString = "emotion_bigsmile"
+                break
+            case 4:
+                imageString = "emotion_haha"
+                break
+            case 5:
+                imageString = "emotion_hungry"
+                break
+            case 6:
+                imageString = "emotion_medic"
+                break
+            default:
+                break
+            }
+            self.moodImageView.image = UIImage(named: imageString)
         }
     }
     

@@ -34,7 +34,7 @@ class XTDB: NSObject {
                 if !db.executeStatements(sql_stmt) {
                     print("Error: \(db.lastErrorMessage())")
                 }
-                sql_stmt = "CREATE TABLE IF NOT EXISTS WEATHERTABLE(WEATHERID INTEGER PRIMARY KEY autoincrement,WEATHERTYPE INTEGER,DATETIME TEXT)"
+                sql_stmt = "CREATE TABLE IF NOT EXISTS WEATHERMOODTABLE(WEATHERID INTEGER PRIMARY KEY autoincrement,WEATHERTYPE INTEGER,MOODTYPE INTEGER,DATETIME TEXT)"
                 if !db.executeStatements(sql_stmt){
                     print("Error: \(db.lastErrorMessage())")
                 }
@@ -270,7 +270,7 @@ class XTDB: NSObject {
         if dateStr == ""{
            return 0
         }
-        let sql = "SELECT * FROM WEATHERTABLE WHERE DATETIME = ?"
+        let sql = "SELECT * FROM WEATHERMOODTABLE WHERE DATETIME = ?"
         
         let db = XTDB.getDb()
         db.open()
@@ -283,17 +283,51 @@ class XTDB: NSObject {
         return type
     }
     
-    class func updateWeatherTypeWithDateString(dateStr:String,type:Int) -> Bool{
+    class func selectMoodTypeWithDateString(dateStr:String) -> Int {
+        if dateStr == ""{
+            return 0
+        }
+        let sql = "SELECT * FROM WEATHERMOODTABLE WHERE DATETIME = ?"
+        
         let db = XTDB.getDb()
         db.open()
-        var sql = "DELETE FROM WEATHERTABLE WHERE DATETIME=?"
+        let rs = db.executeQuery(sql, withArgumentsInArray: [dateStr])
+        var type = 0
+        
+        while rs.next() {
+            type = Int(rs.intForColumn("MOODTYPE"))
+        }
+        return type
+    }
+    
+    class func updateWeatherTypeWithDateString(dateStr:String,type:Int) -> Bool{
+        let moodtype = self.selectMoodTypeWithDateString(dateStr)
+        let db = XTDB.getDb()
+        db.open()
+        var sql = "DELETE FROM WEATHERMOODTABLE WHERE DATETIME=?"
         db.executeUpdate(sql, withArgumentsInArray: [dateStr])
         
-        sql = "INSERT INTO WEATHERTABLE(WEATHERTYPE,DATETIME) "+"VALUES(?,?)"
-        let success:Bool = db.executeUpdate(sql, withArgumentsInArray: [type,dateStr])
+        sql = "INSERT INTO WEATHERMOODTABLE(WEATHERTYPE,MOODTYPE,DATETIME) "+"VALUES(?,?,?)"
+        let success:Bool = db.executeUpdate(sql, withArgumentsInArray: [type,moodtype,dateStr])
         
 //        sql = "UPDATE WEATHERTABLE SET WEATHERTYPE=?,DATETIME=? WHERE DATETIME=?"
 //        let success:Bool = db.executeUpdate(sql, withArgumentsInArray: [type,dateStr])
+        db.close()
+        return success
+    }
+    
+    class func updateMoodTypeWithDateString(dateStr:String,type:Int) -> Bool{
+        let weatherType = self.selectWeatherTypeWithDateString(dateStr)
+        let db = XTDB.getDb()
+        db.open()
+        var sql = "DELETE FROM WEATHERMOODTABLE WHERE DATETIME=?"
+        db.executeUpdate(sql, withArgumentsInArray: [dateStr])
+        
+        sql = "INSERT INTO WEATHERMOODTABLE(WEATHERTYPE,MOODTYPE,DATETIME) "+"VALUES(?,?,?)"
+        let success:Bool = db.executeUpdate(sql, withArgumentsInArray: [weatherType,type,dateStr])
+        
+        //        sql = "UPDATE WEATHERTABLE SET WEATHERTYPE=?,DATETIME=? WHERE DATETIME=?"
+        //        let success:Bool = db.executeUpdate(sql, withArgumentsInArray: [type,dateStr])
         db.close()
         return success
     }
