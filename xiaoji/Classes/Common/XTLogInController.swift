@@ -9,6 +9,7 @@
 import UIKit
 import ReactiveCocoa
 import PKHUD
+import Alamofire
 
 let isLogInKey = "UserIsLogIn"
 
@@ -24,7 +25,6 @@ class XTLogInController: UIViewController,UITextFieldDelegate{
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
         logInButton.enabled = false
         userNameTextField.becomeFirstResponder()
     }
@@ -75,17 +75,49 @@ class XTLogInController: UIViewController,UITextFieldDelegate{
     @IBAction func LogInButtonClick(sender: AnyObject) {
         HUD.show(.Label("登陆中..."))
         weak var weakSelf = self
-        XTSignInService.signInWithUserName(userNameTextField.text, passWord: passwordTextField.text) { (status:Bool) -> Void in
-            if status == true{
-                HUD.flash(.Label("登陆成功！"), delay: 1.5)
-                weakSelf?.dismissViewControllerAnimated(true, completion: nil)
-                let userDefaluts = NSUserDefaults.standardUserDefaults()
-                userDefaluts.setBool(true, forKey: isLogInKey)
+        
+        let parameters = [
+            "account":userNameTextField.text!,
+            "password":passwordTextField.text!
+            ]
+    
+        print(passwordTextField.text!.md5())
+        
+        Alamofire.request(.POST, "http://localhost/login.php", parameters: parameters).responseJSON { response in
+            if(response.2.isSuccess){
+//                let message = response.2.value!["message"]! as! String
+                let json:AnyObject = response.2.value!
+                let message = json.objectForKey("message") as! String
+                let success = json.objectForKey("success") as! NSNumber
+                print("success:\(success)")
+                if success.boolValue == true{
+                    weakSelf?.dismissViewControllerAnimated(true, completion: nil)
+                    let userDefaluts = NSUserDefaults.standardUserDefaults()
+                    userDefaluts.setBool(true, forKey: isLogInKey)
+                }
+                HUD.flash(.Label(message), delay: 1.5)
             }else{
-                HUD.flash(.Label("账号或密码错误！"), delay: 1.5)
+                HUD.flash(.Label("收到消息"), delay: 1.5);
             }
+            
+//            print(response.2.value)
+//            HUD.flash(.Label("收到消息"), delay: 1.5);
+        
         }
+//        XTSignInService.signInWithUserName(userNameTextField.text, passWord: passwordTextField.text) { (status:Bool) -> Void in
+//            if status == true{
+//                HUD.flash(.Label("登陆成功！"), delay: 1.5)
+//                weakSelf?.dismissViewControllerAnimated(true, completion: nil)
+//                let userDefaluts = NSUserDefaults.standardUserDefaults()
+//                userDefaluts.setBool(true, forKey: isLogInKey)
+//            }else{
+//                HUD.flash(.Label("账号或密码错误！"), delay: 1.5)
+//            }
+//        }
         
     }
+    
+
+    
     
 }

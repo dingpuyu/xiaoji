@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 typealias ActionResultArrayClosure=(resultArray:[NoteItemModel])->Void
 
@@ -20,6 +21,9 @@ class DataService: NSObject {
         let db = XTDB.getDb()
         db.open()
         let sql = "SELECT * FROM ITEMTABLE WHERE ANSWER LIKE '%\(text)%'"
+        
+
+        
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
             let rs = db.executeQuery(sql, withArgumentsInArray: [])

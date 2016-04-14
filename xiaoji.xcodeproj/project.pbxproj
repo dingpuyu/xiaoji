@@ -506,6 +506,8 @@
 		BAE00FC81CABA851006A9965 /* UUDatePicker_DateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE00FC51CABA851006A9965 /* UUDatePicker_DateModel.m */; };
 		BAE00FC91CABA851006A9965 /* UUDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE00FC71CABA851006A9965 /* UUDatePicker.m */; };
 		BAE00FCE1CABB743006A9965 /* XTVoiceServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE00FCD1CABB743006A9965 /* XTVoiceServiceController.swift */; };
+		BAECE6961CBF1E9800942F9B /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = BAECE6951CBF1E9800942F9B /* NSString+MD5.m */; };
+		BAECE6981CBF7A2900942F9B /* XJRegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAECE6971CBF7A2900942F9B /* XJRegisterController.swift */; };
 		BAEE222F1C97A98A00CB6290 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = BAEE222E1C97A98A00CB6290 /* Reachability.m */; };
 		BAF163801CA37CBE0048681A /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF1633C1CA37CBE0048681A /* BaseViewController.m */; };
 		BAF163811CA37CBE0048681A /* JTCalendarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF163411CA37CBE0048681A /* JTCalendarManager.m */; };
@@ -1099,6 +1101,9 @@
 		BAE00FC61CABA851006A9965 /* UUDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUDatePicker.h; sourceTree = SOURCE_ROOT; };
 		BAE00FC71CABA851006A9965 /* UUDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUDatePicker.m; sourceTree = SOURCE_ROOT; };
 		BAE00FCD1CABB743006A9965 /* XTVoiceServiceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTVoiceServiceController.swift; sourceTree = "<group>"; };
+		BAECE6941CBF1E9800942F9B /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		BAECE6951CBF1E9800942F9B /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		BAECE6971CBF7A2900942F9B /* XJRegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XJRegisterController.swift; sourceTree = "<group>"; };
 		BAEE222D1C97A98A00CB6290 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		BAEE222E1C97A98A00CB6290 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		BAF1633B1CA37CBE0048681A /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -1818,6 +1823,8 @@
 				2A7F72F51C9568B900FFE217 /* NSString+MessageDigest.h */,
 				2A7F72F61C9568B900FFE217 /* NSString+MessageDigest.m */,
 				BA8991F81C9BA5A500C63B3B /* LocationService.swift */,
+				BAECE6941CBF1E9800942F9B /* NSString+MD5.h */,
+				BAECE6951CBF1E9800942F9B /* NSString+MD5.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1994,6 +2001,7 @@
 				BA08DCF31CB3B29C00B3DDE3 /* XTSignInService.h */,
 				BA08DCF41CB3B29C00B3DDE3 /* XTSignInService.m */,
 				BA08DCF11CB39EA500B3DDE3 /* XTLogInController.swift */,
+				BAECE6971CBF7A2900942F9B /* XJRegisterController.swift */,
 			);
 			name = "登陆";
 			path = Common;
@@ -2938,6 +2946,7 @@
 				BAF163891CA37CBE0048681A /* JTCalendarWeekDayView.m in Sources */,
 				2A3C66C21C94175D00AC685D /* XTNoteTipsCell.swift in Sources */,
 				2AC9217B1C8C407600683D7E /* XTMorningNoteController.swift in Sources */,
+				BAECE6981CBF7A2900942F9B /* XJRegisterController.swift in Sources */,
 				BAF163811CA37CBE0048681A /* JTCalendarManager.m in Sources */,
 				BA08DCF51CB3B29C00B3DDE3 /* XTSignInService.m in Sources */,
 				BAF163971CA37CBE0048681A /* XTUserScheduleCell.m in Sources */,
@@ -2996,6 +3005,7 @@
 				BAF1639D1CA37CBE0048681A /* XTUserScheduleViewController.m in Sources */,
 				BAF163821CA37CBE0048681A /* JTCalendarSettings.m in Sources */,
 				2A3C66D91C9470A200AC685D /* FMDatabaseQueue.m in Sources */,
+				BAECE6961CBF1E9800942F9B /* NSString+MD5.m in Sources */,
 				BAF163A11CA3D7670048681A /* XTNoteIteShowCell.swift in Sources */,
 				2AC921671C8C2BF400683D7E /* XTTabBarController.swift in Sources */,
 				2A3C66D71C9470A200AC685D /* FMDatabaseAdditions.m in Sources */,

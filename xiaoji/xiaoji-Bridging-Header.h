@@ -21,3 +21,4 @@
 
 #import "XTSignInService.h"
 
+#import "NSString+MD5.h"
