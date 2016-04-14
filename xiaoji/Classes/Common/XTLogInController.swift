@@ -78,7 +78,7 @@ class XTLogInController: UIViewController,UITextFieldDelegate{
         
         let parameters = [
             "account":userNameTextField.text!,
-            "password":passwordTextField.text!
+            "password":passwordTextField.text!.md5()!
             ]
     
         print(passwordTextField.text!.md5())
