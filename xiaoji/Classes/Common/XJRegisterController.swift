@@ -35,7 +35,7 @@ class XJRegisterController: UIViewController {
             "password2":password2Field.text!.md5()!
         ]
         
-        Alamofire.request(.POST, "http://localhost/register.php", parameters: parameters).responseJSON { response in
+        Alamofire.request(.POST, "http://api.xiaotei.com/register.php", parameters: parameters).responseJSON { response in
             if(response.2.isSuccess){
                 //                let message = response.2.value!["message"]! as! String
                 let json:AnyObject = response.2.value!
@@ -49,7 +49,7 @@ class XJRegisterController: UIViewController {
                 }
                 HUD.flash(.Label(message), delay: 1.5)
             }else{
-                HUD.flash(.Label("注册错误"), delay: 1.5);
+                HUD.flash(.Label("参数错误"), delay: 1.5);
                 
             }
             //            print(response.2.value)

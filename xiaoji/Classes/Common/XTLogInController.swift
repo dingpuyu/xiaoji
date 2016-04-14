@@ -83,7 +83,7 @@ class XTLogInController: UIViewController,UITextFieldDelegate{
     
         print(passwordTextField.text!.md5())
         
-        Alamofire.request(.POST, "http://localhost/login.php", parameters: parameters).responseJSON { response in
+        Alamofire.request(.POST, "http://api.xiaotei.com/login.php", parameters: parameters).responseJSON { response in
             if(response.2.isSuccess){
 //                let message = response.2.value!["message"]! as! String
                 let json:AnyObject = response.2.value!
