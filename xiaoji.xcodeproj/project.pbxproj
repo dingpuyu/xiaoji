@@ -508,6 +508,9 @@
 		BAE00FCE1CABB743006A9965 /* XTVoiceServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE00FCD1CABB743006A9965 /* XTVoiceServiceController.swift */; };
 		BAECE6961CBF1E9800942F9B /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = BAECE6951CBF1E9800942F9B /* NSString+MD5.m */; };
 		BAECE6981CBF7A2900942F9B /* XJRegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAECE6971CBF7A2900942F9B /* XJRegisterController.swift */; };
+		BAECE69E1CBF9D2900942F9B /* login.php in Resources */ = {isa = PBXBuildFile; fileRef = BAECE69B1CBF9D2900942F9B /* login.php */; };
+		BAECE69F1CBF9D2900942F9B /* MMysql.class.php in Resources */ = {isa = PBXBuildFile; fileRef = BAECE69C1CBF9D2900942F9B /* MMysql.class.php */; };
+		BAECE6A01CBF9D2900942F9B /* register.php in Resources */ = {isa = PBXBuildFile; fileRef = BAECE69D1CBF9D2900942F9B /* register.php */; };
 		BAEE222F1C97A98A00CB6290 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = BAEE222E1C97A98A00CB6290 /* Reachability.m */; };
 		BAF163801CA37CBE0048681A /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF1633C1CA37CBE0048681A /* BaseViewController.m */; };
 		BAF163811CA37CBE0048681A /* JTCalendarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF163411CA37CBE0048681A /* JTCalendarManager.m */; };
@@ -1104,6 +1107,9 @@
 		BAECE6941CBF1E9800942F9B /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		BAECE6951CBF1E9800942F9B /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		BAECE6971CBF7A2900942F9B /* XJRegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XJRegisterController.swift; sourceTree = "<group>"; };
+		BAECE69B1CBF9D2900942F9B /* login.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = login.php; sourceTree = "<group>"; };
+		BAECE69C1CBF9D2900942F9B /* MMysql.class.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = MMysql.class.php; sourceTree = "<group>"; };
+		BAECE69D1CBF9D2900942F9B /* register.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = register.php; sourceTree = "<group>"; };
 		BAEE222D1C97A98A00CB6290 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		BAEE222E1C97A98A00CB6290 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		BAF1633B1CA37CBE0048681A /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -1952,6 +1958,7 @@
 		2ACE47DE1C414ADF0066A303 /* xiaoji */ = {
 			isa = PBXGroup;
 			children = (
+				BAECE69A1CBF9D2900942F9B /* PHPSource */,
 				BA89923F1C9BFD6000C63B3B /* Document */,
 				2AABDAFB1C8DD68500A0E078 /* Definition.h */,
 				2AABDAFC1C8DD76A00A0E078 /* PopupView.h */,
@@ -2170,6 +2177,16 @@
 				BAE00FCD1CABB743006A9965 /* XTVoiceServiceController.swift */,
 			);
 			name = "语音工具";
+			sourceTree = "<group>";
+		};
+		BAECE69A1CBF9D2900942F9B /* PHPSource */ = {
+			isa = PBXGroup;
+			children = (
+				BAECE69B1CBF9D2900942F9B /* login.php */,
+				BAECE69C1CBF9D2900942F9B /* MMysql.class.php */,
+				BAECE69D1CBF9D2900942F9B /* register.php */,
+			);
+			path = PHPSource;
 			sourceTree = "<group>";
 		};
 		BAF1633A1CA37CB40048681A /* XT日历 */ = {
@@ -2673,11 +2690,13 @@
 				BA89922D1C9BCF8600C63B3B /* Rain-thin.png in Resources */,
 				2A3FBF6A1C87203C00F548AA /* iconfont-remen.png in Resources */,
 				2A3FBF821C87203C00F548AA /* iconfont-zhiding-3-down@2x.png in Resources */,
+				BAECE69E1CBF9D2900942F9B /* login.php in Resources */,
 				2A3FBF711C87203C00F548AA /* iconfont-sousuo-hui@2x.png in Resources */,
 				2A3FC0631C87203D00F548AA /* baobeijilu@2x.png in Resources */,
 				BAFC14541CB503A400149F4E /* avatar.png in Resources */,
 				2A3FBFB31C87203C00F548AA /* 圆角矩形-up@2x.png in Resources */,
 				2A3FC0911C87203D00F548AA /* shape-6@3x.png in Resources */,
+				BAECE69F1CBF9D2900942F9B /* MMysql.class.php in Resources */,
 				2A3FBF921C87203C00F548AA /* pin-2.png in Resources */,
 				2A3FC0301C87203C00F548AA /* iconfont-sousuo@3x.png in Resources */,
 				2A3FBF6E1C87203C00F548AA /* iconfont-sousuo-down@2x.png in Resources */,
@@ -2793,6 +2812,7 @@
 				2A3FC01D1C87203C00F548AA /* bluecircle-copy-2@3x.png in Resources */,
 				BA89921C1C9BCF8600C63B3B /* default.png in Resources */,
 				2A3FC0C01C87203D00F548AA /* 椭圆-7.png in Resources */,
+				BAECE6A01CBF9D2900942F9B /* register.php in Resources */,
 				2A3FC0371C87203C00F548AA /* search-icon.png in Resources */,
 				2A3FBF701C87203C00F548AA /* iconfont-sousuo-hui.png in Resources */,
 				2A3FC0C61C87203D00F548AA /* 楼盘实.png in Resources */,
