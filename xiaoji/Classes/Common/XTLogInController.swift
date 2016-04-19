@@ -91,9 +91,12 @@ class XTLogInController: UIViewController,UITextFieldDelegate{
                 let success = json.objectForKey("success") as! NSNumber
                 print("success:\(success)")
                 if success.boolValue == true{
-                    weakSelf?.dismissViewControllerAnimated(true, completion: nil)
-                    let userDefaluts = NSUserDefaults.standardUserDefaults()
-                    userDefaluts.setBool(true, forKey: isLogInKey)
+                    let userid = json.objectForKey("userid") as! NSNumber
+                    XJUserDefault.sharedInstance.setLogIn(true)
+                    XJUserDefault.sharedInstance.setUserID(userid.integerValue)
+                
+                    weakSelf?.dismissViewControllerAnimated(true, completion: {
+                    })
                 }
                 HUD.flash(.Label(message), delay: 1.5)
             }else{

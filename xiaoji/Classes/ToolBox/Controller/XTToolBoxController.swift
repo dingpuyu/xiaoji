@@ -10,6 +10,8 @@ import UIKit
 
 class XTToolBoxController: XTBaseViewController,UITableViewDelegate,UITableViewDataSource{
 
+    private var userInfoModel = UserInfoModel()
+    
     var tableView:UITableView! = {
         var view = UITableView()
         view.separatorStyle = .None
@@ -24,7 +26,7 @@ class XTToolBoxController: XTBaseViewController,UITableViewDelegate,UITableViewD
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.whiteColor()
         // Do any additional setup after loading the view.
-        
+        self.tableView.separatorStyle = .None
         
         self.commonInit()
     }
@@ -50,6 +52,14 @@ class XTToolBoxController: XTBaseViewController,UITableViewDelegate,UITableViewD
         tableView.registerNib(UINib(nibName: String(XTUserInfoCell), bundle: nil), forCellReuseIdentifier: String(XTUserInfoCell))
         
         tableView.registerNib(UINib(nibName: String(XTUserSettingCell), bundle: nil), forCellReuseIdentifier: String(XTUserSettingCell))
+        
+        
+        weak var weakSelf = self
+        DataService.shareInstance().RequestUserInfo { (resultModel) in
+            weakSelf?.userInfoModel = resultModel
+            weakSelf?.tableView.reloadData()
+        }
+        
     }
 
     
@@ -66,6 +76,7 @@ class XTToolBoxController: XTBaseViewController,UITableViewDelegate,UITableViewD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.row == 0{
             let cell = tableView.dequeueReusableCellWithIdentifier(String(XTUserInfoCell)) as! XTUserInfoCell
+            cell.userinfoModel = self.userInfoModel
             return cell
         }
         if indexPath.row == cellTitleArray.count - 1{
@@ -83,6 +94,12 @@ class XTToolBoxController: XTBaseViewController,UITableViewDelegate,UITableViewD
             return 64
         }
         return 55
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row == 0{
+            self.performSegueWithIdentifier("UserInfoDetail", sender: nil)
+        }
     }
     
     func logOutActionClosure() -> Void{

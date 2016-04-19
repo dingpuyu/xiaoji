@@ -22,6 +22,7 @@ let fontName = "Helvetica"
 let lightGreenColor = UIColor(red: 0.18, green: 0.82, blue: 0.80, alpha: 1.0)
 let hightGreenColor = UIColor(red: 0.00, green: 0.9, blue: 0.79, alpha: 1.0)
 
+let hostName = "http://api.xiaotei.com"
 
 let functionViewHeight = 30
 
