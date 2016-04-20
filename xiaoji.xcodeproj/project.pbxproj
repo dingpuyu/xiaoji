@@ -443,6 +443,9 @@
 		BA08DCF21CB39EA500B3DDE3 /* XTLogInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA08DCF11CB39EA500B3DDE3 /* XTLogInController.swift */; };
 		BA08DCF51CB3B29C00B3DDE3 /* XTSignInService.m in Sources */ = {isa = PBXBuildFile; fileRef = BA08DCF41CB3B29C00B3DDE3 /* XTSignInService.m */; };
 		BA08DCF71CB3BDC300B3DDE3 /* logInScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = BA08DCF61CB3BDC300B3DDE3 /* logInScreen.png */; };
+		BA200E1B1CC7261A00F99057 /* updateuserinfo.php in Resources */ = {isa = PBXBuildFile; fileRef = BA200E1A1CC7261A00F99057 /* updateuserinfo.php */; };
+		BA200E1D1CC7262200F99057 /* upload_file.php in Resources */ = {isa = PBXBuildFile; fileRef = BA200E1C1CC7262200F99057 /* upload_file.php */; };
+		BA200E1F1CC7262E00F99057 /* userinfo.php in Resources */ = {isa = PBXBuildFile; fileRef = BA200E1E1CC7262E00F99057 /* userinfo.php */; };
 		BA2BE6A21CB5F66C0077AEF5 /* emotion_amazing.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2BE69C1CB5F66C0077AEF5 /* emotion_amazing.png */; };
 		BA2BE6A31CB5F66C0077AEF5 /* emotion_baffle.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2BE69D1CB5F66C0077AEF5 /* emotion_baffle.png */; };
 		BA2BE6A41CB5F66C0077AEF5 /* emotion_bigsmile.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2BE69E1CB5F66C0077AEF5 /* emotion_bigsmile.png */; };
@@ -471,7 +474,6 @@
 		BA2D0F991CB4ABF900E45567 /* Storm-back.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2D0F911CB4ABF900E45567 /* Storm-back.png */; };
 		BA2D0F9A1CB4ABF900E45567 /* Sun-back.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2D0F921CB4ABF900E45567 /* Sun-back.png */; };
 		BA2D0F9B1CB4ABF900E45567 /* Tornado-back.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2D0F931CB4ABF900E45567 /* Tornado-back.png */; };
-		BA38B0941CC63588006819CA /* upload_file.php in Resources */ = {isa = PBXBuildFile; fileRef = BA38B0931CC63588006819CA /* upload_file.php */; };
 		BA59ECA41C9959470037CF70 /* set_btn_del_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA59ECA01C9959470037CF70 /* set_btn_del_@2x.png */; };
 		BA59ECA51C9959470037CF70 /* set_btn_del_@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA59ECA11C9959470037CF70 /* set_btn_del_@3x.png */; };
 		BA59ECA61C9959470037CF70 /* set_btn_del_pre_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA59ECA21C9959470037CF70 /* set_btn_del_pre_@2x.png */; };
@@ -1041,6 +1043,9 @@
 		BA08DCF31CB3B29C00B3DDE3 /* XTSignInService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTSignInService.h; sourceTree = "<group>"; };
 		BA08DCF41CB3B29C00B3DDE3 /* XTSignInService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTSignInService.m; sourceTree = "<group>"; };
 		BA08DCF61CB3BDC300B3DDE3 /* logInScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logInScreen.png; sourceTree = "<group>"; };
+		BA200E1A1CC7261A00F99057 /* updateuserinfo.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = updateuserinfo.php; sourceTree = "<group>"; };
+		BA200E1C1CC7262200F99057 /* upload_file.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = upload_file.php; sourceTree = "<group>"; };
+		BA200E1E1CC7262E00F99057 /* userinfo.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = userinfo.php; sourceTree = "<group>"; };
 		BA2BE69C1CB5F66C0077AEF5 /* emotion_amazing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emotion_amazing.png; sourceTree = "<group>"; };
 		BA2BE69D1CB5F66C0077AEF5 /* emotion_baffle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emotion_baffle.png; sourceTree = "<group>"; };
 		BA2BE69E1CB5F66C0077AEF5 /* emotion_bigsmile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emotion_bigsmile.png; sourceTree = "<group>"; };
@@ -1070,7 +1075,6 @@
 		BA2D0F911CB4ABF900E45567 /* Storm-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Storm-back.png"; sourceTree = "<group>"; };
 		BA2D0F921CB4ABF900E45567 /* Sun-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sun-back.png"; sourceTree = "<group>"; };
 		BA2D0F931CB4ABF900E45567 /* Tornado-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tornado-back.png"; sourceTree = "<group>"; };
-		BA38B0931CC63588006819CA /* upload_file.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = upload_file.php; sourceTree = "<group>"; };
 		BA59ECA01C9959470037CF70 /* set_btn_del_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "set_btn_del_@2x.png"; sourceTree = "<group>"; };
 		BA59ECA11C9959470037CF70 /* set_btn_del_@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "set_btn_del_@3x.png"; sourceTree = "<group>"; };
 		BA59ECA21C9959470037CF70 /* set_btn_del_pre_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "set_btn_del_pre_@2x.png"; sourceTree = "<group>"; };
@@ -2195,8 +2199,10 @@
 			children = (
 				BAECE69B1CBF9D2900942F9B /* login.php */,
 				BAECE69C1CBF9D2900942F9B /* MMysql.class.php */,
+				BA200E1C1CC7262200F99057 /* upload_file.php */,
 				BAECE69D1CBF9D2900942F9B /* register.php */,
-				BA38B0931CC63588006819CA /* upload_file.php */,
+				BA200E1E1CC7262E00F99057 /* userinfo.php */,
+				BA200E1A1CC7261A00F99057 /* updateuserinfo.php */,
 			);
 			path = PHPSource;
 			sourceTree = "<group>";
@@ -2560,6 +2566,7 @@
 				BA2BE6B31CB63FD10077AEF5 /* icon_search@2x.png in Resources */,
 				2A3FBF7B1C87203C00F548AA /* iconfont-xiazai-3@3x.png in Resources */,
 				2A3FC0AC1C87203D00F548AA /* 我线@2x.png in Resources */,
+				BA200E1F1CC7262E00F99057 /* userinfo.php in Resources */,
 				2A3FC0A21C87203D00F548AA /* 形状-2.png in Resources */,
 				2A3FC0091C87203C00F548AA /* btn-deletePic@3x.png in Resources */,
 				2A3FBF7D1C87203C00F548AA /* iconfont-xiazai-lan@3x.png in Resources */,
@@ -2582,7 +2589,6 @@
 				2A3FBFFB1C87203C00F548AA /* sort3@2x.png in Resources */,
 				2A3FBF771C87203C00F548AA /* iconfont-xiazai-3-down@2x.png in Resources */,
 				2A3FC07D1C87203D00F548AA /* iconfont-xiaoxi-2-down@2x.png in Resources */,
-				BA38B0941CC63588006819CA /* upload_file.php in Resources */,
 				2A3FC0531C87203D00F548AA /* 热@3x.png in Resources */,
 				2A3FBFD31C87203C00F548AA /* 盆友圈.png in Resources */,
 				2A3FBF5E1C87203C00F548AA /* iconfont-fenxiang-2-down.png in Resources */,
@@ -2659,6 +2665,7 @@
 				2ACE47E71C414ADF0066A303 /* Assets.xcassets in Resources */,
 				BA59ECA51C9959470037CF70 /* set_btn_del_@3x.png in Resources */,
 				2A3FC0661C87203D00F548AA /* bluecircle-copy-2@3x.png in Resources */,
+				BA200E1D1CC7262200F99057 /* upload_file.php in Resources */,
 				BA2BE6AF1CB6392F0077AEF5 /* rightdest@2x.png in Resources */,
 				2A3FC0CF1C87203D00F548AA /* 添加客户.png in Resources */,
 				2A3FBFA91C87203C00F548AA /* 取消置顶@3x.png in Resources */,
@@ -2692,6 +2699,7 @@
 				2A3FC0251C87203C00F548AA /* clock@3x.png in Resources */,
 				2A3FC0241C87203C00F548AA /* clock@2x.png in Resources */,
 				2A3FBF8F1C87203C00F548AA /* loupan报-down@3x.png in Resources */,
+				BA200E1B1CC7261A00F99057 /* updateuserinfo.php in Resources */,
 				2A3FC0C21C87203D00F548AA /* 椭圆-7@3x.png in Resources */,
 				2A3FC0C31C87203D00F548AA /* 椭圆-8.png in Resources */,
 				2A3FBFCC1C87203C00F548AA /* 椭圆-3@2x.png in Resources */,

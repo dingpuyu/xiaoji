@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import Foundation
 
+typealias ActionResult=(success:Bool,message:String,code:Int)->Void
 typealias ActionResultArrayClosure=(resultArray:[NoteItemModel])->Void
 typealias UserInfoResultClosure=(resultModel:UserInfoModel)->Void
 class DataService: NSObject {
@@ -60,9 +61,42 @@ class DataService: NSObject {
     }
     
     
-    func RequestUserInfo(resultCallBack:UserInfoResultClosure) -> Void {
+    func RequestUserInfo(resultCallBack:UserInfoResultClosure,failerCallBack:ActionResult) -> Void {
         Alamofire.request(.POST, "\(hostName)/userinfo.php", parameters: ["userid":XJUserDefault.sharedInstance.UserID()]).responseJSON { (request, response, result) in
-                resultCallBack(resultModel: UserInfoModel().initWithJson((result.value?.objectForKey("data"))!))
+            if result.isSuccess{
+                let model = UserInfoModel()
+                model.initWithJson((result.value?.objectForKey("data"))!)
+                resultCallBack(resultModel: model)
+            }else{
+                failerCallBack(success: false, message: "网路错误", code: -1000)
+            }
         }
     }
+    //上传头像
+    func uploadAvatar(image:UIImage,actionCallBack:ActionResult) -> Void{
+        let imageData = UIImageJPEGRepresentation(image, 0.1);
+        Alamofire.upload(.POST, "http://api.xiaotei.com/upload_file.php",headers:["HTTP_ACCOUNT":XJUserDefault.sharedInstance.UserAccount()] , data:imageData!)
+            .progress { bytesWritten, totalBytesWritten, totalBytesExpectedToWrite in
+                print(totalBytesWritten)
+                
+                // This closure is NOT called on the main queue for performance
+                // reasons. To update your ui, dispatch to the main queue.
+                dispatch_async(dispatch_get_main_queue()) {
+                   
+                }
+            }
+            .responseString { response in
+                
+                print("result:\(response.2.value)")
+//                if(response.2.isSuccess){
+//                    let success = response.2.value?.objectForKey("success") as! NSNumber
+//                    let message = response.2.value?.objectForKey("message") as! String
+//                    let code = response.2.value?.objectForKey("code") as! NSNumber
+//                    actionCallBack(success: (success.boolValue), message: message, code: code.integerValue)
+//                }else{
+//                    actionCallBack(success: false, message: "网路错误", code: -1000)
+//                }
+        }
+    }
+    
 }

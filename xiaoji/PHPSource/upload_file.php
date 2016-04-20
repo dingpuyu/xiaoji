@@ -1,16 +1,27 @@
 <?php
 include("MMysql.class.php");
 
+$Data = nil;
+
+
+
 	$response['success'] = false;
 	$response['message'] = "上传失败";
 	$response['code'] = -1;
-	if(!empty($GLOBALS['HTTP_RAW_POST_DATA']) && strlen($GLOBALS['HTTP_RAW_POST_DATA'])>0) {
+
+	if (!empty($GLOBALS['HTTP_RAW_POST_DATA'])) {
+		$Data = $GLOBALS['HTTP_RAW_POST_DATA'];
+	}else{
+		$Data = file_get_contents('php://input');
+	}
+
+	if(!empty($Data) && strlen($Data)>0) {
 		$date = $GLOBALS['HTTP_RAW_POST_DATA'];
 		$fid = time().".".getfileType();
         $absoluteName  = dirname(__FILE__)."/upload/".$fid;
         $handleWrite = fopen($absoluteName,'a');
          
-        fwrite($handleWrite,$GLOBALS['HTTP_RAW_POST_DATA']);
+        fwrite($handleWrite,$Data);
         
         fclose($handleWrite);
 		$success = replaceAvatarWithAccount(getAccountHeader(),"http://".$_SERVER['SERVER_NAME']."/upload/".$fid);
@@ -23,6 +34,8 @@ include("MMysql.class.php");
 	}
 
 
+
+
 function getAccountHeader()
     {
     	$header = "";
@@ -32,7 +45,8 @@ function getAccountHeader()
     }
 
 function getfileType(){
-        $str_info  = @unpack("C2chars",  $GLOBALS['HTTP_RAW_POST_DATA']);
+		global $Data;
+        $str_info  = @unpack("C2chars",  $Data);
         $type_code = intval($str_info['chars1'].$str_info['chars2']);
         $file_type = '';
         switch ($type_code) {

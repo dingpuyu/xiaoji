@@ -54,11 +54,7 @@ class XTToolBoxController: XTBaseViewController,UITableViewDelegate,UITableViewD
         tableView.registerNib(UINib(nibName: String(XTUserSettingCell), bundle: nil), forCellReuseIdentifier: String(XTUserSettingCell))
         
         
-        weak var weakSelf = self
-        DataService.shareInstance().RequestUserInfo { (resultModel) in
-            weakSelf?.userInfoModel = resultModel
-            weakSelf?.tableView.reloadData()
-        }
+        
         
     }
 
@@ -107,6 +103,17 @@ class XTToolBoxController: XTBaseViewController,UITableViewDelegate,UITableViewD
         
         self.performSegueWithIdentifier("LogIn", sender: self)
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        weak var weakSelf = self
+        DataService.shareInstance().RequestUserInfo({ (resultModel) in
+            weakSelf?.userInfoModel = resultModel
+            weakSelf?.tableView.reloadData()
+        }) { (success, message, code) in
+            print(message);
+        }
+    }
+
     
     
     override func didReceiveMemoryWarning() {

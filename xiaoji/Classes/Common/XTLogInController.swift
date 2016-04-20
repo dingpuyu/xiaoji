@@ -92,9 +92,10 @@ class XTLogInController: UIViewController,UITextFieldDelegate{
                 print("success:\(success)")
                 if success.boolValue == true{
                     let userid = json.objectForKey("userid") as! NSNumber
+                    let account = json.objectForKey("account") as! String
                     XJUserDefault.sharedInstance.setLogIn(true)
                     XJUserDefault.sharedInstance.setUserID(userid.integerValue)
-                
+                    XJUserDefault.sharedInstance.setUserAccount(account)
                     weakSelf?.dismissViewControllerAnimated(true, completion: {
                     })
                 }

@@ -20,6 +20,12 @@
                             <constraint firstAttribute="width" constant="50" id="J4O-OD-sJ7"/>
                             <constraint firstAttribute="height" constant="50" id="nRQ-da-ekt"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="25"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="临渊羡鱼，不如退而织网！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udL-72-Gb8">
                         <rect key="frame" x="80" y="37" width="204" height="29"/>
