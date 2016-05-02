@@ -412,6 +412,8 @@
 		2A7F72F41C95583A00FFE217 /* XTNoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F72F31C95583A00FFE217 /* XTNoteModel.swift */; };
 		2A7F72F71C9568B900FFE217 /* NSString+MessageDigest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F72F61C9568B900FFE217 /* NSString+MessageDigest.m */; };
 		2A7F72FA1C96EA5A00FFE217 /* Brush-Script.ttf in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F72F91C96E63800FFE217 /* Brush-Script.ttf */; };
+		2A9E770D1CD5A437008F085F /* XTVoiceListenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9E770C1CD5A437008F085F /* XTVoiceListenController.swift */; };
+		2A9E77131CD6003D008F085F /* ISRDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9E77121CD6003D008F085F /* ISRDataHelper.m */; };
 		2AABDAFE1C8DD76A00A0E078 /* PopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AABDAFD1C8DD76A00A0E078 /* PopupView.m */; };
 		2AC453161CC24A04005A8E2D /* XTResetPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC453151CC24A04005A8E2D /* XTResetPasswordController.swift */; };
 		2AC921661C8C2BF400683D7E /* XTBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC921641C8C2BF400683D7E /* XTBaseViewController.swift */; };
@@ -431,6 +433,9 @@
 		2AC921941C8C63A600683D7E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AC921931C8C63A600683D7E /* QuartzCore.framework */; };
 		2AC921961C8C63AF00683D7E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AC921951C8C63AF00683D7E /* CoreGraphics.framework */; };
 		2AC921981C8C63D300683D7E /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AC921971C8C63D300683D7E /* libc++.tbd */; };
+		2AC9351D1CD6F02900EE89A4 /* XTVoiceSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9351C1CD6F02900EE89A4 /* XTVoiceSettingController.swift */; };
+		2AC9351F1CD6F58300EE89A4 /* XTGroupTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9351E1CD6F58300EE89A4 /* XTGroupTitleView.swift */; };
+		2AC935231CD7866D00EE89A4 /* VoicePeopleSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC935221CD7866D00EE89A4 /* VoicePeopleSelectView.swift */; };
 		2ACAC0F01C93E01B00429C08 /* Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACAC0EF1C93E01B00429C08 /* Define.swift */; };
 		2ACE47E01C414ADF0066A303 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACE47DF1C414ADF0066A303 /* AppDelegate.swift */; };
 		2ACE47E51C414ADF0066A303 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ACE47E31C414ADF0066A303 /* Main.storyboard */; };
@@ -1001,6 +1006,9 @@
 		2A7F72F51C9568B900FFE217 /* NSString+MessageDigest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MessageDigest.h"; sourceTree = "<group>"; };
 		2A7F72F61C9568B900FFE217 /* NSString+MessageDigest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MessageDigest.m"; sourceTree = "<group>"; };
 		2A7F72F91C96E63800FFE217 /* Brush-Script.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Brush-Script.ttf"; sourceTree = "<group>"; };
+		2A9E770C1CD5A437008F085F /* XTVoiceListenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTVoiceListenController.swift; sourceTree = "<group>"; };
+		2A9E77111CD6003D008F085F /* ISRDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISRDataHelper.h; path = ../../Resource/ISRDataHelper.h; sourceTree = "<group>"; };
+		2A9E77121CD6003D008F085F /* ISRDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISRDataHelper.m; path = ../../Resource/ISRDataHelper.m; sourceTree = "<group>"; };
 		2AABDAEA1C8DCB1700A0E078 /* xiaoji-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "xiaoji-Bridging-Header.h"; sourceTree = "<group>"; };
 		2AABDAFB1C8DD68500A0E078 /* Definition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Definition.h; sourceTree = "<group>"; };
 		2AABDAFC1C8DD76A00A0E078 /* PopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupView.h; sourceTree = "<group>"; };
@@ -1023,6 +1031,9 @@
 		2AC921931C8C63A600683D7E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2AC921951C8C63AF00683D7E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2AC921971C8C63D300683D7E /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		2AC9351C1CD6F02900EE89A4 /* XTVoiceSettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTVoiceSettingController.swift; sourceTree = "<group>"; };
+		2AC9351E1CD6F58300EE89A4 /* XTGroupTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XTGroupTitleView.swift; path = xiaoji/Classes/ToolBox/Controller/XTGroupTitleView.swift; sourceTree = SOURCE_ROOT; };
+		2AC935221CD7866D00EE89A4 /* VoicePeopleSelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoicePeopleSelectView.swift; sourceTree = SOURCE_ROOT; };
 		2ACAC0EF1C93E01B00429C08 /* Define.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Define.swift; sourceTree = "<group>"; };
 		2ACE47DC1C414ADF0066A303 /* xiaoji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xiaoji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ACE47DF1C414ADF0066A303 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -1902,11 +1913,9 @@
 			isa = PBXGroup;
 			children = (
 				2AC9217D1C8C40A300683D7E /* XTToolBoxController.swift */,
-<<<<<<< Updated upstream
 				BA03DD7E1CC0825000BDBECF /* XTUserInfoDetailController.swift */,
-=======
 				2AC453151CC24A04005A8E2D /* XTResetPasswordController.swift */,
->>>>>>> Stashed changes
+				2AC9351C1CD6F02900EE89A4 /* XTVoiceSettingController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1922,6 +1931,7 @@
 		2AC9217F1C8C40A300683D7E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2AC935201CD6F58C00EE89A4 /* 语音设置组头视图 */,
 				BAFC144F1CB501E200149F4E /* XTUserInfoCell.swift */,
 				BAFC14501CB501E200149F4E /* XTUserInfoCell.xib */,
 				BAFC144B1CB4FCBE00149F4E /* XTQuitLogInCell.swift */,
@@ -1930,6 +1940,23 @@
 				BA2BE6AA1CB638B40077AEF5 /* XTUserSettingCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		2AC935201CD6F58C00EE89A4 /* 语音设置组头视图 */ = {
+			isa = PBXGroup;
+			children = (
+				2AC935211CD785ED00EE89A4 /* 人声选择视图 */,
+				2AC9351E1CD6F58300EE89A4 /* XTGroupTitleView.swift */,
+			);
+			name = "语音设置组头视图";
+			sourceTree = "<group>";
+		};
+		2AC935211CD785ED00EE89A4 /* 人声选择视图 */ = {
+			isa = PBXGroup;
+			children = (
+				2AC935221CD7866D00EE89A4 /* VoicePeopleSelectView.swift */,
+			);
+			name = "人声选择视图";
 			sourceTree = "<group>";
 		};
 		2ACAC0EC1C93C37700429C08 /* Resource */ = {
@@ -2195,7 +2222,10 @@
 		BAE00FCA1CABB1C4006A9965 /* 语音工具 */ = {
 			isa = PBXGroup;
 			children = (
+				2A9E77111CD6003D008F085F /* ISRDataHelper.h */,
+				2A9E77121CD6003D008F085F /* ISRDataHelper.m */,
 				BAE00FCD1CABB743006A9965 /* XTVoiceServiceController.swift */,
+				2A9E770C1CD5A437008F085F /* XTVoiceListenController.swift */,
 			);
 			name = "语音工具";
 			sourceTree = "<group>";
@@ -2984,6 +3014,7 @@
 				2A3E48281CA1821E00FFFC38 /* XTAddNoteQuestionCell.swift in Sources */,
 				BAF163961CA37CBE0048681A /* XTScheduleInfoTableView.m in Sources */,
 				BAF1638E1CA37CBE0048681A /* UITableViewRowAction+JZExtension.m in Sources */,
+				2AC9351D1CD6F02900EE89A4 /* XTVoiceSettingController.swift in Sources */,
 				2A7F72F41C95583A00FFE217 /* XTNoteModel.swift in Sources */,
 				2AC921761C8C402900683D7E /* XTHomePageController.swift in Sources */,
 				BA2BE6BA1CB64A6C0077AEF5 /* XTSearchNoteController.swift in Sources */,
@@ -3002,6 +3033,7 @@
 				2ACE47E01C414ADF0066A303 /* AppDelegate.swift in Sources */,
 				2A3C66DF1C94716F00AC685D /* XTDB.swift in Sources */,
 				BAE00FCE1CABB743006A9965 /* XTVoiceServiceController.swift in Sources */,
+				2A9E77131CD6003D008F085F /* ISRDataHelper.m in Sources */,
 				BA2BE6AB1CB638B40077AEF5 /* XTUserSettingCell.swift in Sources */,
 				BAF163801CA37CBE0048681A /* BaseViewController.m in Sources */,
 				BAE00FC21CABA812006A9965 /* XTMonthDateSelectView.m in Sources */,
@@ -3021,8 +3053,10 @@
 				BAFC144D1CB4FCBE00149F4E /* XTQuitLogInCell.swift in Sources */,
 				BA2BE6C31CB6660F0077AEF5 /* XTSearchResultViewModel.swift in Sources */,
 				2A3013011C99B723003E098A /* XTNoteItemEditController.swift in Sources */,
+				2AC935231CD7866D00EE89A4 /* VoicePeopleSelectView.swift in Sources */,
 				BAF163851CA37CBE0048681A /* JTCalendarScrollManager.m in Sources */,
 				BAF1638C1CA37CBE0048681A /* JTVerticalCalendarView.m in Sources */,
+				2AC9351F1CD6F58300EE89A4 /* XTGroupTitleView.swift in Sources */,
 				BA6A4D661CB3461900994E9E /* XTnoteItemDetailController.swift in Sources */,
 				2AABDAFE1C8DD76A00A0E078 /* PopupView.m in Sources */,
 				BAF1638B1CA37CBE0048681A /* JTHorizontalCalendarView.m in Sources */,
@@ -3048,6 +3082,7 @@
 				2A5BBBA61C9E73E40071C672 /* XTCollectionCllFunctionView.swift in Sources */,
 				BAF163951CA37CBE0048681A /* XTScheduleContentView.m in Sources */,
 				2A3E48251CA16BA000FFFC38 /* XTAddTitleItemController.swift in Sources */,
+				2A9E770D1CD5A437008F085F /* XTVoiceListenController.swift in Sources */,
 				BA8991F91C9BA5A500C63B3B /* LocationService.swift in Sources */,
 				BAF1638A1CA37CBE0048681A /* JTCalendarWeekView.m in Sources */,
 				BAB089C51CA23CB20080706D /* XTAddNoteTitleHeaderCell.swift in Sources */,

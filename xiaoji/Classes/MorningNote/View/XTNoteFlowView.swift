@@ -120,7 +120,7 @@ class XTNoteFlowView: UIView, UICollectionViewDelegateFlowLayout,UICollectionVie
         self.addSubview(collectionView!)
         self.addSubview(collectionViewFunctionView!)
         collectionViewFunctionView!.initWithClosure(functionCellFunctionViewClosure)
-        longPressGesture = UILongPressGestureRecognizer(target: self, action: "handleLongGesture:")
+        longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(XTNoteFlowView.handleLongGesture(_:)))
         collectionView?.addGestureRecognizer(longPressGesture)
         
         isEdit = false

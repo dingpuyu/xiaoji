@@ -37,7 +37,7 @@ class XTCollectionCellFunctionView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.addSubview(addButton!)
-        addButton?.addTarget(self, action: "addBtnClick:", forControlEvents: .TouchUpInside)
+        addButton?.addTarget(self, action: #selector(XTCollectionCellFunctionView.addBtnClick(_:)), forControlEvents: .TouchUpInside)
         
         addButton?.snp_makeConstraints(closure: { (make) -> Void in
             make.center.equalTo(self.snp_center)

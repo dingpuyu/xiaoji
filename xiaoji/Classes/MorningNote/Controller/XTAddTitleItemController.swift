@@ -56,7 +56,7 @@ class XTAddTitleItemController: XTBaseViewController,UITableViewDataSource,UITab
         
         tableView?.separatorStyle = .None
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "保存", style: .Plain, target: self, action: "saveButtonClick:")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "保存", style: .Plain, target: self, action: #selector(XTAddTitleItemController.saveButtonClick(_:)))
     }
     
     //tableview delegate datasource

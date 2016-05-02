@@ -43,7 +43,7 @@ class XTMorningNoteController: XTBaseViewController,NoteFlowViewDelegate,AddTitl
 //        self.navigationController?.navigationBar.hidden = true
         self.title = "晨记"
         dateString = dateFormatter.stringFromDate(NSDate())
-        let rightButtonItem = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: "rightButtonAction:")
+        let rightButtonItem = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: #selector(XTMorningNoteController.rightButtonAction(_:)))
 
         self.navigationItem.rightBarButtonItem = rightButtonItem
 
@@ -63,7 +63,7 @@ class XTMorningNoteController: XTBaseViewController,NoteFlowViewDelegate,AddTitl
         XTDB.initTitieAndItemWithDate(dateFormatter.stringFromDate(currentDate))
         
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("reloadCollectionHeaderView"), name: "ReloadHeaderWeatherView", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(XTMorningNoteController.reloadCollectionHeaderView), name: "ReloadHeaderWeatherView", object: nil)
     }
 
     override func didReceiveMemoryWarning() {

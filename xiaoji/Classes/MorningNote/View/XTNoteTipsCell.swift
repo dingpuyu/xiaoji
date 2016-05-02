@@ -110,8 +110,8 @@ class XTNoteTipsCell: UICollectionViewCell ,UITextViewDelegate{
 //            self.contentView.userInteractionEnabled = true
             deleteButton.hidden = !isEdit! && !isFullScreen!
             saveButton.hidden = !isFullScreen!
-            saveButton.addTarget(self, action: "saveButtonClick:", forControlEvents: .TouchUpInside)
-            deleteButton.addTarget(self, action: "deleteButtonClick:", forControlEvents: .TouchUpInside)
+            saveButton.addTarget(self, action: #selector(XTNoteTipsCell.saveButtonClick(_:)), forControlEvents: .TouchUpInside)
+            deleteButton.addTarget(self, action: #selector(XTNoteTipsCell.deleteButtonClick(_:)), forControlEvents: .TouchUpInside)
             titleLabel.snp_remakeConstraints(closure: { (make) -> Void in
                 make.top.equalTo(deleteButton.snp_bottom)
                 make.left.equalTo(self.contentView).offset(8)
@@ -220,7 +220,7 @@ class XTNoteTipsCell: UICollectionViewCell ,UITextViewDelegate{
 //        self.contentView.snp_makeConstraints { (make) -> Void in
 //            make.edges.equalTo(self)
 //        }
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:"keyboardWillChangeFrameNotification:", name: UIKeyboardWillChangeFrameNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(XTNoteTipsCell.keyboardWillChangeFrameNotification(_:)), name: UIKeyboardWillChangeFrameNotification, object: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -257,6 +257,8 @@ class XTNoteTipsCell: UICollectionViewCell ,UITextViewDelegate{
             break;
         case .Voice:
             self.closure!(cellView: self, model: titleModel, type: .Voice)
+            break;
+        default:
             break;
         }
     }

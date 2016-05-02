@@ -19,6 +19,12 @@ class XTNoteItemView: UIView,UITextFieldDelegate,UITextViewDelegate,UIScrollView
 
     private var oldContentOffsetY:CGFloat? = 0.0
     
+    var listenString:String = ""{
+        didSet{
+            editingTextView?.text = (editingTextView?.text)! + (listenString as String)
+        }
+    }
+    
     var textViewArray:[UITextView]? = []
     var titleViewArray:[UILabel]? = []
     
@@ -209,7 +215,7 @@ class XTNoteItemView: UIView,UITextFieldDelegate,UITextViewDelegate,UIScrollView
    override init(frame: CGRect) {
         super.init(frame: frame)
     
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:"keyboardWillChangeFrameNotification:", name: UIKeyboardWillChangeFrameNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(XTNoteItemView.keyboardWillChangeFrameNotification(_:)), name: UIKeyboardWillChangeFrameNotification, object: nil)
     }
 
    required init?(coder aDecoder: NSCoder) {
@@ -220,6 +226,7 @@ class XTNoteItemView: UIView,UITextFieldDelegate,UITextViewDelegate,UIScrollView
         
         return true
     }
+    
     
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         if text == "\n"{

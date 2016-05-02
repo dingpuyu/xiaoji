@@ -95,6 +95,9 @@ class XTToolBoxController: XTBaseViewController,UITableViewDelegate,UITableViewD
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row == 0{
             self.performSegueWithIdentifier("UserInfoDetail", sender: nil)
+        }else if indexPath.row == 3{
+            
+            self.performSegueWithIdentifier("VoiceSetting", sender: nil)
         }
     }
     
@@ -114,6 +117,12 @@ class XTToolBoxController: XTBaseViewController,UITableViewDelegate,UITableViewD
         }
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "VoiceSetting"{
+            let destVC = segue.destinationViewController
+            destVC.hidesBottomBarWhenPushed = true
+        }
+    }
     
     
     override func didReceiveMemoryWarning() {

@@ -34,7 +34,7 @@ class XTNoteItemAddButtonCell: UITableViewCell {
     
     func commonInit(){
         self.contentView.addSubview(addButton!)
-        addButton?.addTarget(self, action: "addButtonClick:", forControlEvents: .TouchUpInside)
+        addButton?.addTarget(self, action: #selector(XTNoteItemAddButtonCell.addButtonClick(_:)), forControlEvents: .TouchUpInside)
         addButton?.snp_makeConstraints(closure: { (make) -> Void in
             make.center.equalTo(self.contentView.snp_center)
             make.width.equalTo(self.contentView.snp_width).multipliedBy(0.33)

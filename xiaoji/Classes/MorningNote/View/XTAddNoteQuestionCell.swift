@@ -59,7 +59,7 @@ class XTAddNoteQuestionCell: UITableViewCell ,UITextFieldDelegate{
         self.contentView.addSubview(textField!)
 //        self.contentView.addSubview(deleteBtn!)
         textField?.delegate = self
-        deleteBtn?.addTarget(self, action: "deleteBtnClick:", forControlEvents: .TouchUpInside)
+        deleteBtn?.addTarget(self, action: #selector(XTAddNoteQuestionCell.deleteBtnClick(_:)), forControlEvents: .TouchUpInside)
         tipsLabel?.snp_makeConstraints(closure: { (make) -> Void in
             make.left.equalTo(self.contentView.snp_left).offset(8)
             make.centerY.equalTo(self.contentView.snp_centerY)

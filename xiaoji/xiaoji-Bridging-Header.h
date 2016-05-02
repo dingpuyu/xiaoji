@@ -10,6 +10,10 @@
 #import "iflyMSC/IFlySpeechSynthesizer.h"
 #import "iflyMSC/IFlySpeechSynthesizerDelegate.h"
 
+//语音识别
+#import "iflyMSC/IFlySpeechRecognizerDelegate.h"
+#import "ISRDataHelper.h"
+
 #import "FMDB.h"
 
 

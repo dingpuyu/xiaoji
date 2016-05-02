@@ -104,31 +104,3 @@ class XTUserInfoDetailController: UIViewController ,UIImagePickerControllerDeleg
     
     
 }
-
-
-
-
-
-
-
-
-
-/*
- <!DOCTYPE html>
- <html>
- <head>
-	<meta http-equiv="Content-Type" content="text/html;charset=utf8";>
-	<title></title>
- </head>
- <body>
- <form method='POST' action="<?php echo $_SERVER['PHP_SELF'];?>">
- <input type="text" name="userid">
- <input type="submit"  name="submit" value="查询">
- </form>
- 
- 
- </body>
- </html>
- 
-
- */

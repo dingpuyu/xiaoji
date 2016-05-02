@@ -9,7 +9,7 @@
 import UIKit
 
 enum FunctionEventType{
-    case Return,Save,Cancel,Voice
+    case Return,Save,Cancel,Voice,Listen
 }
 
 
@@ -29,38 +29,49 @@ class XTNoteFunctionView: UIView {
         super.init(frame: frame)
         let btn1 = UIButton()
         btn1.setTitle("返回", forState: .Normal)
-        btn1.addTarget(self, action: "returnActionTouch:", forControlEvents: .TouchUpInside)
+        btn1.addTarget(self, action: #selector(XTNoteFunctionView.returnActionTouch(_:)), forControlEvents: .TouchUpInside)
 
         self.addSubview(btn1)
         let btn2 = UIButton()
-        btn2.setTitle("语音", forState: .Normal)
-        btn2.addTarget(self, action: "voiceActionTouch:", forControlEvents: .TouchUpInside)
+        btn2.setTitle("播放", forState: .Normal)
+        btn2.addTarget(self, action: #selector(XTNoteFunctionView.voiceActionTouch(_:)), forControlEvents: .TouchUpInside)
         self.addSubview(btn2)
         let btn3 = UIButton()
-        btn3.addTarget(self, action: "saveActionTouch:", forControlEvents: .TouchUpInside)
+        btn3.addTarget(self, action: #selector(XTNoteFunctionView.saveActionTouch(_:)), forControlEvents: .TouchUpInside)
         btn3.setTitle("确认", forState: .Normal)
         self.addSubview(btn3)
+        let btn4 = UIButton()
+        btn4.setTitle("语音", forState: .Normal)
+        btn4.addTarget(self, action: #selector(listenAction(_:)), forControlEvents: .TouchUpInside)
+        
+        self.addSubview(btn4)
         btn1.setTitleColor(lightGreenColor, forState: .Normal)
         btn2.setTitleColor(lightGreenColor, forState: .Normal)
         btn3.setTitleColor(lightGreenColor, forState: .Normal)
+        btn4.setTitleColor(lightGreenColor, forState: .Normal)
         
-        
-        btn1.snp_makeConstraints { (make) -> Void in
-            make.centerY.equalTo(self.snp_centerY)
-            make.left.equalTo(self.snp_left).offset(8)
-            make.width.equalTo(50)
-            make.height.equalTo(self.snp_height)
+        btn1.snp_makeConstraints { (make) in
+            make.left.equalTo(self.snp_left)
+            make.top.bottom.equalTo(self)
+            make.right.equalTo(btn2.snp_left)
+            make.width.equalTo(btn2.snp_width)
         }
-        
-        btn3.snp_makeConstraints { (make) -> Void in
-            make.center.equalTo(self)
-            make.size.equalTo(btn1.snp_size)
+        btn2.snp_makeConstraints { (make) in
+            make.left.equalTo(btn1.snp_right)
+            make.top.bottom.equalTo(self)
+            make.right.equalTo(btn3.snp_left)
+            make.width.equalTo(btn3.snp_width)
         }
-        
-        btn2.snp_makeConstraints { (make) -> Void in
-            make.centerY.equalTo(self.snp_centerY)
-            make.right.equalTo(self.snp_right).offset(-8)
-            make.size.equalTo(btn1.snp_size)
+        btn3.snp_makeConstraints { (make) in
+            make.left.equalTo(btn2.snp_right)
+            make.top.bottom.equalTo(self)
+            make.right.equalTo(btn4.snp_left)
+            make.width.equalTo(btn4.snp_width)
+        }
+        btn4.snp_makeConstraints { (make) in
+            make.left.equalTo(btn3.snp_right)
+            make.top.bottom.equalTo(self)
+            make.right.equalTo(self.snp_right)
         }
     }
 
@@ -86,6 +97,11 @@ class XTNoteFunctionView: UIView {
     func voiceActionTouch(button:UIButton){
         if closure != nil{
             closure!(funcView: self, event: .Voice)
+        }
+    }
+    func listenAction(button:UIButton) {
+        if closure != nil{
+            closure!(funcView:self,event:.Listen)
         }
     }
 }

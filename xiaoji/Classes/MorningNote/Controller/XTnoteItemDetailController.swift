@@ -8,7 +8,7 @@
 
 import UIKit
 
-class XTnoteItemDetailController: UIViewController {
+class XTnoteItemDetailController: UIViewController,VoiceListenDelegate {
 
     var noteImteView:XTNoteItemView?
     
@@ -28,7 +28,7 @@ class XTnoteItemDetailController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "保存", style: .Plain, target: self, action: Selector("rightButtonClick"))
+       self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "保存", style: .Plain, target: self, action: #selector(XTnoteItemDetailController.rightButtonClick))
 //        UIBarButtonItem(image: UIImage(named: "sound"), style: .Plain, target: self, action: )
         
         
@@ -51,7 +51,7 @@ class XTnoteItemDetailController: UIViewController {
         }
         functionView.initWithClosure(functionViewClosure)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:"keyboardWillChangeFrameNotification:", name: UIKeyboardWillChangeFrameNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(XTnoteItemDetailController.keyboardWillChangeFrameNotification(_:)), name: UIKeyboardWillChangeFrameNotification, object: nil)
         
         noteImteView?.titleModel = titleModel
     }
@@ -87,6 +87,9 @@ class XTnoteItemDetailController: UIViewController {
         case .Voice:
             self.voiceAction()
             break;
+        case .Listen:
+            self.listenAction()
+            break;
         }
     }
     
@@ -104,6 +107,16 @@ class XTnoteItemDetailController: UIViewController {
         self.navigationController?.presentViewController(voiceVC, animated: true, completion: nil)
     }
 
+    func listenAction() {
+        let listenVC = XTVoiceListenController()
+        listenVC.delegate = self
+        self.navigationController?.presentViewController(listenVC, animated: true, completion: nil)
+    }
+    
+    func didEndListen(result: NSString) {
+        noteImteView?.listenString = result as String
+    }
+    
     
     func keyboardWillChangeFrameNotification(notification:NSNotification){
         

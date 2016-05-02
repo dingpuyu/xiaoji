@@ -43,4 +43,17 @@ class XJUserDefault: NSObject {
         userdefault.setInteger(id, forKey: "userid")
     }
     
+    func VoicePeople() -> String{
+        let userdefault = NSUserDefaults.standardUserDefaults()
+        var people = userdefault.stringForKey("voicePeople")
+        if people == nil{
+            people = "xiaoyan"
+        }
+        return people!
+    }
+    
+    func setVoicePeople(name:String){
+        let userdefault = NSUserDefaults.standardUserDefaults()
+        userdefault.setValue(name, forKey: "voicePeople")
+    }
 }
