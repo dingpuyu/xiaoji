@@ -110,11 +110,11 @@ typedef enum : NSInteger {
     _scheduleEventsArray = nil;
     [self scheduleEventsArray];
 //    
-//    BOOL isLogIn = [[NSUserDefaults standardUserDefaults] boolForKey:@"UserIsLogIn"];
-//    
-//    if (!isLogIn) {
-//        [self performSegueWithIdentifier:@"LogIn" sender:self];        
-//    }
+    BOOL isLogIn = [[NSUserDefaults standardUserDefaults] boolForKey:@"UserIsLogIn"];
+    
+    if (!isLogIn) {
+        [self performSegueWithIdentifier:@"LogIn" sender:self];        
+    }
     SearchBarButton* searchButton = [[SearchBarButton alloc]initWithFrame:CGRectMake(0, 0, 44, 44)];
     [searchButton setImage:[UIImage imageNamed:@"icon_search"] forState:UIControlStateNormal];
     [searchButton addTarget:self action:@selector(searchButtonClick:) forControlEvents:UIControlEventTouchUpInside];

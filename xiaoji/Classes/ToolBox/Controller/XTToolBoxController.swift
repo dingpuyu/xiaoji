@@ -82,6 +82,7 @@ class XTToolBoxController: XTBaseViewController,UITableViewDelegate,UITableViewD
         }
         let cell = tableView.dequeueReusableCellWithIdentifier(String(XTUserSettingCell)) as! XTUserSettingCell
         cell.titleLabel.text = (cellTitleArray[indexPath.row] as! String)
+        cell.selectionStyle = .None
         return cell
     }
     

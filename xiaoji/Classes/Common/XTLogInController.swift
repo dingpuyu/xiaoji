@@ -91,6 +91,7 @@ class XTLogInController: UIViewController,UITextFieldDelegate{
                 let success = json.objectForKey("success") as! NSNumber
                 print("success:\(success)")
                 if success.boolValue == true{
+                    print(json)
                     let userid = json.objectForKey("userid") as! NSNumber
                     let account = json.objectForKey("account") as! String
                     XJUserDefault.sharedInstance.setLogIn(true)

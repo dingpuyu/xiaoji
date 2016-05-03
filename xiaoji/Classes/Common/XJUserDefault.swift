@@ -56,4 +56,33 @@ class XJUserDefault: NSObject {
         let userdefault = NSUserDefaults.standardUserDefaults()
         userdefault.setValue(name, forKey: "voicePeople")
     }
+    
+    func voiceLanguage() -> String{
+        let userdefault = NSUserDefaults.standardUserDefaults()
+        var language = userdefault.stringForKey("voiceLanguage")
+        if language == nil{
+            language = CHINESE
+        }
+        return language!
+    }
+    
+    func setVoiceLanguage(language:String){
+        let userdefault = NSUserDefaults.standardUserDefaults()
+        userdefault.setValue(language, forKey: "voiceLanguage")
+    }
+    
+    func voiceFangYan() -> String {
+        let userdefault = NSUserDefaults.standardUserDefaults()
+        var fangYan = userdefault.stringForKey("voiceFangYan")
+        if fangYan == nil{
+            fangYan = PUTONGHUA
+        }
+        return fangYan!
+    }
+    
+    func setFangYan(fangYan:String){
+        let userdefault = NSUserDefaults.standardUserDefaults()
+        userdefault.setValue(fangYan, forKey: "voiceFangYan")
+    }
+    
 }

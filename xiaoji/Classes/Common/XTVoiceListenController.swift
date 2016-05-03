@@ -33,6 +33,10 @@ class XTVoiceListenController: XTBaseViewController,IFlySpeechRecognizerDelegate
 //        [iFlySpeechRecognizer setParameter:@"asrview.pcm" forKey:[IFlySpeechConstant ASR_AUDIO_PATH]];
         iFlySpeechRecognizer.setParameter("asrview.pcm", forKey: IFlySpeechConstant.ASR_AUDIO_PATH())
         
+        //设置语言
+        iFlySpeechRecognizer.setParameter(XJUserDefault.sharedInstance.voiceLanguage(), forKey: IFlySpeechConstant.LANGUAGE())
+        //设置方言
+        iFlySpeechRecognizer.setParameter(XJUserDefault.sharedInstance.voiceFangYan(), forKey: IFlySpeechConstant.ACCENT())
     iFlySpeechRecognizer.startListening()
         self.view.addSubview(volumeLabel)
         volumeLabel.snp_makeConstraints { (make) in
@@ -47,11 +51,12 @@ class XTVoiceListenController: XTBaseViewController,IFlySpeechRecognizerDelegate
      ****/
     func onEndOfSpeech() {
 //        self.dismissViewControllerAnimated(true, completion: nil)
+        iFlySpeechRecognizer.stopListening()
     }
     /*识别会话结束返回代理
      @ param error 错误码,error.errorCode=0表示正常结束,非0表示发生错误。 */
     func onError(errorCode: IFlySpeechError!) {
-        
+        iFlySpeechRecognizer.stopListening()
     }
     /**
      开始识别回调

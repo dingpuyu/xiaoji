@@ -8,6 +8,9 @@
 
 import UIKit
 
+enum PickerViewType {
+    case VoiceFangYan,VoicePeoPle,VoiceLanguage
+}
 
 
 class VoicePeopleSelectView: UIView ,UIPickerViewDelegate,UIPickerViewDataSource{
@@ -19,6 +22,8 @@ class VoicePeopleSelectView: UIView ,UIPickerViewDelegate,UIPickerViewDataSource
     var saveButton:UIButton = UIButton()
     
     var selectRow:Int = 8
+    
+    var style:PickerViewType = .VoicePeoPle
 
     var peopleArray:NSArray! = {
         ["小燕","小宇","凯瑟琳","亨利","玛丽","小研","小琪","小峰","小梅","小莉","小蓉(四川话)","小芸","小坤","小强","小莹","小新","老楠","老孙"]
@@ -38,7 +43,7 @@ class VoicePeopleSelectView: UIView ,UIPickerViewDelegate,UIPickerViewDataSource
         selectionView.dataSource = self
         selectionView.backgroundColor = UIColor.whiteColor()
         self.addSubview(selectionView)
-        selectionView.selectRow(selectRow, inComponent: 0, animated: false)
+        
 //        selectionView.frame = CGRect(x: 0, y: kMainScreenHeight - 180, width: kMainScreenWidth, height: 180)
         
         selectionView.snp_makeConstraints { (make) in
@@ -73,6 +78,26 @@ class VoicePeopleSelectView: UIView ,UIPickerViewDelegate,UIPickerViewDataSource
             make.bottom.equalTo(selectionView.snp_top)
             make.size.equalTo(CGSize(width: 70, height: 30))
         }
+        
+        
+        switch(style){
+        case .VoiceFangYan:
+            peopleArray =  ["普通话","粤语","河南话"]
+            selectRow = 0
+            break
+        case .VoicePeoPle:
+            selectRow = 8
+            break
+        case .VoiceLanguage:
+            peopleArray = ["汉语","英语"]
+            selectRow = 0
+            
+            break
+        default:
+            break
+        }
+        
+        selectionView.selectRow(selectRow, inComponent: 0, animated: false)
     }
 
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -105,11 +130,14 @@ class VoicePeopleSelectView: UIView ,UIPickerViewDelegate,UIPickerViewDataSource
     
     
     func didTouchSelf() -> Void {
+        NSNotificationCenter.defaultCenter().postNotificationName("ReloadVoiceSetting", object: nil)
         self.removeFromSuperview()
     }
     
     func saveAction() -> Void {
         var string = "xiaoyan"
+        
+        if style == .VoicePeoPle{
         
         switch selectRow {
         case 0:
@@ -172,7 +200,36 @@ class VoicePeopleSelectView: UIView ,UIPickerViewDelegate,UIPickerViewDataSource
         }
         
         XJUserDefault.sharedInstance.setVoicePeople(string)
-        
+        }else if style == .VoiceFangYan{
+            switch selectRow {
+            case 0:
+                string = PUTONGHUA
+                break
+            case 1:
+                string = YUEYU
+                break
+            case 2:
+                string = HENANHUA
+                break
+            default:
+                string = PUTONGHUA
+                break
+            }
+            XJUserDefault.sharedInstance.setFangYan(string)
+        }else if style == .VoiceLanguage{
+            switch selectRow {
+            case 0:
+                string = CHINESE
+                break
+            case 1:
+                string = ENGLISH
+                break
+            default:
+                string = CHINESE
+                break
+            }
+            XJUserDefault.sharedInstance.setVoiceLanguage(string)
+        }
         didTouchSelf()
     }
 }

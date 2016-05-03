@@ -8,6 +8,12 @@
 
 import UIKit
 
+let PUTONGHUA = "mandarin"
+let YUEYU     = "cantonese"
+let HENANHUA   = "henanese"
+let ENGLISH = "en_us"
+let CHINESE = "zh_cn"
+
 class XTVoiceSettingController: UIViewController,UITableViewDelegate,UITableViewDataSource{
     
     @IBOutlet weak var tableView: UITableView!
@@ -18,6 +24,8 @@ class XTVoiceSettingController: UIViewController,UITableViewDelegate,UITableView
         tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: String(UITableViewCell))
         
         tableView.registerClass(XTGroupTitleView.classForCoder(), forHeaderFooterViewReuseIdentifier: String(XTGroupTitleView))
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(XTVoiceSettingController.reloadVoiceSetting), name: "ReloadVoiceSetting", object: nil)
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -26,6 +34,10 @@ class XTVoiceSettingController: UIViewController,UITableViewDelegate,UITableView
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0{
+            return 1
+        }
+        
+        if XJUserDefault.sharedInstance.voiceLanguage() == ENGLISH{
             return 1
         }
         return 2;
@@ -43,6 +55,7 @@ class XTVoiceSettingController: UIViewController,UITableViewDelegate,UITableView
             }
         }
         
+    
         
         return cell!
     }
@@ -71,13 +84,27 @@ class XTVoiceSettingController: UIViewController,UITableViewDelegate,UITableView
         if indexPath.section == 0{
             if indexPath.row == 0{
               let peopleSelectView = VoicePeopleSelectView(frame: self.view.frame)
+                peopleSelectView.style = .VoicePeoPle
             UIApplication.sharedApplication().keyWindow?.addSubview(peopleSelectView)
             
             }
         }else if indexPath.section == 1{
             if indexPath.row == 0 {
-                
+                let peopleSelectView = VoicePeopleSelectView(frame: self.view.frame)
+                peopleSelectView.style = .VoiceLanguage
+                UIApplication.sharedApplication().keyWindow?.addSubview(peopleSelectView)
+            }else if indexPath.row == 1{
+                let peopleSelectView = VoicePeopleSelectView(frame: self.view.frame)
+                peopleSelectView.style = .VoiceFangYan
+                UIApplication.sharedApplication().keyWindow?.addSubview(peopleSelectView)
             }
         }
+    }
+    
+    func reloadVoiceSetting(){
+        self.tableView.reloadData()
+    }
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 }
