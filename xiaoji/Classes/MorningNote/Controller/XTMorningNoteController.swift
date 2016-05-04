@@ -10,9 +10,6 @@ import UIKit
 
 let dateTimeStr = "yyyy-MM-dd"
 
-
-
-
 class XTMorningNoteController: XTBaseViewController,NoteFlowViewDelegate,AddTitleItemControllerDelegate {
 
     var MYDB:FMDatabase? = nil
