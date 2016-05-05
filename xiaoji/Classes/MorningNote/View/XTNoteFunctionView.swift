@@ -33,11 +33,9 @@ class XTNoteFunctionView: UIView {
 
         self.addSubview(btn1)
         let btn2 = UIButton()
-<<<<<<< Updated upstream
+
         btn2.setTitle("播放", forState: .Normal)
-=======
-        btn2.setTitle("语音", forState: .Normal)
->>>>>>> Stashed changes
+
         btn2.addTarget(self, action: #selector(XTNoteFunctionView.voiceActionTouch(_:)), forControlEvents: .TouchUpInside)
         self.addSubview(btn2)
         let btn3 = UIButton()
@@ -54,19 +52,12 @@ class XTNoteFunctionView: UIView {
         btn3.setTitleColor(lightGreenColor, forState: .Normal)
         btn4.setTitleColor(lightGreenColor, forState: .Normal)
         
-<<<<<<< Updated upstream
         btn1.snp_makeConstraints { (make) in
             make.left.equalTo(self.snp_left)
             make.top.bottom.equalTo(self)
             make.right.equalTo(btn2.snp_left)
             make.width.equalTo(btn2.snp_width)
-=======
-        btn1.snp_makeConstraints { (make) -> Void in
-            make.centerY.equalTo(self.snp_centerY)
-            make.left.equalTo(self.snp_left).offset(8)
-            make.width.equalTo(50)
-            make.height.equalTo(self.snp_height)
->>>>>>> Stashed changes
+
         }
         btn2.snp_makeConstraints { (make) in
             make.left.equalTo(btn1.snp_right)
